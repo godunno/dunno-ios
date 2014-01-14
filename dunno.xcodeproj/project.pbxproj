@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3006F5B18859432007B0790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5A18859432007B0790 /* Foundation.framework */; };
+		C3006F5D18859432007B0790 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5C18859432007B0790 /* CoreGraphics.framework */; };
+		C3006F5F18859432007B0790 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5E18859432007B0790 /* UIKit.framework */; };
+		C3006F6518859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F6318859432007B0790 /* InfoPlist.strings */; };
+		C3006F6718859432007B0790 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F6618859432007B0790 /* main.m */; };
+		C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F6A18859432007B0790 /* DUNAppDelegate.m */; };
+		C3006F6E18859432007B0790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3006F6C18859432007B0790 /* Main.storyboard */; };
+		C3006F7118859432007B0790 /* DUNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F7018859432007B0790 /* DUNViewController.m */; };
+		C3006F7318859432007B0790 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3006F7218859432007B0790 /* Images.xcassets */; };
+		C3006F7A18859432007B0790 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F7918859432007B0790 /* XCTest.framework */; };
+		C3006F7B18859432007B0790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5A18859432007B0790 /* Foundation.framework */; };
+		C3006F7C18859432007B0790 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5E18859432007B0790 /* UIKit.framework */; };
+		C3006F8418859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F8218859432007B0790 /* InfoPlist.strings */; };
+		C3006F8618859432007B0790 /* dunnoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F8518859432007B0790 /* dunnoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3006F7D18859432007B0790 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3006F4F18859432007B0790 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3006F5618859432007B0790;
+			remoteInfo = dunno;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3006F5718859432007B0790 /* dunno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dunno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3006F5A18859432007B0790 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3006F5C18859432007B0790 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3006F5E18859432007B0790 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3006F6218859432007B0790 /* dunno-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dunno-Info.plist"; sourceTree = "<group>"; };
+		C3006F6418859432007B0790 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3006F6618859432007B0790 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3006F6818859432007B0790 /* dunno-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dunno-Prefix.pch"; sourceTree = "<group>"; };
+		C3006F6918859432007B0790 /* DUNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNAppDelegate.h; sourceTree = "<group>"; };
+		C3006F6A18859432007B0790 /* DUNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUNAppDelegate.m; sourceTree = "<group>"; };
+		C3006F6D18859432007B0790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C3006F6F18859432007B0790 /* DUNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNViewController.h; sourceTree = "<group>"; };
+		C3006F7018859432007B0790 /* DUNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUNViewController.m; sourceTree = "<group>"; };
+		C3006F7218859432007B0790 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3006F7818859432007B0790 /* dunnoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dunnoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3006F7918859432007B0790 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3006F8118859432007B0790 /* dunnoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dunnoTests-Info.plist"; sourceTree = "<group>"; };
+		C3006F8318859432007B0790 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3006F8518859432007B0790 /* dunnoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dunnoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3006F5418859432007B0790 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F5D18859432007B0790 /* CoreGraphics.framework in Frameworks */,
+				C3006F5F18859432007B0790 /* UIKit.framework in Frameworks */,
+				C3006F5B18859432007B0790 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3006F7518859432007B0790 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F7A18859432007B0790 /* XCTest.framework in Frameworks */,
+				C3006F7C18859432007B0790 /* UIKit.framework in Frameworks */,
+				C3006F7B18859432007B0790 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3006F4E18859432007B0790 = {
+			isa = PBXGroup;
+			children = (
+				C3006F6018859432007B0790 /* dunno */,
+				C3006F7F18859432007B0790 /* dunnoTests */,
+				C3006F5918859432007B0790 /* Frameworks */,
+				C3006F5818859432007B0790 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3006F5818859432007B0790 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F5718859432007B0790 /* dunno.app */,
+				C3006F7818859432007B0790 /* dunnoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3006F5918859432007B0790 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F5A18859432007B0790 /* Foundation.framework */,
+				C3006F5C18859432007B0790 /* CoreGraphics.framework */,
+				C3006F5E18859432007B0790 /* UIKit.framework */,
+				C3006F7918859432007B0790 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3006F6018859432007B0790 /* dunno */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F6918859432007B0790 /* DUNAppDelegate.h */,
+				C3006F6A18859432007B0790 /* DUNAppDelegate.m */,
+				C3006F6C18859432007B0790 /* Main.storyboard */,
+				C3006F6F18859432007B0790 /* DUNViewController.h */,
+				C3006F7018859432007B0790 /* DUNViewController.m */,
+				C3006F7218859432007B0790 /* Images.xcassets */,
+				C3006F6118859432007B0790 /* Supporting Files */,
+			);
+			path = dunno;
+			sourceTree = "<group>";
+		};
+		C3006F6118859432007B0790 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F6218859432007B0790 /* dunno-Info.plist */,
+				C3006F6318859432007B0790 /* InfoPlist.strings */,
+				C3006F6618859432007B0790 /* main.m */,
+				C3006F6818859432007B0790 /* dunno-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3006F7F18859432007B0790 /* dunnoTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F8518859432007B0790 /* dunnoTests.m */,
+				C3006F8018859432007B0790 /* Supporting Files */,
+			);
+			path = dunnoTests;
+			sourceTree = "<group>";
+		};
+		C3006F8018859432007B0790 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F8118859432007B0790 /* dunnoTests-Info.plist */,
+				C3006F8218859432007B0790 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3006F5618859432007B0790 /* dunno */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3006F8918859432007B0790 /* Build configuration list for PBXNativeTarget "dunno" */;
+			buildPhases = (
+				C3006F5318859432007B0790 /* Sources */,
+				C3006F5418859432007B0790 /* Frameworks */,
+				C3006F5518859432007B0790 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dunno;
+			productName = dunno;
+			productReference = C3006F5718859432007B0790 /* dunno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3006F7718859432007B0790 /* dunnoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3006F8C18859432007B0790 /* Build configuration list for PBXNativeTarget "dunnoTests" */;
+			buildPhases = (
+				C3006F7418859432007B0790 /* Sources */,
+				C3006F7518859432007B0790 /* Frameworks */,
+				C3006F7618859432007B0790 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3006F7E18859432007B0790 /* PBXTargetDependency */,
+			);
+			name = dunnoTests;
+			productName = dunnoTests;
+			productReference = C3006F7818859432007B0790 /* dunnoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3006F4F18859432007B0790 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DUN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = dunno;
+				TargetAttributes = {
+					C3006F7718859432007B0790 = {
+						TestTargetID = C3006F5618859432007B0790;
+					};
+				};
+			};
+			buildConfigurationList = C3006F5218859432007B0790 /* Build configuration list for PBXProject "dunno" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C3006F4E18859432007B0790;
+			productRefGroup = C3006F5818859432007B0790 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3006F5618859432007B0790 /* dunno */,
+				C3006F7718859432007B0790 /* dunnoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3006F5518859432007B0790 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F7318859432007B0790 /* Images.xcassets in Resources */,
+				C3006F6518859432007B0790 /* InfoPlist.strings in Resources */,
+				C3006F6E18859432007B0790 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3006F7618859432007B0790 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F8418859432007B0790 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3006F5318859432007B0790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F7118859432007B0790 /* DUNViewController.m in Sources */,
+				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
+				C3006F6718859432007B0790 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3006F7418859432007B0790 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3006F8618859432007B0790 /* dunnoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3006F7E18859432007B0790 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3006F5618859432007B0790 /* dunno */;
+			targetProxy = C3006F7D18859432007B0790 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3006F6318859432007B0790 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3006F6418859432007B0790 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3006F6C18859432007B0790 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3006F6D18859432007B0790 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C3006F8218859432007B0790 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3006F8318859432007B0790 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3006F8718859432007B0790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C3006F8818859432007B0790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3006F8A18859432007B0790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
+				INFOPLIST_FILE = "dunno/dunno-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3006F8B18859432007B0790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
+				INFOPLIST_FILE = "dunno/dunno-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3006F8D18859432007B0790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dunno.app/dunno";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "dunnoTests/dunnoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3006F8E18859432007B0790 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dunno.app/dunno";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
+				INFOPLIST_FILE = "dunnoTests/dunnoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3006F5218859432007B0790 /* Build configuration list for PBXProject "dunno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3006F8718859432007B0790 /* Debug */,
+				C3006F8818859432007B0790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3006F8918859432007B0790 /* Build configuration list for PBXNativeTarget "dunno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3006F8A18859432007B0790 /* Debug */,
+				C3006F8B18859432007B0790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3006F8C18859432007B0790 /* Build configuration list for PBXNativeTarget "dunnoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3006F8D18859432007B0790 /* Debug */,
+				C3006F8E18859432007B0790 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3006F4F18859432007B0790 /* Project object */;
+}
