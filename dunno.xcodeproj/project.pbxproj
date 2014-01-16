@@ -21,6 +21,12 @@
 		C3006F8418859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F8218859432007B0790 /* InfoPlist.strings */; };
 		C3006F8618859432007B0790 /* dunnoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F8518859432007B0790 /* dunnoTests.m */; };
 		C3006F941885985D007B0790 /* DUNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F931885985D007B0790 /* DUNViewController.m */; };
+		C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9718859A1B007B0790 /* DUNStyles.m */; };
+		C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9A1885B369007B0790 /* DUNAppearance.m */; };
+		C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
+		C3DFCB49188813E200C19D1F /* DUNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB48188813E200C19D1F /* DUNUser.m */; };
+		C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4B1888146900C19D1F /* DUNOrganization.m */; };
+		C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4E188814AF00C19D1F /* DUNLocation.m */; };
 		CCBF397B59D6404DB23C7F98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1976053BB44A65A795ECBC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +61,18 @@
 		C3006F8518859432007B0790 /* dunnoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dunnoTests.m; sourceTree = "<group>"; };
 		C3006F921885985D007B0790 /* DUNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNViewController.h; sourceTree = "<group>"; };
 		C3006F931885985D007B0790 /* DUNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNViewController.m; sourceTree = "<group>"; };
+		C3006F9618859A1B007B0790 /* DUNStyles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNStyles.h; sourceTree = "<group>"; };
+		C3006F9718859A1B007B0790 /* DUNStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNStyles.m; sourceTree = "<group>"; };
+		C3006F991885B369007B0790 /* DUNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNAppearance.h; sourceTree = "<group>"; };
+		C3006F9A1885B369007B0790 /* DUNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNAppearance.m; sourceTree = "<group>"; };
+		C3DFCB44188805FE00C19D1F /* DUNEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNEvent.h; sourceTree = "<group>"; };
+		C3DFCB45188805FE00C19D1F /* DUNEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEvent.m; sourceTree = "<group>"; };
+		C3DFCB47188813E200C19D1F /* DUNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNUser.h; sourceTree = "<group>"; };
+		C3DFCB48188813E200C19D1F /* DUNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNUser.m; sourceTree = "<group>"; };
+		C3DFCB4A1888146900C19D1F /* DUNOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNOrganization.h; sourceTree = "<group>"; };
+		C3DFCB4B1888146900C19D1F /* DUNOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNOrganization.m; sourceTree = "<group>"; };
+		C3DFCB4D188814AF00C19D1F /* DUNLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNLocation.h; sourceTree = "<group>"; };
+		C3DFCB4E188814AF00C19D1F /* DUNLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNLocation.m; sourceTree = "<group>"; };
 		DF1976053BB44A65A795ECBC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +136,7 @@
 		C3006F6018859432007B0790 /* dunno */ = {
 			isa = PBXGroup;
 			children = (
+				C3006F95188599F8007B0790 /* Components */,
 				C3006F911885985D007B0790 /* Controllers */,
 				C3006F8F18859853007B0790 /* Models */,
 				C3006F901885985D007B0790 /* CustomViews */,
@@ -162,6 +181,14 @@
 		C3006F8F18859853007B0790 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3DFCB44188805FE00C19D1F /* DUNEvent.h */,
+				C3DFCB45188805FE00C19D1F /* DUNEvent.m */,
+				C3DFCB47188813E200C19D1F /* DUNUser.h */,
+				C3DFCB48188813E200C19D1F /* DUNUser.m */,
+				C3DFCB4A1888146900C19D1F /* DUNOrganization.h */,
+				C3DFCB4B1888146900C19D1F /* DUNOrganization.m */,
+				C3DFCB4D188814AF00C19D1F /* DUNLocation.h */,
+				C3DFCB4E188814AF00C19D1F /* DUNLocation.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +207,17 @@
 				C3006F931885985D007B0790 /* DUNViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3006F95188599F8007B0790 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C3006F9618859A1B007B0790 /* DUNStyles.h */,
+				C3006F9718859A1B007B0790 /* DUNStyles.m */,
+				C3006F991885B369007B0790 /* DUNAppearance.h */,
+				C3006F9A1885B369007B0790 /* DUNAppearance.m */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,8 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */,
 				C3006F941885985D007B0790 /* DUNViewController.m in Sources */,
+				C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */,
+				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
+				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
+				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
+				C3DFCB49188813E200C19D1F /* DUNUser.m in Sources */,
 				C3006F6718859432007B0790 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
