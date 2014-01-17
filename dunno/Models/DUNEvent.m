@@ -7,10 +7,16 @@
 //
 
 #import "DUNEvent.h"
+#import "DUNSpeaker.h"
+#import "DUNLocation.h"
+#import "DUNUser.h"
+#import "DUNOrganization.h"
 
 #import "DCKeyValueObjectMapping.h"
 #import "DCParserConfiguration.h"
+#import "DCObjectMapping.h"
 #import "DCArrayMapping.h"
+
 
 @implementation DUNEvent
 
@@ -27,19 +33,30 @@
   DCObjectMapping *picMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNEvent class]];
   
 
+  DCArrayMapping *speakersMapping = [DCArrayMapping mapperForClassElements:[DUNSpeaker class] forAttribute:@"speakers" onClass:[DUNSpeaker class]];
+  DCObjectMapping *speakerIdMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"entityId" onClass:[DUNSpeaker class]];
+  DCObjectMapping *speakerPictureMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNSpeaker class]];
+  
+  DCObjectMapping *userIdMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"entityId" onClass:[DUNUser class]];
+  DCObjectMapping *userPicMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNUser class]];
+  
+  DCObjectMapping *organizationIdMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"entityId" onClass:[DUNOrganization class]];
+  DCObjectMapping *organizationPicMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNOrganization class]];
+  
   [config addObjectMapping:idMapping];
   [config addObjectMapping:descMapping];
   [config addObjectMapping:picMapping];
+  [config addArrayMapper:speakersMapping];
+  [config addObjectMapping:speakerIdMapping];
+  [config addObjectMapping:speakerPictureMapping];
+  [config addObjectMapping:userIdMapping];
+  [config addObjectMapping:userPicMapping];
+  [config addObjectMapping:organizationIdMapping];
+  [config addObjectMapping:organizationPicMapping];
   
   DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[DUNEvent class] andConfiguration:config];
   
-  DUNEvent *event = [parser parseDictionary:jsonDict];
-  
-//  @property (nonatomic, strong) NSArray *speakers;
-//  @property (nonatomic, strong) DUNUser *owner;
-//  @property (nonatomic, strong) DUNOrganization *organization;
-
-  return event;
+  return [parser parseDictionary:jsonDict];
 }
 
 @end

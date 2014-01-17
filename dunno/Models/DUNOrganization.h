@@ -10,7 +10,10 @@
 
 @interface DUNOrganization : NSObject
 
+@property (nonatomic, copy) NSString *entityId;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *picture;
+@property (nonatomic, copy) NSString *pictureURLString;
+
++ (instancetype)newFromJsonDictionary:(NSDictionary*)jsonDict;
 
 @end

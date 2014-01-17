@@ -38,6 +38,15 @@ static NSDictionary *validJsonDictionary() {
   assertThat(speaker.pictureURLString, isNot(isEmpty()));
 }
 
+- (void)testIfMappingAllPropertiesFromJsonDictionary
+{
+  DUNSpeaker *speaker = [DUNSpeaker newFromJsonDictionary:validJsonDictionary()];
+  
+  assertThat(speaker.entityId, is(notNilValue()));
+  assertThat(speaker.name, is(notNilValue()));
+  assertThat(speaker.bio, is(notNilValue()));
+  assertThat(speaker.pictureURLString, is(notNilValue()));
+}
 
 
 @end

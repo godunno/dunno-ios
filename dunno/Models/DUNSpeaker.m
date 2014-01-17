@@ -7,9 +7,10 @@
 //
 
 #import "DUNSpeaker.h"
+
 #import "DCKeyValueObjectMapping.h"
 #import "DCParserConfiguration.h"
-#import "DCArrayMapping.h"
+#import "DCObjectMapping.h"
 
 @implementation DUNSpeaker
 
@@ -19,7 +20,6 @@
     return nil;
   
   DCParserConfiguration *config = [DCParserConfiguration configuration];
-  config.datePattern = @"dd-MM-yyyy HH:mm";
   
   DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"entityId" onClass:[DUNSpeaker class]];
   DCObjectMapping *picMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNSpeaker class]];
