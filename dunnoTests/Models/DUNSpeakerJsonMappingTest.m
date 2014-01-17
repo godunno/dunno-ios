@@ -14,7 +14,7 @@
 #import "DUNSpeaker.h"
 
 static NSDictionary *validJsonDictionary() {
-  return @{@"id":@"123", @"name": @"xxx", @"pictureURLString": @"xxx.png",@"bio": @"jedi master"};
+  return @{@"uid":@"123", @"name": @"xxx", @"pictureURLString": @"xxx.png",@"bio": @"jedi master"};
 }
 
 @interface DUNSpeakerJsonMappingTest : XCTestCase
@@ -27,7 +27,7 @@ static NSDictionary *validJsonDictionary() {
   DUNSpeaker *speaker = [DUNSpeaker newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(speaker.entityId, is(notNilValue()));
-  assertThat(speaker.entityId, isNot(isEmpty()));
+  assertThat(speaker.entityId, is(equalTo(@"123")));
 }
 
 - (void)testIfMappingPictureKeyToPictureURLStringProperty
@@ -35,7 +35,7 @@ static NSDictionary *validJsonDictionary() {
   DUNSpeaker *speaker = [DUNSpeaker newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(speaker.pictureURLString, is(notNilValue()));
-  assertThat(speaker.pictureURLString, isNot(isEmpty()));
+  assertThat(speaker.pictureURLString, is(equalTo(@"xxx.png")));
 }
 
 - (void)testIfMappingAllPropertiesFromJsonDictionary

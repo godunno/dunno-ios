@@ -26,7 +26,7 @@ static NSDictionary *validJsonDictionary() {
   DUNLocation *location = [DUNLocation newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(location.entityId, is(notNilValue()));
-  assertThat(location.entityId, isNot(isEmpty()));
+  assertThat(location.entityId, is(equalTo(@"666")));
 }
 
 - (void)testIfMappingAllPropertiesFromJsonDictionary

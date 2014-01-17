@@ -13,7 +13,7 @@
 #import "DUNEvent.h"
 
 static NSDictionary *validJsonDictionary() {
-  return @{@"id" : @"123", @"name": @"xxx", @"description": @"xxx", @"picture": @"http://www.s3.com/xx123.png", @"start_at": @"2012-02-14T12:01:41Z", @"finish_at": @"2012-02-14T16:01:41Z", @"speakers":@[@{@"uid":@"123", @"name": @"xxx", @"picture": @"xxx.png"}], @"owner":@{@"id":@"666",@"name":@"gildo"},@"location":@{},@"organization":@{@"id":@"666",@"name":@"acme"}};
+  return @{@"id" : @"123", @"name": @"xxx", @"description": @"xxx", @"picture": @"xx123.png", @"start_at": @"2012-02-14T12:01:41Z", @"finish_at": @"2012-02-14T16:01:41Z", @"speakers":@[@{@"uid":@"123", @"name": @"xxx", @"picture": @"xxx.png"}], @"owner":@{@"id":@"6669",@"name":@"gildo"},@"location":@{@"id" : @"555"},@"organization":@{@"id":@"888",@"name":@"acme"}};
 }
 
 @interface DUNEventJsonMappingTest : XCTestCase
@@ -31,7 +31,7 @@ static NSDictionary *validJsonDictionary() {
   DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(event.entityId, is(notNilValue()));
-  assertThat(event.entityId, isNot(isEmpty()));
+  assertThat(event.entityId, is(equalTo(@"123")));
 }
 
 - (void)testIfMappingPictureKeyToPictureURLStringProperty
@@ -39,7 +39,7 @@ static NSDictionary *validJsonDictionary() {
   DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(event.pictureURLString, is(notNilValue()));
-  assertThat(event.pictureURLString, isNot(isEmpty()));
+  assertThat(event.pictureURLString, is(equalTo(@"xx123.png")));
 }
 
 
@@ -48,7 +48,7 @@ static NSDictionary *validJsonDictionary() {
   DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(event.shortDescription, is(notNilValue()));
-  assertThat(event.shortDescription, isNot(isEmpty()));
+  assertThat(event.shortDescription, is(equalTo(@"xxx")));
 }
 
 
@@ -56,6 +56,8 @@ static NSDictionary *validJsonDictionary() {
 {
   DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
   assertThat(event.speakers[0], is(notNilValue()));
+  assertThat(((DUNSpeaker*)[event.speakers objectAtIndex:0]).entityId, is(notNilValue()));
+  assertThat(((DUNSpeaker*)[event.speakers objectAtIndex:0]).entityId, is(equalTo(@"123")));
 }
 
 - (void)testIfMappingAllPropertiesFromJsonDictionary
@@ -68,12 +70,18 @@ static NSDictionary *validJsonDictionary() {
   assertThat(event.startAt, is(notNilValue()));
   assertThat(event.finishAt, is(notNilValue()));
   assertThat(event.pictureURLString, is(notNilValue()));
-
-  assertThat(event.location, is(notNilValue()));
-  assertThat(event.speakers, is(notNilValue()));
-  assertThat(event.owner, is(notNilValue()));
-  assertThat(event.organization, is(notNilValue()));
   
+  assertThat(event.location, is(notNilValue()));
+  assertThat(event.location.entityId, is(
+                                         equalTo(@"555")));
+  assertThat(event.speakers, is(notNilValue()));
+  assertThat(event.speakers[0], is(notNilValue()));
+  assertThat(event.owner, is(notNilValue()));
+  assertThat(event.owner.entityId, is(
+                                      equalTo(@"6669")));
+  assertThat(event.organization, is(notNilValue()));
+  assertThat(event.organization.entityId, is(
+                                             equalTo(@"888")));
 }
 
 @end

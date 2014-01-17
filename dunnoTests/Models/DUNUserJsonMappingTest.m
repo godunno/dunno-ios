@@ -26,7 +26,7 @@ static NSDictionary *validJsonDictionary() {
   DUNUser *user = [DUNUser newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(user.entityId, is(notNilValue()));
-  assertThat(user.entityId, isNot(isEmpty()));
+  assertThat(user.entityId, is(equalTo(@"666")));
 }
 
 - (void)testIfMappingPictureKeyToPictureURLStringProperty
@@ -34,7 +34,7 @@ static NSDictionary *validJsonDictionary() {
   DUNUser *user = [DUNUser newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(user.pictureURLString, is(notNilValue()));
-  assertThat(user.pictureURLString, isNot(isEmpty()));
+  assertThat(user.pictureURLString, is(equalTo(@"xxx.png")));
 }
 
 - (void)testIfMappingAllPropertiesFromJsonDictionary

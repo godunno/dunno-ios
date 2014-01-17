@@ -17,7 +17,6 @@ static NSDictionary *validJsonDictionary() {
 }
 
 @interface DUNOrganizationJsonMappingTest : XCTestCase
-
 @end
 
 @implementation DUNOrganizationJsonMappingTest
@@ -27,7 +26,7 @@ static NSDictionary *validJsonDictionary() {
   DUNOrganization *organization = [DUNOrganization newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(organization.entityId, is(notNilValue()));
-  assertThat(organization.entityId, isNot(isEmpty()));
+  assertThat(organization.entityId, is(equalTo(@"666")));
 }
 
 - (void)testIfMappingPictureKeyToPictureURLStringProperty
@@ -35,7 +34,7 @@ static NSDictionary *validJsonDictionary() {
   DUNOrganization *organization = [DUNOrganization newFromJsonDictionary:validJsonDictionary()];
   
   assertThat(organization.pictureURLString, is(notNilValue()));
-  assertThat(organization.pictureURLString, isNot(isEmpty()));
+  assertThat(organization.pictureURLString, is(equalTo(@"xxx.png")));
 }
 
 - (void)testIfMappingAllPropertiesFromJsonDictionary

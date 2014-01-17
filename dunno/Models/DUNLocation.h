@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+DUNJsonParser.h"
 
-@interface DUNLocation : NSObject
+@interface DUNLocation : NSObject<DUNJsonParseable>
 
 @property (nonatomic, copy) NSString *entityId;
 @property (nonatomic, copy) NSString *name;

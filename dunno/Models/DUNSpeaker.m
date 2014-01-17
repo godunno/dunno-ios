@@ -8,28 +8,17 @@
 
 #import "DUNSpeaker.h"
 
-#import "DCKeyValueObjectMapping.h"
-#import "DCParserConfiguration.h"
-#import "DCObjectMapping.h"
-
 @implementation DUNSpeaker
 
 + (instancetype)newFromJsonDictionary:(NSDictionary*)jsonDict
 {
-  if (jsonDict == nil || [jsonDict isKindOfClass:[NSNull class]])
-    return nil;
-  
-  DCParserConfiguration *config = [DCParserConfiguration configuration];
-  
-  DCObjectMapping *idMapping = [DCObjectMapping mapKeyPath:@"id" toAttribute:@"entityId" onClass:[DUNSpeaker class]];
-  DCObjectMapping *picMapping = [DCObjectMapping mapKeyPath:@"picture" toAttribute:@"pictureURLString" onClass:[DUNSpeaker class]];
-  
-  [config addObjectMapping:idMapping];
-  [config addObjectMapping:picMapping];
-  
-  DCKeyValueObjectMapping *parser = [DCKeyValueObjectMapping mapperForClass:[DUNSpeaker class] andConfiguration:config];
-  
-  return [parser parseDictionary:jsonDict];
+  return [self instanceFromJsonDictionary:jsonDict];
+}
+
++ (NSDictionary*)mappings
+{
+  return @{@"uid" : @"entityId",
+           @"picture" : @"pictureURLString",};
 }
 
 @end
