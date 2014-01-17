@@ -29,6 +29,11 @@
 		C3DFCB49188813E200C19D1F /* DUNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB48188813E200C19D1F /* DUNUser.m */; };
 		C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4B1888146900C19D1F /* DUNOrganization.m */; };
 		C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4E188814AF00C19D1F /* DUNLocation.m */; };
+		C3EACC521888FB480086F277 /* DUNOrganizationJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC511888FB480086F277 /* DUNOrganizationJsonMappingTest.m */; };
+		C3EACC541888FB560086F277 /* DUNLocationJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC531888FB560086F277 /* DUNLocationJsonMappingTest.m */; };
+		C3EACC561888FB650086F277 /* DUNUserJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC551888FB650086F277 /* DUNUserJsonMappingTest.m */; };
+		C3EACC5A1888FBEC0086F277 /* DUNSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC591888FBEC0086F277 /* DUNSpeaker.m */; };
+		C3EACC5C1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */; };
 		CCBF397B59D6404DB23C7F98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1976053BB44A65A795ECBC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +81,12 @@
 		C3DFCB4B1888146900C19D1F /* DUNOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNOrganization.m; sourceTree = "<group>"; };
 		C3DFCB4D188814AF00C19D1F /* DUNLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNLocation.h; sourceTree = "<group>"; };
 		C3DFCB4E188814AF00C19D1F /* DUNLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNLocation.m; sourceTree = "<group>"; };
+		C3EACC511888FB480086F277 /* DUNOrganizationJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNOrganizationJsonMappingTest.m; sourceTree = "<group>"; };
+		C3EACC531888FB560086F277 /* DUNLocationJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNLocationJsonMappingTest.m; sourceTree = "<group>"; };
+		C3EACC551888FB650086F277 /* DUNUserJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNUserJsonMappingTest.m; sourceTree = "<group>"; };
+		C3EACC581888FBEC0086F277 /* DUNSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSpeaker.h; sourceTree = "<group>"; };
+		C3EACC591888FBEC0086F277 /* DUNSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSpeaker.m; sourceTree = "<group>"; };
+		C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSpeakerJsonMappingTest.m; sourceTree = "<group>"; };
 		DF1976053BB44A65A795ECBC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F3B731C29E42E080946113 /* Pods-dunnoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dunnoTests.xcconfig"; path = "Pods/Pods-dunnoTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +207,8 @@
 				C3DFCB4B1888146900C19D1F /* DUNOrganization.m */,
 				C3DFCB4D188814AF00C19D1F /* DUNLocation.h */,
 				C3DFCB4E188814AF00C19D1F /* DUNLocation.m */,
+				C3EACC581888FBEC0086F277 /* DUNSpeaker.h */,
+				C3EACC591888FBEC0086F277 /* DUNSpeaker.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -230,9 +243,21 @@
 		C3A1920C1888C31A00061FF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */,
+				C3EACC571888FB6B0086F277 /* Mapping */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C3EACC571888FB6B0086F277 /* Mapping */ = {
+			isa = PBXGroup;
+			children = (
+				C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */,
+				C3EACC511888FB480086F277 /* DUNOrganizationJsonMappingTest.m */,
+				C3EACC531888FB560086F277 /* DUNLocationJsonMappingTest.m */,
+				C3EACC551888FB650086F277 /* DUNUserJsonMappingTest.m */,
+				C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */,
+			);
+			name = Mapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */,
+				C3EACC5A1888FBEC0086F277 /* DUNSpeaker.m in Sources */,
 				C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */,
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
@@ -417,6 +443,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */,
+				C3EACC561888FB650086F277 /* DUNUserJsonMappingTest.m in Sources */,
+				C3EACC5C1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m in Sources */,
+				C3EACC541888FB560086F277 /* DUNLocationJsonMappingTest.m in Sources */,
+				C3EACC521888FB480086F277 /* DUNOrganizationJsonMappingTest.m in Sources */,
 				C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
