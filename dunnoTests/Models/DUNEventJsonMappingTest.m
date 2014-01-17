@@ -60,7 +60,31 @@ static NSDictionary *validJsonDictionary() {
   assertThat(((DUNSpeaker*)[event.speakers objectAtIndex:0]).entityId, is(equalTo(@"123")));
 }
 
-- (void)testIfMappingAllPropertiesFromJsonDictionary
+- (void) testMappingLocationAggregation
+{
+  DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
+  assertThat(event.location, is(notNilValue()));
+  assertThat(event.location.entityId, is(
+                                         equalTo(@"555")));
+}
+
+- (void) testMappingOwnerAggregation
+{
+  DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
+  assertThat(event.owner, is(notNilValue()));
+  assertThat(event.owner.entityId, is(
+                                      equalTo(@"6669")));
+}
+
+- (void) testMappingOrganizationAggregation
+{
+  DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
+  assertThat(event.organization, is(notNilValue()));
+  assertThat(event.organization.entityId, is(
+                                             equalTo(@"888")));
+}
+
+- (void)testIfMappingAllAttributesFromJsonDictionary
 {
   DUNEvent *event = [DUNEvent newFromJsonDictionary:validJsonDictionary()];
   
@@ -70,18 +94,6 @@ static NSDictionary *validJsonDictionary() {
   assertThat(event.startAt, is(notNilValue()));
   assertThat(event.finishAt, is(notNilValue()));
   assertThat(event.pictureURLString, is(notNilValue()));
-  
-  assertThat(event.location, is(notNilValue()));
-  assertThat(event.location.entityId, is(
-                                         equalTo(@"555")));
-  assertThat(event.speakers, is(notNilValue()));
-  assertThat(event.speakers[0], is(notNilValue()));
-  assertThat(event.owner, is(notNilValue()));
-  assertThat(event.owner.entityId, is(
-                                      equalTo(@"6669")));
-  assertThat(event.organization, is(notNilValue()));
-  assertThat(event.organization.entityId, is(
-                                             equalTo(@"888")));
 }
 
 @end
