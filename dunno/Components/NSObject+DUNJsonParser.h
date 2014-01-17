@@ -13,7 +13,10 @@
 #import "DCObjectMapping.h"
 #import "DCArrayMapping.h"
 
-#import "DUNJsonParseable.h"
+@protocol DUNJsonParseable <NSObject>
+@required
++ (NSDictionary*)mappings;
+@end
 
 @interface NSObject (DUNJsonParser)
 

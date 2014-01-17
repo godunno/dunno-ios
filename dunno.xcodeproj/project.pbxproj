@@ -78,7 +78,6 @@
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
 		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
 		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
-		C3B4430018895C51007DA7BA /* DUNJsonParseable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNJsonParseable.h; sourceTree = "<group>"; };
 		C3B4430518897297007DA7BA /* DUNJsonParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNJsonParserTest.m; sourceTree = "<group>"; };
 		C3DFCB44188805FE00C19D1F /* DUNEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNEvent.h; sourceTree = "<group>"; };
 		C3DFCB45188805FE00C19D1F /* DUNEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEvent.m; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 				C3006F9A1885B369007B0790 /* DUNAppearance.m */,
 				C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */,
 				C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */,
-				C3B4430018895C51007DA7BA /* DUNJsonParseable.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
