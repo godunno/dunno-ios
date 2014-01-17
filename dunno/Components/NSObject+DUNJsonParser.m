@@ -24,9 +24,6 @@
 
 + (DCParserConfiguration*)defaultParserConfig
 {
-  if (![self conformsToProtocol:@protocol(DUNJsonParseable)])
-    return nil;
-  
   DCParserConfiguration *config = [DCParserConfiguration configuration];
   config.datePattern = @"dd-MM-yyyy HH:mm";
   
@@ -37,11 +34,13 @@
 
 + (DCParserConfiguration*) addToConfig:(DCParserConfiguration**)config mappings:(Class<DUNJsonParseable>)parseableClass
 {
+  if (![self conformsToProtocol:@protocol(DUNJsonParseable)])
+    return nil;
+  
   [[parseableClass mappings] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
     
     if([key hasSuffix:@"[]"])
     {
-      
       NSString *attributeName = [key substringToIndex:(((NSString*)key).length-2)];
       
       DCArrayMapping *mapping = [DCArrayMapping mapperForClassElements:obj forAttribute:attributeName onClass:self];
