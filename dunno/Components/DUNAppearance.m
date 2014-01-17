@@ -10,7 +10,7 @@
 
 @implementation DUNAppearance
 
--(void) applyGlobalAppearance
++(void) applyGlobalAppearance
 {
   
 }

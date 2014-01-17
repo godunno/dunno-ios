@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_HexColors 2
 #define COCOAPODS_VERSION_PATCH_HexColors 1
 
+// KeyValueObjectMapping
+#define COCOAPODS_POD_AVAILABLE_KeyValueObjectMapping
+#define COCOAPODS_VERSION_MAJOR_KeyValueObjectMapping 1
+#define COCOAPODS_VERSION_MINOR_KeyValueObjectMapping 4
+#define COCOAPODS_VERSION_PATCH_KeyValueObjectMapping 0
+

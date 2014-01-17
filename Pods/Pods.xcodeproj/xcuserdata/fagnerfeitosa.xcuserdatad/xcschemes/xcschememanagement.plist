@@ -14,6 +14,26 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-KeyValueObjectMapping.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-dunnoTests-OCHamcrest.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-dunnoTests-OCMock.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-dunnoTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1DC6417A4E804B1F82C5A405</key>
+		<key>1099D0D901B14DFC8F020ED9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>492A12A96FFE4A2FB1B18926</key>
+		<key>2C8B12154D6B427F8A082E66</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A570C5297C2242C0AA5A4CF5</key>
+		<key>73D383EB317148D2A67C7EE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D6196C129104A5E82DDDF9B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A9714EB1DCCF4DDFBE55DADB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0F7C938240748B8A759D4A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3661CF21F8548959BF1F90D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

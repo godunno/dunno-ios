@@ -1,13 +1,26 @@
 PODS:
   - GoogleAnalytics-iOS-SDK (3.0.2)
   - HexColors (2.2.1)
+  - KeyValueObjectMapping (1.4.0)
+  - OCHamcrest (3.0.1)
+  - OCMock (2.2.2)
 
 DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - HexColors
+  - KeyValueObjectMapping (from `https://github.com/dchohfi/KeyValueObjectMapping.git`)
+  - OCHamcrest (~> 3.0)
+  - OCMock
+
+EXTERNAL SOURCES:
+  KeyValueObjectMapping:
+    :git: https://github.com/dchohfi/KeyValueObjectMapping.git
 
 SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: 86393b99f7328ae8d8e975fcaa8632a39dafafe8
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
+  KeyValueObjectMapping: 7dab34c5fa8727d4aee33fc08ae9b94306e33a39
+  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
+  OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
 
 COCOAPODS: 0.27.1

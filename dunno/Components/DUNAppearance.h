@@ -11,6 +11,6 @@
 @interface DUNAppearance : NSObject
 
 
--(void) applyGlobalAppearance;
++(void) applyGlobalAppearance;
 
 @end
