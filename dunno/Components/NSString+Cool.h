@@ -1,11 +1,10 @@
 //
 //  NSString+Cool.h
-//  sambanorio
+//  dunno
 //
-//  Created by fagner feitosa on 11/6/13.
-//  Copyright (c) 2013 mobo.fagner. All rights reserved.
+//  Created by fagner feitosa on 1/17/14.
+//  Copyright (c) 2014 dunno. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 @interface NSString (Cool)
