@@ -24,7 +24,7 @@
 		C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9A1885B369007B0790 /* DUNAppearance.m */; };
 		C34F3317188B2C7000A3C11C /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F3315188B2C7000A3C11C /* DUNPusher.m */; };
 		C34F3318188B2C7000A3C11C /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F3315188B2C7000A3C11C /* DUNPusher.m */; };
-		C3A1920B1888C2F700061FF2 /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920A1888C2F700061FF2 /* DUNRootVC.m */; };
+		C34F3322188B327500A3C11C /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F3321188B327500A3C11C /* DUNRootVC.m */; };
 		C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
@@ -78,8 +78,8 @@
 		C34F3315188B2C7000A3C11C /* DUNPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUNPusher.m; path = ../Models/DUNPusher.m; sourceTree = "<group>"; };
 		C34F3316188B2C7000A3C11C /* DUNPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUNPusher.h; path = ../Models/DUNPusher.h; sourceTree = "<group>"; };
 		C34F3319188B2DC200A3C11C /* DUNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNConfig.h; sourceTree = "<group>"; };
-		C3A192091888C2F700061FF2 /* DUNRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNRootVC.h; sourceTree = SOURCE_ROOT; };
-		C3A1920A1888C2F700061FF2 /* DUNRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRootVC.m; sourceTree = SOURCE_ROOT; };
+		C34F3320188B327500A3C11C /* DUNRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNRootVC.h; sourceTree = "<group>"; };
+		C34F3321188B327500A3C11C /* DUNRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRootVC.m; sourceTree = "<group>"; };
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
 		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
 		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		C3006F6018859432007B0790 /* dunno */ = {
 			isa = PBXGroup;
 			children = (
+				C34F331F188B327500A3C11C /* Controllers */,
 				C3006F95188599F8007B0790 /* Components */,
-				C3006F911885985D007B0790 /* Controllers */,
 				C3006F8F18859853007B0790 /* Models */,
 				C3006F901885985D007B0790 /* CustomViews */,
 				C3006F6C18859432007B0790 /* Main.storyboard */,
@@ -232,15 +232,6 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		C3006F911885985D007B0790 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C3A192091888C2F700061FF2 /* DUNRootVC.h */,
-				C3A1920A1888C2F700061FF2 /* DUNRootVC.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		C3006F95188599F8007B0790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +246,15 @@
 				C34F3319188B2DC200A3C11C /* DUNConfig.h */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C34F331F188B327500A3C11C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C34F3320188B327500A3C11C /* DUNRootVC.h */,
+				C34F3321188B327500A3C11C /* DUNRootVC.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C3A1920C1888C31A00061FF2 /* Models */ = {
@@ -456,9 +456,9 @@
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
 				C34F3317188B2C7000A3C11C /* DUNPusher.m in Sources */,
+				C34F3322188B327500A3C11C /* DUNRootVC.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
-				C3A1920B1888C2F700061FF2 /* DUNRootVC.m in Sources */,
 				C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */,
 				C3DFCB49188813E200C19D1F /* DUNUser.m in Sources */,
 				C3006F6718859432007B0790 /* main.m in Sources */,
