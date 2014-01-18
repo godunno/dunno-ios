@@ -6,8 +6,14 @@ xcodeproj 'dunno'
 
 pod 'GoogleAnalytics-iOS-SDK', '~> 3.0'
 pod 'HexColors'
-pod 'KeyValueObjectMapping', :git => "https://github.com/dchohfi/KeyValueObjectMapping.git"
 
+# network
+pod 'AFNetworking', '~> 1.0'
+pod 'Reachability', '~> 3.1.1'
+pod 'SDWebImage', '~> 3.5'
+pod 'libPusher', '~> 1.4'
+
+pod 'KeyValueObjectMapping', :git => "https://github.com/dchohfi/KeyValueObjectMapping.git"
 
 target :dunnoTests, :exclusive => true do
   pod 'OCMock'

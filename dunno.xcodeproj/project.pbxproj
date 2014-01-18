@@ -22,6 +22,8 @@
 		C3006F8418859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F8218859432007B0790 /* InfoPlist.strings */; };
 		C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9718859A1B007B0790 /* DUNStyles.m */; };
 		C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9A1885B369007B0790 /* DUNAppearance.m */; };
+		C34F3317188B2C7000A3C11C /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F3315188B2C7000A3C11C /* DUNPusher.m */; };
+		C34F3318188B2C7000A3C11C /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C34F3315188B2C7000A3C11C /* DUNPusher.m */; };
 		C3A1920B1888C2F700061FF2 /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920A1888C2F700061FF2 /* DUNRootVC.m */; };
 		C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
@@ -73,6 +75,9 @@
 		C3006F9718859A1B007B0790 /* DUNStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNStyles.m; sourceTree = "<group>"; };
 		C3006F991885B369007B0790 /* DUNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNAppearance.h; sourceTree = "<group>"; };
 		C3006F9A1885B369007B0790 /* DUNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNAppearance.m; sourceTree = "<group>"; };
+		C34F3315188B2C7000A3C11C /* DUNPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUNPusher.m; path = ../Models/DUNPusher.m; sourceTree = "<group>"; };
+		C34F3316188B2C7000A3C11C /* DUNPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUNPusher.h; path = ../Models/DUNPusher.h; sourceTree = "<group>"; };
+		C34F3319188B2DC200A3C11C /* DUNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNConfig.h; sourceTree = "<group>"; };
 		C3A192091888C2F700061FF2 /* DUNRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNRootVC.h; sourceTree = SOURCE_ROOT; };
 		C3A1920A1888C2F700061FF2 /* DUNRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRootVC.m; sourceTree = SOURCE_ROOT; };
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
@@ -239,12 +244,15 @@
 		C3006F95188599F8007B0790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C34F3316188B2C7000A3C11C /* DUNPusher.h */,
+				C34F3315188B2C7000A3C11C /* DUNPusher.m */,
 				C3006F9618859A1B007B0790 /* DUNStyles.h */,
 				C3006F9718859A1B007B0790 /* DUNStyles.m */,
 				C3006F991885B369007B0790 /* DUNAppearance.h */,
 				C3006F9A1885B369007B0790 /* DUNAppearance.m */,
 				C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */,
 				C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */,
+				C34F3319188B2DC200A3C11C /* DUNConfig.h */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -447,6 +455,7 @@
 				C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */,
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
+				C34F3317188B2C7000A3C11C /* DUNPusher.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
 				C3A1920B1888C2F700061FF2 /* DUNRootVC.m in Sources */,
@@ -468,6 +477,7 @@
 				C3EACC541888FB560086F277 /* DUNLocationJsonMappingTest.m in Sources */,
 				C3EACC521888FB480086F277 /* DUNOrganizationJsonMappingTest.m in Sources */,
 				C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */,
+				C34F3318188B2C7000A3C11C /* DUNPusher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
