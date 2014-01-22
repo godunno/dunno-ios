@@ -34,7 +34,7 @@
 
 - (IBAction)addNewMessage:(id)sender {
   DUNTimelineUserMessage *message = [DUNTimelineUserMessage new];
-  message.message = @"teste mensagem";
+  message.message = @"teste mensagem\nteste mensagem\nteste mensagem";
   
   [self.timelineItems addObject:message];
   

@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *downVoteButton;
 @property (weak, nonatomic) IBOutlet UILabel *upVoteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *downVoteLabel;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageTextHeightConstraint;
+
 @end
 
 @implementation DUNTimelineMessageCell
@@ -23,11 +26,9 @@
 - (void) setUserMessage:(DUNTimelineUserMessage *)userMessage
 {
   _userMessage = userMessage;
-
   
-  //show profile pic
-  self.upVoteLabel.text = [NSString stringWithFormat:@"%d",userMessage.upVoteCount];
-  self.downVoteLabel.text = [NSString stringWithFormat:@"%d",userMessage.downVoteCount];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
   
   [self showMessage];
 }
@@ -35,12 +36,12 @@
 
 - (IBAction)upVote:(id)sender {
   [self.userMessage addOneUpVote];
-  self.upVoteLabel.text = [NSString stringWithFormat:@"%d",self.userMessage.upVoteCount];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
 }
 
 - (IBAction)downVote:(id)sender {
   [self.userMessage addOneDownVote];
-  self.downVoteLabel.text = [NSString stringWithFormat:@"%d",self.userMessage.downVoteCount];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
 }
 
 
@@ -48,7 +49,17 @@
 
 - (void) showMessage
 {
-  self.messageText.text = self.userMessage.message;
+  //
+  CGSize sizeThatShouldFitTheContent = [_messageText sizeThatFits:_messageText.frame.size];
+
+  // min height
+  if (sizeThatShouldFitTheContent.height<158) {
+    sizeThatShouldFitTheContent.height = 158;
+  }
+  
+  _messageTextHeightConstraint.constant = sizeThatShouldFitTheContent.height;
+  
+  _messageText.text = self.userMessage.message;
 }
 
 
