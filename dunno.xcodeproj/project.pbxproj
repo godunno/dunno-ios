@@ -22,6 +22,9 @@
 		C3006F8418859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F8218859432007B0790 /* InfoPlist.strings */; };
 		C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9718859A1B007B0790 /* DUNStyles.m */; };
 		C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9A1885B369007B0790 /* DUNAppearance.m */; };
+		C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */; };
+		C3850B09188F9CAD008E46FE /* DUNTimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B08188F9CAD008E46FE /* DUNTimelineVC.m */; };
+		C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B0C188F9E25008E46FE /* DUNTimelineUserMessage.m */; };
 		C385EF07188B34870022A574 /* NSString+Cool.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF04188B34870022A574 /* NSString+Cool.m */; };
 		C385EF08188B34870022A574 /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF06188B34870022A574 /* DUNPusher.m */; };
 		C385EF0D188B36880022A574 /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF0C188B36880022A574 /* DUNRootVC.m */; };
@@ -76,6 +79,12 @@
 		C3006F991885B369007B0790 /* DUNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNAppearance.h; sourceTree = "<group>"; };
 		C3006F9A1885B369007B0790 /* DUNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNAppearance.m; sourceTree = "<group>"; };
 		C34F3319188B2DC200A3C11C /* DUNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNConfig.h; sourceTree = "<group>"; };
+		C3850B04188F9ADF008E46FE /* DUNTimelineMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineMessageCell.h; sourceTree = "<group>"; };
+		C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineMessageCell.m; sourceTree = "<group>"; };
+		C3850B07188F9CAD008E46FE /* DUNTimelineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineVC.h; sourceTree = "<group>"; };
+		C3850B08188F9CAD008E46FE /* DUNTimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineVC.m; sourceTree = "<group>"; };
+		C3850B0B188F9E25008E46FE /* DUNTimelineUserMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineUserMessage.h; sourceTree = "<group>"; };
+		C3850B0C188F9E25008E46FE /* DUNTimelineUserMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineUserMessage.m; sourceTree = "<group>"; };
 		C385EF04188B34870022A574 /* NSString+Cool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Cool.m"; sourceTree = "<group>"; };
 		C385EF05188B34870022A574 /* NSString+Cool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Cool.h"; sourceTree = "<group>"; };
 		C385EF06188B34870022A574 /* DUNPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNPusher.m; sourceTree = "<group>"; };
@@ -168,9 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				C385EF0A188B36880022A574 /* Controllers */,
+				C3850B03188F9AD3008E46FE /* CustomViews */,
 				C3006F95188599F8007B0790 /* Components */,
 				C3006F8F18859853007B0790 /* Models */,
-				C3006F901885985D007B0790 /* CustomViews */,
 				C3006F6C18859432007B0790 /* Main.storyboard */,
 				C3006F7218859432007B0790 /* Images.xcassets */,
 				C3006F6118859432007B0790 /* Supporting Files */,
@@ -213,6 +222,7 @@
 		C3006F8F18859853007B0790 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3850B0A188F9E06008E46FE /* Timeline */,
 				C3DFCB44188805FE00C19D1F /* DUNEvent.h */,
 				C3DFCB45188805FE00C19D1F /* DUNEvent.m */,
 				C3DFCB47188813E200C19D1F /* DUNUser.h */,
@@ -225,13 +235,6 @@
 				C3EACC591888FBEC0086F277 /* DUNSpeaker.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		C3006F901885985D007B0790 /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		C3006F95188599F8007B0790 /* Components */ = {
@@ -252,11 +255,31 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		C3850B03188F9AD3008E46FE /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C3850B04188F9ADF008E46FE /* DUNTimelineMessageCell.h */,
+				C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		C3850B0A188F9E06008E46FE /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				C3850B0B188F9E25008E46FE /* DUNTimelineUserMessage.h */,
+				C3850B0C188F9E25008E46FE /* DUNTimelineUserMessage.m */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
 		C385EF0A188B36880022A574 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				C385EF0B188B36880022A574 /* DUNRootVC.h */,
 				C385EF0C188B36880022A574 /* DUNRootVC.m */,
+				C3850B07188F9CAD008E46FE /* DUNTimelineVC.h */,
+				C3850B08188F9CAD008E46FE /* DUNTimelineVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -341,6 +364,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = dunno;
 				TargetAttributes = {
+					C3006F5618859432007B0790 = {
+						DevelopmentTeam = GDZM3BBBRR;
+					};
 					C3006F7718859432007B0790 = {
 						TestTargetID = C3006F5618859432007B0790;
 					};
@@ -454,11 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */,
 				C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */,
 				C3EACC5A1888FBEC0086F277 /* DUNSpeaker.m in Sources */,
 				C3DFCB4F188814AF00C19D1F /* DUNLocation.m in Sources */,
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
+				C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
 				C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */,
@@ -467,6 +495,7 @@
 				C385EF0D188B36880022A574 /* DUNRootVC.m in Sources */,
 				C385EF08188B34870022A574 /* DUNPusher.m in Sources */,
 				C3006F6718859432007B0790 /* main.m in Sources */,
+				C3850B09188F9CAD008E46FE /* DUNTimelineVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
 				INFOPLIST_FILE = "dunno/dunno-Info.plist";
@@ -617,6 +647,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
 				INFOPLIST_FILE = "dunno/dunno-Info.plist";
