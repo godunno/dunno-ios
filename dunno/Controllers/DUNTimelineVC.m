@@ -1,14 +1,10 @@
-//
-//  DUNTimelineVC.m
-//  dunno
-//
-//  Created by fagner feitosa on 1/22/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
-
 #import "DUNTimelineVC.h"
 #import "DUNTimelineMessageCell.h"
 #import "DUNTimelineUserMessage.h"
+
+#import "UIViewController+CWPopup.h"
+#import "DUNPollModalVC.h"
+#import "DUNTimelinePoll.h"
 
 @interface DUNTimelineVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -39,6 +35,22 @@
   [self.timelineItems addObject:message];
   
   [self.timelineCollectionView reloadData];
+}
+- (IBAction)showPoll:(id)sender {
+  DUNPollModalVC *pollModalVC = [[DUNPollModalVC alloc] initWithNibName:kDUNPollModalXibName bundle:nil];
+  
+  DUNTimelinePoll *poll =   [[DUNTimelinePoll alloc] init];
+  poll.question = @"onde está wallie?";
+  poll.options = @[@"Sim", @"Não"];
+  
+  pollModalVC.poll = poll;
+  pollModalVC.presentingVC = self;
+  
+  [self presentPopupViewController:pollModalVC animated:YES completion:^(void) {
+    
+  }];
+  
+  
 }
 
 ////////////////////////////////////////////////////////////

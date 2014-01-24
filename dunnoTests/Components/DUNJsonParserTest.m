@@ -15,43 +15,34 @@
 
 - (void) testFail_instanceFromJsonDictionary_ifJsonDictionaryIsNil
 {
-  
 }
 
 - (void) test_instanceFromJsonDictionary_returnInstanceUsingDefaultParserConfig
 {
-  
 }
 
 - (void) test_defaultParserConfig_useDefaultDatePattern
 {
-  
 }
 
 - (void) testFail_defaultParserConfig_notConformsToProtocol_DUNJsonParseable
 {
-  
 }
 
 - (void) test_defaultParserConfig_mappingDictionaryFromParseableClass
 {
-  
 }
 
 - (void) test_addToConfigMappings_acceptsArrayFormat
 {
-  
 }
 
 - (void) test_addToConfigMappings_acceptsArrayFormatAndMappingParseableClassAttributes
 {
-  
 }
 
 - (void) test_addToConfigMappings_addAllObjectConfigFromParseableClass
 {
-  
 }
-
 
 @end

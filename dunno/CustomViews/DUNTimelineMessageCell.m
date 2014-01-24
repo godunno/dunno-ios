@@ -33,7 +33,6 @@
   [self showMessage];
 }
 
-
 - (IBAction)upVote:(id)sender {
   [self.userMessage addOneUpVote];
   _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
@@ -43,7 +42,6 @@
   [self.userMessage addOneDownVote];
   _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
 }
-
 
 #pragma mark - Private methods
 
@@ -61,6 +59,5 @@
   
   _messageText.text = self.userMessage.message;
 }
-
 
 @end
