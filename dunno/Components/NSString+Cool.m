@@ -1,10 +1,3 @@
-//
-//  NSString+Cool.m
-//  dunno
-//
-//  Created by fagner feitosa on 1/17/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
 #import "NSString+Cool.h"
 
 @implementation NSString (Cool)

@@ -1,9 +1,3 @@
-//
-//  DUNConfig.h
-//  dunno
-//
-//  Created by fagner feitosa on 1/18/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
+// use plist ??
 
 #define PUSHER_ACCESS_KEY @""
