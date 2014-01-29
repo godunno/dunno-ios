@@ -14,7 +14,6 @@
 		C3006F6518859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F6318859432007B0790 /* InfoPlist.strings */; };
 		C3006F6718859432007B0790 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F6618859432007B0790 /* main.m */; };
 		C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F6A18859432007B0790 /* DUNAppDelegate.m */; };
-		C3006F6E18859432007B0790 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3006F6C18859432007B0790 /* Main.storyboard */; };
 		C3006F7318859432007B0790 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3006F7218859432007B0790 /* Images.xcassets */; };
 		C3006F7A18859432007B0790 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F7918859432007B0790 /* XCTest.framework */; };
 		C3006F7B18859432007B0790 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3006F5A18859432007B0790 /* Foundation.framework */; };
@@ -34,6 +33,7 @@
 		C385EF08188B34870022A574 /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF06188B34870022A574 /* DUNPusher.m */; };
 		C385EF0D188B36880022A574 /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF0C188B36880022A574 /* DUNRootVC.m */; };
 		C38D27C918991C70008B8181 /* DUNSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D27C718991C70008B8181 /* DUNSession.m */; };
+		C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38D27CA18992DFF008B8181 /* Main.storyboard */; };
 		C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
@@ -74,7 +74,6 @@
 		C3006F6818859432007B0790 /* dunno-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dunno-Prefix.pch"; sourceTree = "<group>"; };
 		C3006F6918859432007B0790 /* DUNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNAppDelegate.h; sourceTree = "<group>"; };
 		C3006F6A18859432007B0790 /* DUNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DUNAppDelegate.m; sourceTree = "<group>"; };
-		C3006F6D18859432007B0790 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3006F7218859432007B0790 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3006F7818859432007B0790 /* dunnoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dunnoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3006F7918859432007B0790 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -108,6 +107,7 @@
 		C385EF0C188B36880022A574 /* DUNRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRootVC.m; sourceTree = "<group>"; };
 		C38D27C718991C70008B8181 /* DUNSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSession.m; sourceTree = "<group>"; };
 		C38D27C818991C70008B8181 /* DUNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSession.h; sourceTree = "<group>"; };
+		C38D27CA18992DFF008B8181 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
 		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
 		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
@@ -197,9 +197,9 @@
 				C3850B03188F9AD3008E46FE /* CustomViews */,
 				C385EF0A188B36880022A574 /* Controllers */,
 				C3006F8F18859853007B0790 /* Models */,
-				C3006F6C18859432007B0790 /* Main.storyboard */,
 				C3006F7218859432007B0790 /* Images.xcassets */,
 				C3006F6118859432007B0790 /* Supporting Files */,
+				C38D27CA18992DFF008B8181 /* Main.storyboard */,
 			);
 			path = dunno;
 			sourceTree = "<group>";
@@ -442,8 +442,8 @@
 			files = (
 				C3006F7318859432007B0790 /* Images.xcassets in Resources */,
 				C3006F6518859432007B0790 /* InfoPlist.strings in Resources */,
-				C3006F6E18859432007B0790 /* Main.storyboard in Resources */,
 				C34B679F18929E7600407497 /* DUNPollModalVC.xib in Resources */,
+				C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,14 +583,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C3006F6C18859432007B0790 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3006F6D18859432007B0790 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C3006F8218859432007B0790 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -687,6 +679,7 @@
 				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
 				INFOPLIST_FILE = "dunno/dunno-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -702,6 +695,7 @@
 				GCC_PREFIX_HEADER = "dunno/dunno-Prefix.pch";
 				INFOPLIST_FILE = "dunno/dunno-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
