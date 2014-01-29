@@ -33,6 +33,7 @@
 		C385EF07188B34870022A574 /* NSString+Cool.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF04188B34870022A574 /* NSString+Cool.m */; };
 		C385EF08188B34870022A574 /* DUNPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF06188B34870022A574 /* DUNPusher.m */; };
 		C385EF0D188B36880022A574 /* DUNRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF0C188B36880022A574 /* DUNRootVC.m */; };
+		C38D27C918991C70008B8181 /* DUNSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D27C718991C70008B8181 /* DUNSession.m */; };
 		C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
@@ -105,6 +106,8 @@
 		C385EF09188B348F0022A574 /* DUNPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNPusher.h; sourceTree = "<group>"; };
 		C385EF0B188B36880022A574 /* DUNRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNRootVC.h; sourceTree = "<group>"; };
 		C385EF0C188B36880022A574 /* DUNRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRootVC.m; sourceTree = "<group>"; };
+		C38D27C718991C70008B8181 /* DUNSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSession.m; sourceTree = "<group>"; };
+		C38D27C818991C70008B8181 /* DUNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSession.h; sourceTree = "<group>"; };
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
 		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
 		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		C3006F95188599F8007B0790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C38D27C718991C70008B8181 /* DUNSession.m */,
+				C38D27C818991C70008B8181 /* DUNSession.h */,
 				C34B67A61893188600407497 /* API */,
 				C385EF04188B34870022A574 /* NSString+Cool.m */,
 				C385EF05188B34870022A574 /* NSString+Cool.h */,
@@ -529,6 +534,7 @@
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
 				C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */,
 				C34B67AC1893188600407497 /* DUNRequest.m in Sources */,
+				C38D27C918991C70008B8181 /* DUNSession.m in Sources */,
 				C34B67A218929ED700407497 /* DUNPollModalVC.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
