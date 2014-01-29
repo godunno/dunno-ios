@@ -13,6 +13,9 @@
 }
 
 
-
++ (BOOL) hasActiveEvent
+{
+  return ([DUNSession sharedInstance].currentEvent!=nil);
+}
 
 @end

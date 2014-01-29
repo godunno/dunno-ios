@@ -7,4 +7,6 @@
 
 + (DUNSession*) sharedInstance;
 
++ (BOOL) hasActiveEvent;
+
 @end
