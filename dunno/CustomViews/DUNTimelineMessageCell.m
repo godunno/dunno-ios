@@ -1,11 +1,3 @@
-//
-//  DUNTimelineMessage.m
-//  dunno
-//
-//  Created by fagner feitosa on 1/22/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
-
 #import "DUNTimelineMessageCell.h"
 
 @interface DUNTimelineMessageCell()
