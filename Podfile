@@ -14,7 +14,7 @@ pod 'SDWebImage', '~> 3.5'
 pod 'libPusher', '~> 1.4'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'CWPopup', '~> 1.2.4'
-
+pod 'SWRevealViewController', '~> 1.1.1'
 pod 'KeyValueObjectMapping', :git => "https://github.com/dchohfi/KeyValueObjectMapping.git"
 
 target :dunnoTests, :exclusive => true do

@@ -60,6 +60,12 @@
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 5
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
 
+// SWRevealViewController
+#define COCOAPODS_POD_AVAILABLE_SWRevealViewController
+#define COCOAPODS_VERSION_MAJOR_SWRevealViewController 1
+#define COCOAPODS_VERSION_MINOR_SWRevealViewController 1
+#define COCOAPODS_VERSION_PATCH_SWRevealViewController 1
+
 // SocketRocket
 #define COCOAPODS_POD_AVAILABLE_SocketRocket
 #define COCOAPODS_VERSION_MAJOR_SocketRocket 0

@@ -15,5 +15,4 @@
            @"picture" : @"pictureURLString",};
 }
 
-
 @end
