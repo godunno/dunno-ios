@@ -5,12 +5,12 @@
 
 + (UIColor*)menuBackgroundColor
 {
- return [UIColor colorWithHexString:@"363636"];
+ return [UIColor colorWithHexString:@"2f2f2f"];
 }
 
 + (UIColor*)backgroundColor
 {
-  return [UIColor colorWithHexString:@"2f2f2f"];
+  return [UIColor colorWithHexString:@"4a4949"];
 }
 
 
