@@ -9,14 +9,6 @@
 #import "DUNEventCell.h"
 #import <HexColors/HexColor.h>
 
-@interface DUNEventCell()
-
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *teacherNameLabel;
-
-@end
-
 @implementation DUNEventCell
 
 - (void)setFrame:(CGRect)frame {
@@ -31,9 +23,11 @@
   [super layoutSubviews];
   
   self.backgroundColor = [UIColor colorWithHexString:@"f2f2f2"];
+  self.bottomMarginView.backgroundColor = [UIColor colorWithHexString:@"e1e1e1"];
   
   self.eventTitleLabel.textColor = [DUNStyles backgroundColor];
   
   self.teacherNameLabel.textColor = [UIColor colorWithHexString:@"e74c3c"];
+  
 }
 @end

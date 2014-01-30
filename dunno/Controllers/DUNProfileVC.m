@@ -2,6 +2,7 @@
 #import "SWRevealViewController.h"
 #import "DUNEventCell.h"
 #import "DUNUser.h"
+#import <HexColors/HexColor.h>
 
 @interface DUNProfileVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -70,13 +71,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return 3;
+  return 300;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *CellIdentifier = @"EventsCellId";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+  
+  if(indexPath.row == 2)
+  {
+    cell.contentView.backgroundColor = [UIColor colorWithHexString:@"abcede"];
+  } else   if(indexPath.row == 5)
+  {
+    cell.contentView.backgroundColor = [UIColor colorWithHexString:@"e0c7c4"];
+    [cell.eventTitleLabel setAlpha:0.5];
+    [cell.teacherNameLabel setAlpha:0.5];
+    [cell.profileImage setAlpha:0.5];
+  }
+  
   
   return cell;
 }

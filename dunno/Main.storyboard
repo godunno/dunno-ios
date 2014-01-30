@@ -94,16 +94,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.11926431545538554" green="0.1795479910714286" blue="0.15538025097610061" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-M5-3N1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-M5-3N1">
                                 <rect key="frame" x="0.0" y="115" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsCellId" rowHeight="67" id="kv5-PA-4Mi" customClass="DUNEventCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="67"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventsCellId" rowHeight="77" id="kv5-PA-4Mi" customClass="DUNEventCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kv5-PA-4Mi" id="Fqf-9u-lrO">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedro-timeline" translatesAutoresizingMaskIntoConstraints="NO" id="em1-pg-P2w">
@@ -127,10 +127,19 @@
                                                     <color key="textColor" red="0.1192643155" green="0.1795479911" blue="0.155380251" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DR2-J5-ZGh">
+                                                    <rect key="frame" x="0.0" y="73" width="320" height="1"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.31105426650000001" green="1" blue="0.1247472115" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="DR2-J5-ZGh" secondAttribute="bottom" id="iNl-38-YiR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.91106865875912424" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="bottomMarginView" destination="DR2-J5-ZGh" id="TSR-RD-myg"/>
                                             <outlet property="eventTitleLabel" destination="hNZ-1m-5qj" id="1aZ-de-yI2"/>
                                             <outlet property="profileImage" destination="em1-pg-P2w" id="xTr-2T-QA7"/>
                                             <outlet property="teacherNameLabel" destination="fnD-Bh-2DA" id="gSo-hS-co2"/>
