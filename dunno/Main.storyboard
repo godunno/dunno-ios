@@ -81,17 +81,10 @@
                                             <constraint firstAttribute="height" constant="35" id="g7o-7e-oPn"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fagner Moura Feitosa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beP-dI-pfj">
-                                        <rect key="frame" x="15" y="7" width="247" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Psicologia 2011 - PUC Rio" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-sl-j4k">
-                                        <rect key="frame" x="15" y="25" width="247" height="16"/>
+                                        <rect key="frame" x="17" y="16" width="247" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                         <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -99,8 +92,6 @@
                                 <color key="backgroundColor" red="0.11926431545538554" green="0.1795479910714286" blue="0.15538025097610061" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="6fB-6N-03r" secondAttribute="trailing" constant="15" id="3FG-EO-HHb"/>
-                                    <constraint firstItem="beP-dI-pfj" firstAttribute="leading" secondItem="ALK-xV-CDZ" secondAttribute="leading" constant="15" id="Cb9-vh-XZp"/>
-                                    <constraint firstItem="6fB-6N-03r" firstAttribute="leading" secondItem="beP-dI-pfj" secondAttribute="trailing" constant="10" id="JIR-qH-JcC"/>
                                     <constraint firstItem="6fB-6N-03r" firstAttribute="leading" secondItem="jhL-sl-j4k" secondAttribute="trailing" constant="10" id="NgF-Ox-e9c"/>
                                     <constraint firstItem="jhL-sl-j4k" firstAttribute="leading" secondItem="ALK-xV-CDZ" secondAttribute="leading" constant="15" id="mAC-EJ-KWh"/>
                                 </constraints>
@@ -118,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pedro-timeline" translatesAutoresizingMaskIntoConstraints="NO" id="em1-pg-P2w">
-                                                    <rect key="frame" x="9" y="1" width="45" height="45"/>
+                                                    <rect key="frame" x="9" y="16" width="45" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
@@ -144,29 +135,29 @@
                                                     <color key="backgroundColor" red="0.31105426650000001" green="1" blue="0.1247472115" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book-plus" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-c8-8FB">
-                                                    <rect key="frame" x="274" y="22" width="34" height="34"/>
+                                                    <rect key="frame" x="274" y="21" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                                     </accessibility>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alarm9" translatesAutoresizingMaskIntoConstraints="NO" id="5hl-MH-4Cg">
-                                                    <rect key="frame" x="63" y="48" width="19" height="19"/>
+                                                    <rect key="frame" x="133" y="48" width="19" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13:10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGl-Pe-Tsy">
-                                                    <rect key="frame" x="87" y="47" width="41" height="21"/>
+                                                    <rect key="frame" x="157" y="47" width="41" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="date" translatesAutoresizingMaskIntoConstraints="NO" id="VX6-ct-Cwa">
-                                                    <rect key="frame" x="136" y="43" width="29" height="29"/>
+                                                    <rect key="frame" x="61" y="43" width="29" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="13/08" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvk-sG-CvE">
-                                                    <rect key="frame" x="166" y="48" width="41" height="21"/>
+                                                    <rect key="frame" x="91" y="48" width="41" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -203,7 +194,6 @@
                     <connections>
                         <outlet property="classNameLabel" destination="jhL-sl-j4k" id="uyo-lw-UC1"/>
                         <outlet property="eventsTableView" destination="Z3d-M5-3N1" id="hOc-AD-DrI"/>
-                        <outlet property="nameLabel" destination="beP-dI-pfj" id="xBS-AY-i4x"/>
                         <outlet property="profileContainerView" destination="ALK-xV-CDZ" id="nNL-WZ-voz"/>
                         <outlet property="profileImage" destination="6fB-6N-03r" id="KyW-2G-6J2"/>
                         <outlet property="revealSideMenuButton" destination="sgU-sG-WSq" id="zXq-5R-7FR"/>
