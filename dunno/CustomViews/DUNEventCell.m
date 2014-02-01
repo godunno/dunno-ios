@@ -12,7 +12,7 @@
 @implementation DUNEventCell
 
 - (void)setFrame:(CGRect)frame {
-  float inset = 5;
+  float inset = 0;
   frame.origin.x += inset;
   frame.size.width -= 2 * inset;
   [super setFrame:frame];
