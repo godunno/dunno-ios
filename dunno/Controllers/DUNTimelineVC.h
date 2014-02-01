@@ -1,5 +1,4 @@
-#import <UIKit/UIKit.h>
 
-@interface DUNTimelineVC : UIViewController
+@interface DUNTimelineVC : UITableViewController
 
 @end

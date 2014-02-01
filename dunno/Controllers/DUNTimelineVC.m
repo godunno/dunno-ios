@@ -6,11 +6,9 @@
 #import "DUNPollModalVC.h"
 #import "DUNTimelinePoll.h"
 
-@interface DUNTimelineVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface DUNTimelineVC ()
 
 @property (nonatomic, strong) NSMutableArray *timelineItems;
-@property (nonatomic, weak) IBOutlet UIView *headerView;
-@property (nonatomic, weak) IBOutlet UICollectionView *timelineCollectionView;
 
 @end
 
@@ -22,10 +20,6 @@
   [super viewDidLoad];
   
   self.timelineItems = [[NSMutableArray alloc] init];
-  
-  self.timelineCollectionView.delegate = self;
-  self.timelineCollectionView.dataSource = self;
-  
 }
 
 - (IBAction)addNewMessage:(id)sender {
@@ -33,9 +27,8 @@
   message.message = @"teste mensagem\nteste mensagem\nteste mensagem";
   
   [self.timelineItems addObject:message];
-  
-  [self.timelineCollectionView reloadData];
 }
+
 - (IBAction)showPoll:(id)sender {
   DUNPollModalVC *pollModalVC = [[DUNPollModalVC alloc] initWithNibName:kDUNPollModalXibName bundle:nil];
   
@@ -51,23 +44,6 @@
   }];
   
   
-}
-
-////////////////////////////////////////////////////////////
-#pragma mark - CollectionView DataSource
-////////////////////////////////////////////////////////////
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-  return self.timelineItems.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-  DUNTimelineMessageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DUNTimelineMessageCellReuseId" forIndexPath:indexPath];
-  
-  cell.userMessage = [self.timelineItems objectAtIndex:indexPath.row];
-  return cell;
 }
 
 @end

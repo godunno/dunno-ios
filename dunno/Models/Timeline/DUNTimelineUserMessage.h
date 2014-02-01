@@ -1,15 +1,8 @@
-//
-//  DUNUserMessage.h
-//  dunno
-//
-//  Created by fagner feitosa on 1/22/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
+#import "DUNTimelineInteraction.h"
 #import "DUNUser.h"
 
-@interface DUNTimelineUserMessage : NSObject
+
+@interface DUNTimelineUserMessage : DUNTimelineInteraction
 
 @property (nonatomic, copy) NSString *entityId;
 @property (nonatomic, strong) DUNUser *owner;
