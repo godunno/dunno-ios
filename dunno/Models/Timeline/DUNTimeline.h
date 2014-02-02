@@ -4,6 +4,8 @@
 @interface DUNTimeline : NSObject
 
 @property (nonatomic, strong) DUNEvent *event;
-@property (nonatomic, strong) NSArray *interactions;
+@property (nonatomic, strong) NSMutableArray *interactions;
+
+- (void) addInteraction:(DUNTimelineInteraction*)interaction;
 
 @end

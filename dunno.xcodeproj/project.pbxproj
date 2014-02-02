@@ -36,6 +36,12 @@
 		C385EF0D188B36880022A574 /* DUNProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C385EF0C188B36880022A574 /* DUNProfileVC.m */; };
 		C38D27C918991C70008B8181 /* DUNSession.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D27C718991C70008B8181 /* DUNSession.m */; };
 		C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38D27CA18992DFF008B8181 /* Main.storyboard */; };
+		C38D7D82189E9D1C002CE198 /* DUNTimelineTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C38D7D81189E9D1C002CE198 /* DUNTimelineTest.m */; };
+		C38D7D83189E9D77002CE198 /* DUNTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB4189D7499009DAFAC /* DUNTimeline.m */; };
+		C38D7D84189E9D7C002CE198 /* DUNTimelineInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB1189D742E009DAFAC /* DUNTimelineInteraction.m */; };
+		C38D7D85189E9D81002CE198 /* DUNTimelineRating.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB7189D7647009DAFAC /* DUNTimelineRating.m */; };
+		C38D7D86189E9D85002CE198 /* DUNTimelineUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B0C188F9E25008E46FE /* DUNTimelineUserMessage.m */; };
+		C38D7D87189E9D85002CE198 /* DUNTimelinePoll.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A418929F4200407497 /* DUNTimelinePoll.m */; };
 		C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
@@ -118,6 +124,7 @@
 		C38D27C718991C70008B8181 /* DUNSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSession.m; sourceTree = "<group>"; };
 		C38D27C818991C70008B8181 /* DUNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSession.h; sourceTree = "<group>"; };
 		C38D27CA18992DFF008B8181 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C38D7D81189E9D1C002CE198 /* DUNTimelineTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineTest.m; sourceTree = "<group>"; };
 		C3A1920D1888C33900061FF2 /* DUNEventJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventJsonMappingTest.m; sourceTree = "<group>"; };
 		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
 		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
@@ -376,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				C3D56DBA189D8854009DAFAC /* DUNTimelineInteractionTest.m */,
+				C38D7D81189E9D1C002CE198 /* DUNTimelineTest.m */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -594,14 +602,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38D7D85189E9D81002CE198 /* DUNTimelineRating.m in Sources */,
+				C38D7D83189E9D77002CE198 /* DUNTimeline.m in Sources */,
 				C3A1920E1888C33900061FF2 /* DUNEventJsonMappingTest.m in Sources */,
+				C38D7D86189E9D85002CE198 /* DUNTimelineUserMessage.m in Sources */,
 				C3EACC561888FB650086F277 /* DUNUserJsonMappingTest.m in Sources */,
+				C38D7D82189E9D1C002CE198 /* DUNTimelineTest.m in Sources */,
 				C3EACC5C1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m in Sources */,
+				C38D7D84189E9D7C002CE198 /* DUNTimelineInteraction.m in Sources */,
 				C3B442FF18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */,
 				C3B4430618897297007DA7BA /* DUNJsonParserTest.m in Sources */,
 				C3EACC541888FB560086F277 /* DUNLocationJsonMappingTest.m in Sources */,
 				C3EACC521888FB480086F277 /* DUNOrganizationJsonMappingTest.m in Sources */,
 				C3D56DBB189D8854009DAFAC /* DUNTimelineInteractionTest.m in Sources */,
+				C38D7D87189E9D85002CE198 /* DUNTimelinePoll.m in Sources */,
 				C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

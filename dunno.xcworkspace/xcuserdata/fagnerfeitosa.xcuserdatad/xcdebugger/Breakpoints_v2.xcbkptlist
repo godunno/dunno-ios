@@ -67,5 +67,51 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunnoTests/Models/Timeline/DUNTimelineTest.m"
+            timestampString = "413049539.633235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "-testAddUserMessageInteraction"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DUNTimelineTest testAddUserMessageInteraction]"
+                  moduleName = "dunnoTests"
+                  urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/dunnoTests/Models/Timeline/DUNTimelineTest.m"
+                  timestampString = "413049652.416971"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DUNTimelineTest testAddUserMessageInteraction]"
+                  moduleName = "dunnoTests"
+                  urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/dunnoTests/Models/Timeline/DUNTimelineTest.m"
+                  timestampString = "413049652.417347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "513">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
