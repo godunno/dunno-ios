@@ -22,4 +22,8 @@
 
 + (instancetype)newFromJsonDictionary:(NSDictionary*)jsonDict;
 
+- (BOOL) isOpen;
+- (BOOL) isClosed;
+- (BOOL) isLive;
+
 @end
