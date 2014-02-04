@@ -71,7 +71,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="fag-timeline" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-6N-03r">
-                                        <rect key="frame" x="272" y="7" width="35" height="35"/>
+                                        <rect key="frame" x="275" y="7" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
@@ -134,14 +134,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.31105426650000001" green="1" blue="0.1247472115" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book-plus" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-c8-8FB">
+                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add_event" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-c8-8FB">
                                                     <rect key="frame" x="274" y="21" width="34" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
                                                         <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                                     </accessibility>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="alarm9" translatesAutoresizingMaskIntoConstraints="NO" id="5hl-MH-4Cg">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="5hl-MH-4Cg">
                                                     <rect key="frame" x="133" y="48" width="19" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -279,8 +279,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_event" width="512" height="512"/>
         <image name="alarm9" width="512" height="512"/>
-        <image name="book-plus" width="512" height="512"/>
+        <image name="clock" width="512" height="512"/>
         <image name="date" width="512" height="512"/>
         <image name="fag-timeline" width="100" height="102"/>
         <image name="pedro-timeline" width="100" height="102"/>
