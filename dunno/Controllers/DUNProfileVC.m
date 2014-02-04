@@ -1,8 +1,14 @@
 #import "DUNProfileVC.h"
+#import "DUNTimelineTVC.h"
 #import "SWRevealViewController.h"
 #import "DUNEventCell.h"
+
 #import "DUNUser.h"
+
+#import "DUNAPI.h"
+
 #import <HexColors/HexColor.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface DUNProfileVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -14,6 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 
+@property (strong, nonatomic) DUNSession *session;
+@property (strong, nonatomic) NSArray *events;
+
 @end
 
 
@@ -23,9 +32,13 @@
 {
   [super viewDidLoad];
   
+  _session = [DUNSession sharedInstance];
+  
   [self setupProfileView];
   
   [self configureSideMenu];
+  
+  [self loadEvents];
   
   [self setupEventsTable];
 }
@@ -52,6 +65,24 @@
   [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
+- (void) loadEvents
+{
+  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+  hud.mode = MBProgressHUDModeIndeterminate;
+  hud.labelText = @"Carregando eventos";
+  
+  [DUNAPI eventsAvailableToOrganization:_session.currentOrganization success:^(NSArray *events) {
+    _events = events;
+    [hud hide:YES];
+  } error:^(NSError *error) {
+    //TODO show generic 'modal'/'view' with error
+    [hud hide:YES];
+  }];
+  
+  _events = [NSArray array];
+  
+}
+
 - (void) setupEventsTable
 {
   _eventsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -70,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return 300;
+  return 30;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -81,7 +112,7 @@
   if(indexPath.row == 2)
   {
     cell.contentView.backgroundColor = [UIColor colorWithHexString:@"abcede"];
-  } else   if(indexPath.row == 5)
+  } else   if(indexPath.row == 4)
   {
     cell.contentView.backgroundColor = [UIColor colorWithHexString:@"e0c7c4"];
     [cell.eventTitleLabel setAlpha:0.5];
@@ -93,8 +124,11 @@
   return cell;
 }
 
-////////////////////////////////////////////////////////////
-#pragma mark - UITableViewDataSource
-////////////////////////////////////////////////////////////
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
+  //  tvc.event = [_events objectAtIndex:indexPath.row];
+  [self.navigationController pushViewController:tvc animated:YES];
+}
 
 @end

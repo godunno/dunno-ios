@@ -7,5 +7,7 @@
 
 + (void) organizationActiveToUser:(DUNUser*)user success:(void(^)(DUNOrganization *organization))successBlock error:(ErrorBlock)errorCallback;
 
++ (void) eventsAvailableToOrganization:(DUNOrganization*)organization success:(void(^)(NSArray *events))successBlock error:(ErrorBlock)errorCallback;
+
 
 @end

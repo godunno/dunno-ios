@@ -24,7 +24,35 @@
   }  failure:^(NSError *error) {
     errorCallback(error);
   }];
+}
+
++ (void) eventsAvailableToOrganization:(DUNOrganization*)organization success:(void(^)(NSArray *events))successBlock error:(ErrorBlock)errorCallback
+{
+//  NSParameterAssert(organization!=nil);
+//  NSParameterAssert(organization.entityId!=nil);
   
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"events/%@/organization",organization.entityId]];
+  
+  endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
+  
+  [DUNRequest get:endpointURL success:^(NSDictionary *json) {
+    
+    if(successBlock && json != nil){
+      NSArray *eventsJson = [json valueForKey:@"events"];
+      NSMutableArray *events = [NSMutableArray array];
+      
+      [eventsJson enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [events addObject:[DUNEvent instanceFromJsonDictionary:obj]];
+      }];
+      successBlock(events);
+    }
+    else{
+      errorCallback(nil);
+    }
+    
+  }  failure:^(NSError *error) {
+    errorCallback(error);
+  }];
 }
 
 ////////////////////////////////////
@@ -33,7 +61,9 @@
 
 + (NSDictionary*)mandatoryParams
 {
-  
+//  NSParameterAssert([DUNSession sharedInstance].currentUser!=nil);
+//  NSParameterAssert([DUNSession sharedInstance].currentUser.entityId!=nil);
+//  NSString *userId = [DUNSession sharedInstance].currentUser.entityId;
   NSString *fakeUserId = @"666";
   
   return @{@"app_token" : kAppToken, @"user_id" : fakeUserId};

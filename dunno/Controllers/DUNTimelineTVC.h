@@ -1,7 +1,9 @@
-#import "DUNTimeline.h"
+#import "DUNEvent.h"
+
+#define kDUNTimelineTVCStoryboardId @"DUNTimelineTVCStoryboardId"
 
 @interface DUNTimelineTVC : UITableViewController
 
-@property (nonatomic, strong) DUNTimeline *timeline;
+@property (nonatomic, strong) DUNEvent *event;
 
 @end

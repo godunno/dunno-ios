@@ -175,7 +175,6 @@
                                             <outlet property="eventTitleLabel" destination="hNZ-1m-5qj" id="1aZ-de-yI2"/>
                                             <outlet property="profileImage" destination="em1-pg-P2w" id="xTr-2T-QA7"/>
                                             <outlet property="teacherNameLabel" destination="fnD-Bh-2DA" id="gSo-hS-co2"/>
-                                            <segue destination="Vbb-Hf-VxI" kind="push" id="scf-Pn-1TJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -207,14 +206,14 @@
         <!--TimelineTVC-->
         <scene sceneID="Hm6-al-CGF">
             <objects>
-                <tableViewController id="Vbb-Hf-VxI" customClass="DUNTimelineTVC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DUNTimelineTVCStoryboardId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vbb-Hf-VxI" customClass="DUNTimelineTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="sbJ-fs-qnF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="my1-eC-Fgv">
-                                <rect key="frame" x="0.0" y="86" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="my1-eC-Fgv" id="0Od-uv-Hyf">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
