@@ -1,5 +1,4 @@
 #import "DUNEvent.h"
-#import "NSDate-Utilities.h"
 
 @implementation DUNEvent
 
@@ -28,20 +27,5 @@
            };
 }
 
-
-- (BOOL) isOpen
-{
-  return [_startAt isInFuture];
-}
-
-- (BOOL) isClosed
-{
-  return [_startAt isInPast];
-}
-
-- (BOOL) isLive
-{
-  return [_startAt isToday];
-}
 
 @end

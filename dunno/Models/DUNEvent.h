@@ -5,6 +5,13 @@
 #import "DUNUser.h"
 #import "DUNOrganization.h"
 
+typedef NS_ENUM(NSInteger, DUNEventStatus)
+{
+  DUNEventAvailable,
+  DUNEventOpened,
+  DUNEventClosed,
+};
+
 @interface DUNEvent : NSObject<DUNJsonParseable>
 
 @property (nonatomic, copy) NSString *entityId;
@@ -15,15 +22,13 @@
 @property (nonatomic, strong) NSDate *finishAt;
 @property (nonatomic, copy) NSString *pictureURLString;
 
+@property (nonatomic) DUNEventStatus status;
+
 @property (nonatomic, strong) NSArray *speakers;
 
 @property (nonatomic, strong) DUNUser *owner;
 @property (nonatomic, strong) DUNOrganization *organization;
 
 + (instancetype)newFromJsonDictionary:(NSDictionary*)jsonDict;
-
-- (BOOL) isOpen;
-- (BOOL) isClosed;
-- (BOOL) isLive;
 
 @end

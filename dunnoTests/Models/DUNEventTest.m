@@ -9,28 +9,10 @@
 @implementation DUNEventTest
 
 
-- (void)test_returnTrueIfEventIsLive
+- (void)test_defaultStatusIsDUNEventAvailable
 {
   DUNEvent *event = [DUNEvent new];
-  event.startAt = [NSDate date];
-  
-  XCTAssertTrue([event isLive]);
-}
-
-- (void)test_returnTrueIfEventIsClosed
-{
-  DUNEvent *event = [DUNEvent new];
-  event.startAt = [NSDate dateYesterday];
-  
-  XCTAssertTrue([event isClosed]);
-}
-
-- (void)test_returnTrueIfEventIsOpenAttend
-{
-  DUNEvent *event = [DUNEvent new];
-  event.startAt = [NSDate dateTomorrow];
-  
-  XCTAssertTrue([event isOpen]);
+  XCTAssertTrue(event.status == DUNEventAvailable);
 }
 
 
