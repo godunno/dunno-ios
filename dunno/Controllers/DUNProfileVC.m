@@ -10,7 +10,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *profileContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
