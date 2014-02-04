@@ -1,4 +1,0 @@
-
-@interface DUNTimelineVC : UITableViewController
-
-@end
