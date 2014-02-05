@@ -8,6 +8,7 @@
 typedef NS_ENUM(NSInteger, DUNEventStatus)
 {
   DUNEventAvailable,
+  DUNEventScheduled,
   DUNEventOpened,
   DUNEventClosed,
 };
