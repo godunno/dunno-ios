@@ -4,6 +4,7 @@
 #import "DUNSpeaker.h"
 #import "DUNUser.h"
 #import "DUNOrganization.h"
+#import "DUNTimeline.h"
 
 typedef NS_ENUM(NSInteger, DUNEventStatus)
 {
@@ -22,13 +23,14 @@ typedef NS_ENUM(NSInteger, DUNEventStatus)
 @property (nonatomic, strong) NSDate *startAt;
 @property (nonatomic, strong) NSDate *finishAt;
 @property (nonatomic, copy) NSString *pictureURLString;
-
 @property (nonatomic) DUNEventStatus status;
 
 @property (nonatomic, strong) NSArray *speakers;
 
 @property (nonatomic, strong) DUNUser *owner;
 @property (nonatomic, strong) DUNOrganization *organization;
+
+@property (nonatomic, strong) DUNTimeline *timeline;
 
 + (instancetype)newFromJsonDictionary:(NSDictionary*)jsonDict;
 

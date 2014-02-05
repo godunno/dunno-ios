@@ -1,11 +1,3 @@
-//
-//  DUNSideMenuTVC.m
-//  dunno
-//
-//  Created by fagner feitosa on 1/29/14.
-//  Copyright (c) 2014 dunno. All rights reserved.
-//
-
 #import "DUNSideMenuTVC.h"
 
 @interface DUNSideMenuTVC ()
@@ -19,12 +11,6 @@
   [super viewDidLoad];
   
   self.tableView.backgroundColor = [DUNStyles menuBackgroundColor];
-}
-
-- (void)didReceiveMemoryWarning
-{
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

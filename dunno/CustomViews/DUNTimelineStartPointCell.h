@@ -1,5 +1,5 @@
 
-#define kDUNTimelineStartPointCellId @"DUNTimelineStartPointCellId"
+#define kTimelineStartPointCellId @"DUNTimelineStartPointCellId"
 
 @interface DUNTimelineStartPointCell : UITableViewCell
 
