@@ -19,4 +19,6 @@
   #import "DUNConfig.h"
   #import "DUNSession.h"
 
+  #import "DUNAPIMock.h"
+
 #endif

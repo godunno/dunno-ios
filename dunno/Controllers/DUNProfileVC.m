@@ -127,7 +127,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
-  //  tvc.event = [_events objectAtIndex:indexPath.row];
+  tvc.event = [DUNAPIMock event];
   [self.navigationController pushViewController:tvc animated:YES];
 }
 

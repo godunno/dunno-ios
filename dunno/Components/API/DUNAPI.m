@@ -28,8 +28,8 @@
 
 + (void) eventsAvailableToOrganization:(DUNOrganization*)organization success:(void(^)(NSArray *events))successBlock error:(ErrorBlock)errorCallback
 {
-//  NSParameterAssert(organization!=nil);
-//  NSParameterAssert(organization.entityId!=nil);
+  NSParameterAssert(organization!=nil);
+  NSParameterAssert(organization.entityId!=nil);
   
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"events/%@/organization",organization.entityId]];
   
@@ -61,12 +61,12 @@
 
 + (NSDictionary*)mandatoryParams
 {
-//  NSParameterAssert([DUNSession sharedInstance].currentUser!=nil);
-//  NSParameterAssert([DUNSession sharedInstance].currentUser.entityId!=nil);
-//  NSString *userId = [DUNSession sharedInstance].currentUser.entityId;
-  NSString *fakeUserId = @"666";
+  NSParameterAssert([DUNSession sharedInstance].currentUser!=nil);
+  NSParameterAssert([DUNSession sharedInstance].currentUser.entityId!=nil);
   
-  return @{@"app_token" : kAppToken, @"user_id" : fakeUserId};
+  NSString *userId = [DUNSession sharedInstance].currentUser.entityId;
+  
+  return @{@"app_token" : kAppToken, @"user_id" : userId};
 }
 
 + (NSString*)appendToURLString:(NSString*)urlString dictionaryParams:(NSDictionary*)params
