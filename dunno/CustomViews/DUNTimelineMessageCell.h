@@ -1,7 +1,9 @@
-#import <UIKit/UIKit.h>
 #import "DUNTimelineUserMessage.h"
 
-@interface DUNTimelineMessageCell : UICollectionViewCell
+
+#define kTimelineMessageCellId @"TimelineMessageCellId"
+
+@interface DUNTimelineMessageCell : UITableViewCell
 
 @property (nonatomic, strong) DUNTimelineUserMessage *userMessage;
 
