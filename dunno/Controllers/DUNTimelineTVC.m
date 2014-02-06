@@ -8,6 +8,10 @@
 
 @implementation DUNTimelineTVC
 
+//------------------------------------
+  #pragma mark UITableViewDelegate
+//------------------------------------
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   NSParameterAssert(_event!=nil);
@@ -31,6 +35,12 @@
   
   DUNTimelineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineMessageCellId forIndexPath:indexPath];
   return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 150;
 }
 
 // ------------------------------
