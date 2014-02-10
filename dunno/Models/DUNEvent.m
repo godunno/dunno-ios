@@ -23,7 +23,6 @@
   return @{@"id" : @"entityId",
            @"description" : @"shortDescription",
            @"picture" : @"pictureURLString",
-           @"speakers[]" : [DUNSpeaker class],
            };
 }
 

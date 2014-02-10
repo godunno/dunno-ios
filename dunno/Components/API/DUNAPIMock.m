@@ -27,8 +27,6 @@
   event.organization = [DUNAPIMock organization];
   event.owner = [DUNAPIMock user];
   event.timeline = [DUNAPIMock timeline];
-
-//  @property (nonatomic, strong) NSArray *speakers;
   
   return event;
 }

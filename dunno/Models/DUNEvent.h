@@ -25,8 +25,6 @@ typedef NS_ENUM(NSInteger, DUNEventStatus)
 @property (nonatomic, copy) NSString *pictureURLString;
 @property (nonatomic) DUNEventStatus status;
 
-@property (nonatomic, strong) NSArray *speakers;
-
 @property (nonatomic, strong) DUNUser *owner;
 @property (nonatomic, strong) DUNOrganization *organization;
 
