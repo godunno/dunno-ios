@@ -17,6 +17,11 @@
 {
   [super viewDidLoad];
   
+  [self.view.layer setBorderColor:[DUNStyles backgroundColor].CGColor];
+  [self.view.layer setBorderWidth:8.0f];
+  [self.view.layer setCornerRadius:20.0f];
+  self.view.layer.masksToBounds=YES;
+  
   _yesButton.buttonColor = [UIColor turquoiseColor];
   _yesButton.shadowColor = [UIColor greenSeaColor];
   _yesButton.shadowHeight = 3.0f;

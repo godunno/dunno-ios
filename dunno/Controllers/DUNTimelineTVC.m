@@ -6,11 +6,14 @@
 
 #import "UIViewController+MJPopupViewController.h"
 
+#import "UIColor+FlatUI.h"
+#import "UIBarButtonItem+FlatUI.h"
+#import "UINavigationBar+FlatUI.h"
+
 @interface DUNTimelineTVC ()
 @end
 
 @implementation DUNTimelineTVC
-
 
 
 - (IBAction)showFakePoll:(id)sender {
