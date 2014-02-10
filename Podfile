@@ -17,6 +17,8 @@ pod 'MJPopupViewController', '~> 0.4'
 pod 'SWRevealViewController', '~> 1.1.1'
 pod 'KeyValueObjectMapping', :git => "https://github.com/dchohfi/KeyValueObjectMapping.git"
 
+pod 'FlatUIKit'
+
 target :dunnoTests, :exclusive => true do
   pod 'OCMock'
   pod 'OCHamcrest', '~> 3.0'

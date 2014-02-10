@@ -14,10 +14,9 @@
 
 
 - (IBAction)showFakePoll:(id)sender {
-  
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
+  [pollVC setModalInPopover:TRUE];
   [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
-  
 }
 
 
