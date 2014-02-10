@@ -2,14 +2,27 @@
 #import "DUNTimelineStartPointCell.h"
 #import "DUNTimelineMessageCell.h"
 #import "DUNTimelineEndPointCell.h"
+#import "DUNPollVC.h"
+
+#import "UIViewController+MJPopupViewController.h"
 
 @interface DUNTimelineTVC ()
 @end
 
 @implementation DUNTimelineTVC
 
+
+
+- (IBAction)showFakePoll:(id)sender {
+  
+  DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
+  [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
+  
+}
+
+
 //------------------------------------
-  #pragma mark UITableViewDelegate
+#pragma mark UITableViewDelegate
 //------------------------------------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

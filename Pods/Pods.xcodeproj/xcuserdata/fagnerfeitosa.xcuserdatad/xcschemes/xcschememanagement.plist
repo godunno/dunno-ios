@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-CWPopup.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-GoogleAnalytics-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MJPopupViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,77 +82,77 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03D8E3757989437DAF4554C5</key>
+		<key>02E3655C06D64553B6CF27C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>088A528995EF42289CDEE02F</key>
+		<key>11A4201651A345F698CEB347</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F19920CFF0145BDB568C1D0</key>
+		<key>1301E2E04FAD417B98043662</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13BF18E500BF4C7DB39F12B8</key>
+		<key>1561F051F2554F08A8B5C8FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>339BD1BC30A444A5BB3F0560</key>
+		<key>211B80B8BE75419198189334</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D5E3327F59444CFB4BF8539</key>
+		<key>2689606BDC5448F690D2D437</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AD2E4D9FD734B53888BAA8A</key>
+		<key>38128F52B7534D02848C3F2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E3DA2F31943422F88B32604</key>
+		<key>5A758E5F0FDF43C09B9B9528</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B87C5F452C62422AB8A06092</key>
+		<key>8D03E6619EC54DEEA820AD88</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAF775EC65F34AE2A8DF55E1</key>
+		<key>96BD24BC03644B1A9EDFF27A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD94DAB8C9EE4FE88ADD6CD6</key>
+		<key>A320A51A0A6E4E3BA92E3A80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D04D8037073C4C2682969E1E</key>
+		<key>B968BB4C35054B45A7279281</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F2EA7E3B17BD4672B291F674</key>
+		<key>C5010CDD62C3490FA82F9888</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F811297FD7584C72BDC09604</key>
+		<key>ED1E3EB905A84521972F1513</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDA4A8244C27478DAD855F55</key>
+		<key>F04E9784576949DDB5F361F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

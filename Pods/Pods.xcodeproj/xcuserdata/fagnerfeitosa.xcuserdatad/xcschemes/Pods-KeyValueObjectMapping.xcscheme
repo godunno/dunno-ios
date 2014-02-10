@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D04D8037073C4C2682969E1E"
+               BlueprintIdentifier = "1301E2E04FAD417B98043662"
                BuildableName = "libPods-KeyValueObjectMapping.a"
                BlueprintName = "Pods-KeyValueObjectMapping"
                ReferencedContainer = "container:Pods.xcodeproj">

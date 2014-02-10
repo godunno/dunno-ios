@@ -63,6 +63,8 @@
 		C3EACC561888FB650086F277 /* DUNUserJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC551888FB650086F277 /* DUNUserJsonMappingTest.m */; };
 		C3EACC5A1888FBEC0086F277 /* DUNSpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC591888FBEC0086F277 /* DUNSpeaker.m */; };
 		C3EACC5C1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */; };
+		C3EEB39818A93E1200B6BFDA /* DUNPollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3EEB39618A93E1200B6BFDA /* DUNPollVC.m */; };
+		C3EEB39918A93E1200B6BFDA /* DUNPollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3EEB39718A93E1200B6BFDA /* DUNPollVC.xib */; };
 		CCBF397B59D6404DB23C7F98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1976053BB44A65A795ECBC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +161,9 @@
 		C3EACC581888FBEC0086F277 /* DUNSpeaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSpeaker.h; sourceTree = "<group>"; };
 		C3EACC591888FBEC0086F277 /* DUNSpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSpeaker.m; sourceTree = "<group>"; };
 		C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSpeakerJsonMappingTest.m; sourceTree = "<group>"; };
+		C3EEB39518A93E1200B6BFDA /* DUNPollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNPollVC.h; sourceTree = "<group>"; };
+		C3EEB39618A93E1200B6BFDA /* DUNPollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNPollVC.m; sourceTree = "<group>"; };
+		C3EEB39718A93E1200B6BFDA /* DUNPollVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUNPollVC.xib; sourceTree = "<group>"; };
 		DF1976053BB44A65A795ECBC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F3B731C29E42E080946113 /* Pods-dunnoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dunnoTests.xcconfig"; path = "Pods/Pods-dunnoTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +371,7 @@
 		C385EF0A188B36880022A574 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3EEB39418A93DE000B6BFDA /* Modals */,
 				C385EF0B188B36880022A574 /* DUNProfileVC.h */,
 				C385EF0C188B36880022A574 /* DUNProfileVC.m */,
 				C3850B07188F9CAD008E46FE /* DUNTimelineTVC.h */,
@@ -413,6 +419,16 @@
 				C3EACC5B1888FCF20086F277 /* DUNSpeakerJsonMappingTest.m */,
 			);
 			name = Mapping;
+			sourceTree = "<group>";
+		};
+		C3EEB39418A93DE000B6BFDA /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				C3EEB39518A93E1200B6BFDA /* DUNPollVC.h */,
+				C3EEB39618A93E1200B6BFDA /* DUNPollVC.m */,
+				C3EEB39718A93E1200B6BFDA /* DUNPollVC.xib */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3006F7318859432007B0790 /* Images.xcassets in Resources */,
+				C3EEB39918A93E1200B6BFDA /* DUNPollVC.xib in Resources */,
 				C3006F6518859432007B0790 /* InfoPlist.strings in Resources */,
 				C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */,
 			);
@@ -586,6 +603,7 @@
 				C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */,
 				C34B67A518929F4200407497 /* DUNTimelinePoll.m in Sources */,
 				C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */,
+				C3EEB39818A93E1200B6BFDA /* DUNPollVC.m in Sources */,
 				C371C62018A2B7DD00186EC0 /* DUNTimelineStartPointCell.m in Sources */,
 				C3068AA718A15FD400A8C279 /* NSDate-Utilities.m in Sources */,
 				C3EACC5A1888FBEC0086F277 /* DUNSpeaker.m in Sources */,

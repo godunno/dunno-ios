@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 3
 
-// CWPopup
-#define COCOAPODS_POD_AVAILABLE_CWPopup
-#define COCOAPODS_VERSION_MAJOR_CWPopup 1
-#define COCOAPODS_VERSION_MINOR_CWPopup 2
-#define COCOAPODS_VERSION_PATCH_CWPopup 5
-
 // GoogleAnalytics-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_GoogleAnalytics_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_GoogleAnalytics_iOS_SDK 3
@@ -41,6 +35,12 @@
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
+
+// MJPopupViewController
+#define COCOAPODS_POD_AVAILABLE_MJPopupViewController
+#define COCOAPODS_VERSION_MAJOR_MJPopupViewController 0
+#define COCOAPODS_VERSION_MINOR_MJPopupViewController 4
+#define COCOAPODS_VERSION_PATCH_MJPopupViewController 0
 
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
