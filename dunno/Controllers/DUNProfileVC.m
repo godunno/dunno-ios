@@ -3,7 +3,7 @@
 #import "SWRevealViewController.h"
 #import "DUNEventCell.h"
 
-#import "DUNUser.h"
+#import "DUNTeacher.h"
 
 #import "DUNAPI.h"
 
@@ -53,7 +53,7 @@
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
   //customize interface
   
-  DUNUser *user = [DUNSession sharedInstance].currentUser;
+  DUNTeacher *user = [DUNSession sharedInstance].currentUser;
   
   //define values
 }
@@ -73,6 +73,9 @@
   
   [DUNAPI eventsAvailableToOrganization:_session.currentOrganization success:^(NSArray *events) {
     _events = events;
+    
+    [_eventsTableView reloadData];
+    
     [hud hide:YES];
   } error:^(NSError *error) {
     //TODO show generic 'modal'/'view' with error
@@ -101,7 +104,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return 30;
+  return _events.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,17 +112,28 @@
   static NSString *CellIdentifier = @"EventsCellId";
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  if(indexPath.row == 2)
+  DUNEvent *event = [_events objectAtIndex:indexPath.row];
+
+  if([event isOpen])
   {
     cell.contentView.backgroundColor = [UIColor colorWithHexString:@"abcede"];
-  } else   if(indexPath.row == 4)
+    cell.cellIcon.image = [UIImage imageNamed:@"add_event_live"];
+  } else if([event isClosed])
   {
     cell.contentView.backgroundColor = [UIColor colorWithHexString:@"e0c7c4"];
+    cell.cellIcon.image = [UIImage imageNamed:@"closed_event"];
     [cell.eventTitleLabel setAlpha:0.5];
     [cell.teacherNameLabel setAlpha:0.5];
     [cell.profileImage setAlpha:0.5];
+  } else
+  {
+    cell.cellIcon.image = [UIImage imageNamed:@"add_event"];    
   }
   
+  cell.eventTitleLabel.text = event.title;
+  cell.teacherNameLabel.text = event.teacher.name;
+
+  //cell.profileImage.image = event.teacher.pictureURLString;
   
   return cell;
 }
@@ -127,7 +141,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
-  tvc.event = [DUNAPIMock event];
+  tvc.event = [_events objectAtIndex:indexPath.row];
   [self.navigationController pushViewController:tvc animated:YES];
 }
 

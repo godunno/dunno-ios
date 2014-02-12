@@ -6,7 +6,7 @@
 
 @implementation DUNAPI
 
-+ (void) organizationActiveToUser:(DUNUser*)user success:(void(^)(DUNOrganization *organization))successBlock error:(ErrorBlock)errorCallback
++ (void) organizationActiveToUser:(DUNTeacher*)user success:(void(^)(DUNOrganization *organization))successBlock error:(ErrorBlock)errorCallback
 {
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"organization/to/user"];
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
@@ -14,7 +14,7 @@
   [DUNRequest get:endpointURL success:^(NSDictionary *json) {
     
     if(successBlock && json != nil){
-      DUNOrganization *organization = [DUNOrganization newFromJsonDictionary:json];
+      DUNOrganization *organization = [DUNOrganization instanceFromJsonDictionary:json];
       successBlock(organization);
     }
     else{
@@ -31,17 +31,16 @@
   NSParameterAssert(organization!=nil);
   NSParameterAssert(organization.uuid!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"events/%@/organization",organization.uuid]];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"organizations/%@/events",organization.uuid]];
   
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   
   [DUNRequest get:endpointURL success:^(NSDictionary *json) {
     
-    if(successBlock && json != nil){
-      NSArray *eventsJson = [json valueForKey:@"events"];
+    if(successBlock && json != nil && [json isKindOfClass:[NSArray class]]){
       NSMutableArray *events = [NSMutableArray array];
       
-      [eventsJson enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+      [(NSArray*)json enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [events addObject:[DUNEvent instanceFromJsonDictionary:obj]];
       }];
       successBlock(events);
@@ -62,9 +61,9 @@
 + (NSDictionary*)mandatoryParams
 {
   NSParameterAssert([DUNSession sharedInstance].currentUser!=nil);
-  NSParameterAssert([DUNSession sharedInstance].currentUser.entityId!=nil);
+  NSParameterAssert([DUNSession sharedInstance].currentUser.uuid!=nil);
   
-  NSString *userId = [DUNSession sharedInstance].currentUser.entityId;
+  NSString *userId = [DUNSession sharedInstance].currentUser.uuid;
   
   return @{@"app_token" : kAppToken, @"user_id" : userId};
 }

@@ -1,11 +1,11 @@
 #import "DUNTimelineInteraction.h"
-#import "DUNUser.h"
+#import "DUNTeacher.h"
 
 
 @interface DUNTimelineUserMessage : DUNTimelineInteraction
 
 @property (nonatomic, copy) NSString *entityId;
-@property (nonatomic, strong) DUNUser *owner;
+@property (nonatomic, strong) DUNTeacher *owner;
 @property (nonatomic, copy) NSString *profilePicture;
 @property (nonatomic, copy) NSString *message;
 

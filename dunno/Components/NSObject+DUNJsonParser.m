@@ -26,7 +26,7 @@
 
 + (DCParserConfiguration*) addToConfig:(DCParserConfiguration**)config mappings:(Class<DUNJsonParseable>)parseableClass
 {
-  if (![self conformsToProtocol:@protocol(DUNJsonParseable)] && [self respondsToSelector:@selector(mappings)])
+  if (![self conformsToProtocol:@protocol(DUNJsonParseable)] || ![self respondsToSelector:@selector(mappings)])
     return nil;
   
   [[parseableClass mappings] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

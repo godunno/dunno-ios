@@ -1,13 +1,12 @@
 #import "DUNUser.h"
-#import "DUNSpeaker.h"
-#import "DUNLocation.h"
+#import "DUNTeacher.h"
 #import "DUNOrganization.h"
 
 @interface DUNAPIMock : NSObject
 
 + (DUNUser*)user;
++ (DUNTeacher*)teacher;
 + (DUNEvent*) event;
 + (DUNOrganization*)organization;
-+ (DUNTimeline*)timeline;
 
 @end

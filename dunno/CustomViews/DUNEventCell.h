@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teacherNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *bottomMarginView;
+@property (weak, nonatomic) IBOutlet UIImageView *cellIcon;
 
 @end
