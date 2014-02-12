@@ -29,9 +29,9 @@
 + (void) eventsAvailableToOrganization:(DUNOrganization*)organization success:(void(^)(NSArray *events))successBlock error:(ErrorBlock)errorCallback
 {
   NSParameterAssert(organization!=nil);
-  NSParameterAssert(organization.entityId!=nil);
+  NSParameterAssert(organization.uuid!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"events/%@/organization",organization.entityId]];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"events/%@/organization",organization.uuid]];
   
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   

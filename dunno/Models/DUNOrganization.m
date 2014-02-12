@@ -9,10 +9,4 @@
   return [self instanceFromJsonDictionary:jsonDict];
 }
 
-+ (NSDictionary*)mappings
-{
-  return @{@"id" : @"entityId",
-           @"picture" : @"pictureURLString",};
-}
-
 @end

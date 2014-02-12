@@ -4,7 +4,7 @@
 #import "DCArrayMapping.h"
 
 @protocol DUNJsonParseable <NSObject>
-@required
+@optional
 + (NSDictionary*)mappings;
 @end
 

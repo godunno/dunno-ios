@@ -35,9 +35,8 @@
 + (DUNOrganization*)organization
 {
   DUNOrganization *o = [DUNOrganization new];
-  o.entityId = @"999";
+  o.uuid = @"a83355ae-e406-40c9-a28a-45a63215b165";
   o.name = @"PUC";
-  o.pictureURLString = @"http://aaapucrio.com.br/wp-content/uploads/Mostra-Puc.jpg";
   return o;
 }
 
