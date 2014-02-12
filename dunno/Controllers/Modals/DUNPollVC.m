@@ -16,10 +16,25 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+ 
+  [self customize];
+}
+
+- (IBAction)yesTapped:(id)sender {
+}
+
+- (IBAction)noTapped:(id)sender {
+}
+
+
+#pragma mark - Private Methods
+
+- (void) customize
+{
   
   [self.view.layer setBorderColor:[DUNStyles backgroundColor].CGColor];
   [self.view.layer setBorderWidth:8.0f];
-  [self.view.layer setCornerRadius:20.0f];
+  [self.view.layer setCornerRadius:8.0f];
   self.view.layer.masksToBounds=YES;
   
   _yesButton.buttonColor = [UIColor turquoiseColor];
@@ -29,7 +44,7 @@
   _yesButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
   [_yesButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
   [_yesButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
-
+  
   _noButton.buttonColor = [UIColor tangerineColor];
   _noButton.shadowColor = [UIColor carrotColor];
   _noButton.shadowHeight = 3.0f;
@@ -37,13 +52,6 @@
   _noButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
   [_noButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
   [_noButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
-  
-}
-
-- (IBAction)yesTapped:(id)sender {
-}
-
-- (IBAction)noTapped:(id)sender {
 }
 
 
