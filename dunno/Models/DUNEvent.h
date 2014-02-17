@@ -1,5 +1,4 @@
-#import "NSObject+DUNJsonParser.h"
-
+#import "JSONModel.h"
 #import "DUNTeacher.h"
 #import "DUNOrganization.h"
 #import "DUNTimeline.h"
@@ -12,7 +11,10 @@ typedef NS_ENUM(NSInteger, DUNEventStatus)
   DUNEventClosed,
 };
 
-@interface DUNEvent : NSObject<DUNJsonParseable>
+@protocol DUNEvent
+@end
+
+@interface DUNEvent : JSONModel
 
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *title;
@@ -20,11 +22,8 @@ typedef NS_ENUM(NSInteger, DUNEventStatus)
 @property (nonatomic) DUNEventStatus status;
 
 @property (nonatomic, strong) DUNTeacher *teacher;
-@property (nonatomic, strong) DUNOrganization *organization;
 
 @property (nonatomic, strong) DUNTimeline *timeline;
-
-+ (instancetype)instanceFromJsonDictionary:(NSDictionary*)jsonDict;
 
 - (BOOL) isOpen;
 - (BOOL) isClosed;

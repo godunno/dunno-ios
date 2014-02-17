@@ -1,3 +1,4 @@
+#import <JSONModel/JSONHTTPClient.h>
 #import "DUNAPI.h"
 
 #define kBaseURL @"http://localhost:3000/api/v1/"
@@ -6,53 +7,25 @@
 
 @implementation DUNAPI
 
-+ (void) organizationActiveToUser:(DUNTeacher*)user success:(void(^)(DUNOrganization *organization))successBlock error:(ErrorBlock)errorCallback
++ (void) organizationActiveSuccess:(void(^)(DUNOrganization *organization))successBlock error:(void(^)(NSError *error))errorCallback
 {
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"organization/to/user"];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"organizations"];
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   
-  [DUNRequest get:endpointURL success:^(NSDictionary *json) {
+  [JSONHTTPClient getJSONFromURLWithString:endpointURL completion:^(id json, JSONModelError *err) {
     
     if(successBlock && json != nil){
-      DUNOrganization *organization = [DUNOrganization instanceFromJsonDictionary:json];
+      DUNOrganization *organization = [[DUNOrganization alloc] initWithDictionary:json[@"organization"] error:&err];
+      
       successBlock(organization);
     }
-    else{
-      errorCallback(nil);
+    else {
+      errorCallback(err);
     }
     
-  }  failure:^(NSError *error) {
-    errorCallback(error);
   }];
 }
 
-+ (void) eventsAvailableToOrganization:(DUNOrganization*)organization success:(void(^)(NSArray *events))successBlock error:(ErrorBlock)errorCallback
-{
-  NSParameterAssert(organization!=nil);
-  NSParameterAssert(organization.uuid!=nil);
-  
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL, [NSString stringWithFormat:@"organizations/%@/events",organization.uuid]];
-  
-  endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
-  
-  [DUNRequest get:endpointURL success:^(NSDictionary *json) {
-    
-    if(successBlock && json != nil && [json isKindOfClass:[NSArray class]]){
-      NSMutableArray *events = [NSMutableArray array];
-      
-      [(NSArray*)json enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [events addObject:[DUNEvent instanceFromJsonDictionary:obj]];
-      }];
-      successBlock(events);
-    }
-    else{
-      errorCallback(nil);
-    }
-    
-  }  failure:^(NSError *error) {
-    errorCallback(error);
-  }];
-}
 
 ////////////////////////////////////
 #pragma mark Private Methods

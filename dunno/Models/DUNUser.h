@@ -1,6 +1,4 @@
-#import "NSObject+DUNJsonParser.h"
-
-@interface DUNUser : NSObject<DUNJsonParseable>
+@interface DUNUser : NSObject
 
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *name;

@@ -15,7 +15,7 @@ pod 'libPusher', '~> 1.4'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'MJPopupViewController', '~> 0.4'
 pod 'SWRevealViewController', '~> 1.1.1'
-pod 'KeyValueObjectMapping', :git => "https://github.com/dchohfi/KeyValueObjectMapping.git"
+pod 'JSONModel'
 
 pod 'FlatUIKit'
 

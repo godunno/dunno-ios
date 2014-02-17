@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-KeyValueObjectMapping.xcscheme</key>
+		<key>Pods-JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -87,82 +87,82 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0ABA6500DCAC47F4A0FDD204</key>
+		<key>13E0F13551264D75ABBB0F54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EDFBE42FE5A44CB9706EF0B</key>
+		<key>32D1378C39344E2DA5DEFBEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13E1AC2F97CE46DBAF53DC35</key>
+		<key>34EBA572E3DB4865B2AEC8B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A7EDF8EEF184755A7AA080A</key>
+		<key>49F8754867004186B90C11A2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22AD41C56FAE49318A41917C</key>
+		<key>52A68D2D7B744F6AAD12B114</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>385A71ED35324B99ABC03A90</key>
+		<key>53C0475E623743699D6A0472</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FED40421396491E9F17C699</key>
+		<key>602D458261AF4A78A70E5DC0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>535FDD35A8454D58A1CC862E</key>
+		<key>79D26BA7D0BE42CBB04173FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61F3B0C5AF1641079A91F0A2</key>
+		<key>7B2BDC83D2F541069156ACBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69B364A8CD9546CAB5BA2C43</key>
+		<key>841935958F694906896DB1B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>840D03A7990D4B41983518AC</key>
+		<key>A06D48780E7244F99B34E8C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B94654EB8C82438DA7DF6BD1</key>
+		<key>AFD606A4BF5548799E86D65B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCF031D5ECC94B60BC30947C</key>
+		<key>C2B425A6DFF44FC593DA941E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BE26FB894F554E34BE380E20</key>
+		<key>D105F759AEA14BF199849304</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4BDAD5CBBB54ED08537D2AE</key>
+		<key>EBEF08E86A2044148D45F6A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E63A66A13B6B413B92FB90CC</key>
+		<key>F094938F6B5044ADA47BB5F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

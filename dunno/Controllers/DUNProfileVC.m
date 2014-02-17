@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 
 @property (strong, nonatomic) DUNSession *session;
-@property (strong, nonatomic) NSArray *events;
 
 @end
 
@@ -55,7 +54,7 @@
   
   DUNTeacher *user = [DUNSession sharedInstance].currentUser;
   
-  //define values
+
 }
 
 - (void) configureSideMenu
@@ -71,9 +70,9 @@
   hud.mode = MBProgressHUDModeIndeterminate;
   hud.labelText = @"Carregando eventos";
   
-  [DUNAPI eventsAvailableToOrganization:_session.currentOrganization success:^(NSArray *events) {
-    _events = events;
-    
+  [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
+    _session.currentOrganization = organization;
+
     [_eventsTableView reloadData];
     
     [hud hide:YES];
@@ -81,9 +80,6 @@
     //TODO show generic 'modal'/'view' with error
     [hud hide:YES];
   }];
-  
-  _events = [NSArray array];
-  
 }
 
 - (void) setupEventsTable
@@ -104,7 +100,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return _events.count;
+  return _session.currentOrganization.events.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +108,7 @@
   static NSString *CellIdentifier = @"EventsCellId";
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  DUNEvent *event = [_events objectAtIndex:indexPath.row];
+  DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
 
   if([event isOpen])
   {
@@ -141,7 +137,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
-  tvc.event = [_events objectAtIndex:indexPath.row];
+  tvc.event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
   [self.navigationController pushViewController:tvc animated:YES];
 }
 

@@ -35,7 +35,6 @@
   event.title = @"Jung e a imagem";
   event.startAt = [NSDate dateWithDaysFromNow:20];
   event.status = DUNEventAvailable;
-  event.organization = [DUNAPIMock organization];
   event.teacher = [DUNAPIMock teacher];
   
   return event;

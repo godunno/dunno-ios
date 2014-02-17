@@ -24,7 +24,6 @@
 		C3068AA718A15FD400A8C279 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C3068AA618A15FD400A8C279 /* NSDate-Utilities.m */; };
 		C34B67A518929F4200407497 /* DUNTimelinePoll.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A418929F4200407497 /* DUNTimelinePoll.m */; };
 		C34B67AB1893188600407497 /* DUNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A81893188600407497 /* DUNAPI.m */; };
-		C34B67AC1893188600407497 /* DUNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67AA1893188600407497 /* DUNRequest.m */; };
 		C35C3D101899D0A9001A16D2 /* DUNSideMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C3D0F1899D0A9001A16D2 /* DUNSideMenuTVC.m */; };
 		C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C3D121899E488001A16D2 /* DUNEventCell.m */; };
 		C371C62018A2B7DD00186EC0 /* DUNTimelineStartPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */; };
@@ -44,8 +43,6 @@
 		C38D7D86189E9D85002CE198 /* DUNTimelineUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B0C188F9E25008E46FE /* DUNTimelineUserMessage.m */; };
 		C38D7D87189E9D85002CE198 /* DUNTimelinePoll.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A418929F4200407497 /* DUNTimelinePoll.m */; };
 		C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
-		C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
-		C3B442FF18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */; };
 		C3C10C8318AC1BAD0036A6E7 /* DUNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C10C8218AC1BAD0036A6E7 /* DUNUser.m */; };
 		C3D56DB2189D742E009DAFAC /* DUNTimelineInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB1189D742E009DAFAC /* DUNTimelineInteraction.m */; };
 		C3D56DB5189D7499009DAFAC /* DUNTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB4189D7499009DAFAC /* DUNTimeline.m */; };
@@ -96,8 +93,6 @@
 		C34B67A418929F4200407497 /* DUNTimelinePoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelinePoll.m; sourceTree = "<group>"; };
 		C34B67A71893188600407497 /* DUNAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNAPI.h; sourceTree = "<group>"; };
 		C34B67A81893188600407497 /* DUNAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNAPI.m; sourceTree = "<group>"; };
-		C34B67A91893188600407497 /* DUNRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNRequest.h; sourceTree = "<group>"; };
-		C34B67AA1893188600407497 /* DUNRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNRequest.m; sourceTree = "<group>"; };
 		C34F3319188B2DC200A3C11C /* DUNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DUNConfig.h; sourceTree = "<group>"; };
 		C35C3D0E1899D0A9001A16D2 /* DUNSideMenuTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSideMenuTVC.h; sourceTree = "<group>"; };
 		C35C3D0F1899D0A9001A16D2 /* DUNSideMenuTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSideMenuTVC.m; sourceTree = "<group>"; };
@@ -124,8 +119,6 @@
 		C38D27C718991C70008B8181 /* DUNSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNSession.m; sourceTree = "<group>"; };
 		C38D27C818991C70008B8181 /* DUNSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNSession.h; sourceTree = "<group>"; };
 		C38D27CA18992DFF008B8181 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DUNJsonParser.h"; sourceTree = "<group>"; };
-		C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DUNJsonParser.m"; sourceTree = "<group>"; };
 		C3C10C8118AC1BAD0036A6E7 /* DUNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNUser.h; sourceTree = "<group>"; };
 		C3C10C8218AC1BAD0036A6E7 /* DUNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNUser.m; sourceTree = "<group>"; };
 		C3D56DB0189D742E009DAFAC /* DUNTimelineInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineInteraction.h; sourceTree = "<group>"; };
@@ -282,8 +275,6 @@
 				C3006F9718859A1B007B0790 /* DUNStyles.m */,
 				C3006F991885B369007B0790 /* DUNAppearance.h */,
 				C3006F9A1885B369007B0790 /* DUNAppearance.m */,
-				C3B442FC18895C1A007DA7BA /* NSObject+DUNJsonParser.h */,
-				C3B442FD18895C1A007DA7BA /* NSObject+DUNJsonParser.m */,
 				C34F3319188B2DC200A3C11C /* DUNConfig.h */,
 			);
 			path = Components;
@@ -303,8 +294,6 @@
 			children = (
 				C34B67A71893188600407497 /* DUNAPI.h */,
 				C34B67A81893188600407497 /* DUNAPI.m */,
-				C34B67A91893188600407497 /* DUNRequest.h */,
-				C34B67AA1893188600407497 /* DUNRequest.m */,
 				C371EA2918A2D808001C9450 /* DUNAPIMock.h */,
 				C371EA2A18A2D808001C9450 /* DUNAPIMock.m */,
 			);
@@ -548,12 +537,10 @@
 				C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
 				C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */,
-				C34B67AC1893188600407497 /* DUNRequest.m in Sources */,
 				C38D27C918991C70008B8181 /* DUNSession.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3D56DB8189D7647009DAFAC /* DUNTimelineRating.m in Sources */,
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
-				C3B442FE18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */,
 				C3DFCB49188813E200C19D1F /* DUNTeacher.m in Sources */,
 				C385EF07188B34870022A574 /* NSString+Cool.m in Sources */,
 				C371EA2B18A2D808001C9450 /* DUNAPIMock.m in Sources */,
@@ -576,7 +563,6 @@
 				C38D7D83189E9D77002CE198 /* DUNTimeline.m in Sources */,
 				C38D7D86189E9D85002CE198 /* DUNTimelineUserMessage.m in Sources */,
 				C38D7D84189E9D7C002CE198 /* DUNTimelineInteraction.m in Sources */,
-				C3B442FF18895C1A007DA7BA /* NSObject+DUNJsonParser.m in Sources */,
 				C38D7D87189E9D85002CE198 /* DUNTimelinePoll.m in Sources */,
 				C3A1920F1888C34200061FF2 /* DUNEvent.m in Sources */,
 			);
