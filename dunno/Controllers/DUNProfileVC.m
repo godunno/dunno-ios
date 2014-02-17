@@ -72,6 +72,7 @@
   
   [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
     _session.currentOrganization = organization;
+    self.classNameLabel.text = organization.name;
 
     [_eventsTableView reloadData];
     
