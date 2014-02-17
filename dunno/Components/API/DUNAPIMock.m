@@ -7,7 +7,7 @@
 + (DUNUser*)user
 {
   DUNUser *user = [DUNUser new];
-  user.uuid = @"666";
+  user.entityId = @"666";
   user.name = @"Gildo";
   user.email = @"fagnermoura@gmail.com";
   user.pictureURLString = @"https://www.gravatar.com/avatar/c1b77e3ec0a171379300ea493157bbe3?s=42&d=identicon&r=PG";
@@ -19,7 +19,7 @@
 + (DUNUser*)teacher
 {
   DUNTeacher *user = [DUNTeacher new];
-  user.uuid = @"999";
+  user.entityId = @"999";
   user.name = @"Lucas Boscacci";
   user.email = @"lucas@me.com";
   user.pictureURLString = @"https://www.gravatar.com/avatar/c1b77e3ec0a171379300ea493157bbe3?s=42&d=identicon&r=PG";
@@ -33,8 +33,6 @@
   DUNEvent *event = [DUNEvent new];
   event.uuid = @"999";
   event.title = @"Jung e a imagem";
-  event.startAt = [NSDate dateWithDaysFromNow:20];
-  event.status = DUNEventAvailable;
   event.teacher = [DUNAPIMock teacher];
   
   return event;

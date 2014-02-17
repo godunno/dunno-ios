@@ -18,4 +18,9 @@
   [_interactions addObject:interaction];
 }
 
++(JSONKeyMapper*)keyMapper
+{
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId"}];
+}
+
 @end

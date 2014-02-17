@@ -3,14 +3,6 @@
 #import "DUNOrganization.h"
 #import "DUNTimeline.h"
 
-typedef NS_ENUM(NSInteger, DUNEventStatus)
-{
-  DUNEventDraft,
-  DUNEventAvailable,
-  DUNEventOpened,
-  DUNEventClosed,
-};
-
 @protocol DUNEvent
 @end
 
@@ -18,8 +10,6 @@ typedef NS_ENUM(NSInteger, DUNEventStatus)
 
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSDate *startAt;
-@property (nonatomic) DUNEventStatus status;
 
 @property (nonatomic, strong) DUNTeacher *teacher;
 

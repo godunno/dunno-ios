@@ -34,9 +34,9 @@
 + (NSDictionary*)mandatoryParams
 {
   NSParameterAssert([DUNSession sharedInstance].currentUser!=nil);
-  NSParameterAssert([DUNSession sharedInstance].currentUser.uuid!=nil);
+  NSParameterAssert([DUNSession sharedInstance].currentUser.entityId!=nil);
   
-  NSString *userId = [DUNSession sharedInstance].currentUser.uuid;
+  NSString *userId = [DUNSession sharedInstance].currentUser.entityId;
   
   return @{@"app_token" : kAppToken, @"user_id" : userId};
 }

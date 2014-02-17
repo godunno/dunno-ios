@@ -1,8 +1,10 @@
-@interface DUNUser : NSObject
+#import <JSONModel/JSONModel.h>
 
-@property (nonatomic, copy) NSString *uuid;
+@interface DUNUser : JSONModel
+
+@property (nonatomic, copy) NSString *entityId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *email;
-@property (nonatomic, copy) NSString *pictureURLString;
+@property (nonatomic, copy) NSString<Optional> *pictureURLString;
 
 @end

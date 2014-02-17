@@ -5,12 +5,12 @@
 
 - (BOOL) isOpen
 {
-  return (_status == DUNEventOpened);
+  return true;
 }
 
 - (BOOL) isClosed
 {
-  return (_status == DUNEventClosed);
+  return false;
 }
 
 @end
