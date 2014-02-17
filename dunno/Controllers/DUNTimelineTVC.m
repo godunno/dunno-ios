@@ -16,6 +16,15 @@
 @implementation DUNTimelineTVC
 
 
+- (void)viewDidLoad
+{
+  [super viewDidLoad];
+  
+  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.topItem.title = @"";
+}
+
+
 - (IBAction)showFakePoll:(id)sender {
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
   [pollVC setModalInPopover:TRUE];

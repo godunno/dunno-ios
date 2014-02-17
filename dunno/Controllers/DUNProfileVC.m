@@ -56,11 +56,14 @@
   DUNTeacher *user = [DUNSession sharedInstance].currentUser;
   
   [self.profileImage setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/378800000655469739/d36afc2cabe3c1e2ccedf62dd217066e_bigger.png"]];
-
+  
 }
 
 - (void) configureSideMenu
 {
+  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+  
+  _revealSideMenuButton.image = [UIImage imageNamed:@"menu"];
   _revealSideMenuButton.target = self.revealViewController;
   _revealSideMenuButton.action = @selector(revealToggle:);
   [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -75,7 +78,7 @@
   [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
     _session.currentOrganization = organization;
     self.classNameLabel.text = organization.name;
-
+    
     [_eventsTableView reloadData];
     
     [hud hide:YES];
@@ -112,7 +115,7 @@
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
-
+  
   if([event isOpen])
   {
     cell.contentView.backgroundColor = [UIColor colorWithHexString:@"abcede"];
@@ -126,12 +129,12 @@
     [cell.profileImage setAlpha:0.5];
   } else
   {
-    cell.cellIcon.image = [UIImage imageNamed:@"add_event"];    
+    cell.cellIcon.image = [UIImage imageNamed:@"add_event"];
   }
   
   cell.eventTitleLabel.text = event.title;
   cell.teacherNameLabel.text = event.teacher.name;
-
+  
   //cell.profileImage.image = event.teacher.pictureURLString;
   
   return cell;
