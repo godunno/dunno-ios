@@ -7,6 +7,7 @@
 
 #import "DUNAPI.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import <HexColors/HexColor.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
@@ -54,6 +55,7 @@
   
   DUNTeacher *user = [DUNSession sharedInstance].currentUser;
   
+  [self.profileImage setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/378800000655469739/d36afc2cabe3c1e2ccedf62dd217066e_bigger.png"]];
 
 }
 
