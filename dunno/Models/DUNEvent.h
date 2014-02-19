@@ -2,6 +2,7 @@
 #import "DUNTeacher.h"
 #import "DUNOrganization.h"
 #import "DUNTimeline.h"
+#import "DUNTopic.h"
 
 @protocol DUNEvent
 @end
@@ -12,8 +13,9 @@
 @property (nonatomic, copy) NSString *title;
 
 @property (nonatomic, strong) DUNTeacher *teacher;
-
 @property (nonatomic, strong) DUNTimeline *timeline;
+
+@property (nonatomic, strong) NSArray<DUNTopic> *topics;
 
 - (BOOL) isOpen;
 - (BOOL) isClosed;

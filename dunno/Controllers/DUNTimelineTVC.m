@@ -3,6 +3,7 @@
 #import "DUNTimelineMessageCell.h"
 #import "DUNTimelineEndPointCell.h"
 #import "DUNPollVC.h"
+#import "DUNTopic.h"
 
 #import "UIViewController+MJPopupViewController.h"
 
@@ -49,6 +50,18 @@
   if(indexPath.row==0)
   {
     DUNTimelineStartPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineStartPointCellId forIndexPath:indexPath];
+    
+    if(_event.topics.count == 0){
+      cell.messageText.text = @"Evento sem tópico específico - Tema livre";
+    } else {
+      __block NSString *topicsString = @"Tópicos do evento: \n\n";
+      [_event.topics enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        DUNTopic *topic =(DUNTopic*)_event.topics[idx];
+       topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
+      }];
+      cell.messageText.text = topicsString;
+    }
+    
     
     return cell;
   } else if(indexPath.row==[self countCells]) {
