@@ -51,7 +51,6 @@
 {
   self.eventsTableView.backgroundColor = [DUNStyles menuBackgroundColor];
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
-  //customize interface
   
   DUNTeacher *user = [DUNSession sharedInstance].currentUser;
   

@@ -15,7 +15,7 @@
   [JSONHTTPClient getJSONFromURLWithString:endpointURL completion:^(id json, JSONModelError *err) {
     
     if(successBlock && json != nil){
-      DUNOrganization *organization = [[DUNOrganization alloc] initWithDictionary:json[@"organization"] error:&err];
+      DUNOrganization *organization = [[DUNOrganization alloc] initWithDictionary:json error:&err];
       
       successBlock(organization);
     }
