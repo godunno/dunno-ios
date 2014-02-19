@@ -220,7 +220,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qO-UT-SzA">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qO-UT-SzA">
                                             <rect key="frame" x="60" y="8" width="249" height="132"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -251,6 +251,7 @@
                                 <connections>
                                     <outlet property="messageText" destination="1qO-UT-SzA" id="KFp-Ra-k2j"/>
                                     <outlet property="profilePicture" destination="6nD-CL-8WJ" id="RpU-Wk-zN9"/>
+                                    <outlet property="startHour" destination="AJ1-Qk-hjf" id="HYz-Qu-s3n"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TimelineMessageCellId" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimelineMessageCellId" rowHeight="150" id="my1-eC-Fgv" userLabel=" Interaction Cell" customClass="DUNTimelineMessageCell">
@@ -366,9 +367,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Tyo-bv-XhX">
-                        <barButtonItem key="rightBarButtonItem" title="poll" id="3lI-LR-v75">
+                        <barButtonItem key="rightBarButtonItem" title="message" id="3lI-LR-v75">
                             <connections>
-                                <action selector="showFakePoll:" destination="Vbb-Hf-VxI" id="JRZ-Jd-RMk"/>
+                                <action selector="sendNewMessage:" destination="Vbb-Hf-VxI" id="gZA-y4-bnu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

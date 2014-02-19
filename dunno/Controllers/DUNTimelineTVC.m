@@ -3,10 +3,11 @@
 #import "DUNTimelineMessageCell.h"
 #import "DUNTimelineEndPointCell.h"
 #import "DUNPollVC.h"
+#import "DUNNewMessageVC.h"
+
 #import "DUNTopic.h"
 
 #import "UIViewController+MJPopupViewController.h"
-
 #import "UIColor+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
@@ -16,7 +17,6 @@
 
 @implementation DUNTimelineTVC
 
-
 - (void)viewDidLoad
 {
   [super viewDidLoad];
@@ -25,6 +25,11 @@
   self.navigationController.navigationBar.topItem.title = @"";
 }
 
+- (IBAction)sendNewMessage:(id)sender {
+  DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
+  [newMessageVC setModalInPopover:TRUE];
+  [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideTopBottom];
+}
 
 - (IBAction)showFakePoll:(id)sender {
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
@@ -60,6 +65,8 @@
        topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
       }];
       cell.messageText.text = topicsString;
+      
+      cell.startHour.text = _event.timeline.startAt.description;
     }
     
     

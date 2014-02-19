@@ -2,25 +2,13 @@
 
 @implementation DUNTimeline
 
-- (id)init
-{
-  self = [super init];
-  if (self) {
-    _interactions = [NSMutableArray array];
-  }
-  return self;
-}
-
-- (void) addInteraction:(DUNTimelineInteraction*)interaction
-{
-  NSParameterAssert(interaction!=nil);
-  
-  [_interactions addObject:interaction];
-}
-
 +(JSONKeyMapper*)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId"}];
+  return [[JSONKeyMapper alloc] initWithDictionary:
+          @{@"id": @"entityId",
+            @"timeline_interactions":@"interactions"
+            }
+          ];
 }
 
 @end
