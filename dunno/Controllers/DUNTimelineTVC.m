@@ -13,6 +13,10 @@
 #import "UINavigationBar+FlatUI.h"
 
 @interface DUNTimelineTVC ()
+
+@property (nonatomic, strong) DUNEvent *event;
+@property (strong, nonatomic) DUNSession *session;
+
 @end
 
 @implementation DUNTimelineTVC
@@ -21,7 +25,9 @@
 {
   [super viewDidLoad];
   
-  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+  _session = [DUNSession sharedInstance];
+  _event = _session.currentEvent;
+  
   self.navigationController.navigationBar.topItem.title = @"";
 }
 

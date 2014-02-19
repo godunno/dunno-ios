@@ -1,3 +1,4 @@
+#import "JSONModel.h"
 
 typedef NS_ENUM(NSUInteger, DUNTimelineInteractionType) {
   DUNTimelineInteractionMessage,
@@ -6,8 +7,9 @@ typedef NS_ENUM(NSUInteger, DUNTimelineInteractionType) {
 };
 
 
-@interface DUNTimelineInteraction : NSObject
+@interface DUNTimelineInteraction : JSONModel
 
 - (DUNTimelineInteractionType) type;
 
 @end
+

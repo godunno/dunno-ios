@@ -22,7 +22,7 @@
   _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
   _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
   
-    _messageText.text = self.userMessage.message;
+    _messageText.text = self.userMessage.content;
 }
 
 - (IBAction)upVote:(id)sender {

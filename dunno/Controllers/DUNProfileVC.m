@@ -3,13 +3,12 @@
 #import "SWRevealViewController.h"
 #import "DUNEventCell.h"
 
-#import "DUNTeacher.h"
+#import "DUNStudent.h"
 
 #import "DUNAPI.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <HexColors/HexColor.h>
-#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface DUNProfileVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -17,11 +16,12 @@
 
 @property (weak, nonatomic) IBOutlet UIView *profileContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
-@property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *organizationNameLabel;
 
 @property (weak, nonatomic) IBOutlet UITableView *eventsTableView;
 
 @property (strong, nonatomic) DUNSession *session;
+
 
 @end
 
@@ -38,9 +38,29 @@
   
   [self configureSideMenu];
   
-  [self loadEvents];
-  
   [self setupEventsTable];
+  
+  [self loadInitialData];
+}
+
+- (void) loadInitialData
+{
+  //mock student data
+  _session.currentStudent = [DUNStudent new];
+  _session.currentStudent.entityId = @"666";
+  
+  // get student organization
+  [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
+    _session.currentOrganization = organization;
+    
+    _organizationNameLabel.text = organization.name;
+    
+    [_eventsTableView reloadData];
+    
+  } error:^(NSError *error) {
+    //TODO show generic 'modal'/'view' with error
+    NSLog(@"deu merda carregando a Organization atual");
+  }];
 }
 
 ////////////////////////////////////////////////////////////
@@ -52,10 +72,8 @@
   self.eventsTableView.backgroundColor = [DUNStyles menuBackgroundColor];
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
   
-  DUNTeacher *user = [DUNSession sharedInstance].currentUser;
-  
-  [self.profileImage setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/378800000655469739/d36afc2cabe3c1e2ccedf62dd217066e_bigger.png"]];
-  
+  DUNStudent *user = [DUNSession sharedInstance].currentStudent;
+  [self.profileImage setImageWithURL:[NSURL URLWithString:user.pictureURLString]];
 }
 
 - (void) configureSideMenu
@@ -66,25 +84,6 @@
   _revealSideMenuButton.target = self.revealViewController;
   _revealSideMenuButton.action = @selector(revealToggle:);
   [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-}
-
-- (void) loadEvents
-{
-  MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-  hud.mode = MBProgressHUDModeIndeterminate;
-  hud.labelText = @"Carregando eventos";
-  
-  [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
-    _session.currentOrganization = organization;
-    self.classNameLabel.text = organization.name;
-    
-    [_eventsTableView reloadData];
-    
-    [hud hide:YES];
-  } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    [hud hide:YES];
-  }];
 }
 
 - (void) setupEventsTable
@@ -141,8 +140,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  _session.currentEvent = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+  
   DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
-  tvc.event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+
   [self.navigationController pushViewController:tvc animated:YES];
 }
 

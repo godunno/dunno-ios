@@ -1,9 +1,15 @@
 #import "DUNNewMessageVC.h"
+
+#import "DUNTimelineUserMessage.h"
+#import "DUNAPI.h"
+
 #import "FUIButton.h"
 #import "UIColor+FlatUI.h"
 #import "UIFont+FlatUI.h"
 
 @interface DUNNewMessageVC ()
+
+@property (nonatomic, strong) DUNSession *session;
 
 @property (weak, nonatomic) IBOutlet UITextView *messageTextView;
 @property (weak, nonatomic) IBOutlet FUIButton *sendMessageButton;
@@ -12,14 +18,26 @@
 
 @implementation DUNNewMessageVC
 
+
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
+  _session = [DUNSession sharedInstance];
   
   [self customize];
 }
 
 - (IBAction)sendMessage:(id)sender {
+  
+  DUNTimelineUserMessage * message = [DUNTimelineUserMessage initWithContent:_messageTextView.text];
+  message.owner = [_session currentStudent];
+  
+  [DUNAPI sendTimelineMessage:message success:nil error:^(NSError *error) {
+      //TODO show generic 'modal'/'view' with error
+    NSLog(@"deu merda enviando mensagem");
+  }];
+  
 }
 
 - (void) customize

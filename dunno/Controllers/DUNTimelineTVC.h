@@ -4,6 +4,4 @@
 
 @interface DUNTimelineTVC : UITableViewController
 
-@property (nonatomic, strong) DUNEvent *event;
-
 @end

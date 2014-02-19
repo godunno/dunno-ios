@@ -1,18 +1,21 @@
 #import "DUNTimelineInteraction.h"
-#import "DUNTeacher.h"
+#import "DUNStudent.h"
 
 
 @interface DUNTimelineUserMessage : DUNTimelineInteraction
 
 @property (nonatomic, copy) NSString *entityId;
-@property (nonatomic, strong) DUNTeacher *owner;
-@property (nonatomic, copy) NSString *profilePicture;
-@property (nonatomic, copy) NSString *message;
+
+@property (nonatomic, strong) DUNStudent *owner;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, strong) NSDate<Optional> *sentAt;
 
 @property (nonatomic, assign) NSInteger upVoteCount;
 @property (nonatomic, assign) NSInteger downVoteCount;
 
 - (void) addOneUpVote;
 - (void) addOneDownVote;
+
++ (instancetype) initWithContent:(NSString*)content;
 
 @end
