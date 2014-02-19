@@ -173,9 +173,11 @@
                                         <connections>
                                             <outlet property="bottomMarginView" destination="DR2-J5-ZGh" id="TSR-RD-myg"/>
                                             <outlet property="cellIcon" destination="lFz-c8-8FB" id="Ui0-QI-ki7"/>
+                                            <outlet property="dateLabel" destination="Mvk-sG-CvE" id="554-gl-n6g"/>
                                             <outlet property="eventTitleLabel" destination="hNZ-1m-5qj" id="1aZ-de-yI2"/>
                                             <outlet property="profileImage" destination="em1-pg-P2w" id="xTr-2T-QA7"/>
                                             <outlet property="teacherNameLabel" destination="fnD-Bh-2DA" id="gSo-hS-co2"/>
+                                            <outlet property="timeLabel" destination="nGl-Pe-Tsy" id="KMQ-SV-RPJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -114,26 +114,12 @@
   
   DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
   
-  if([event isOpen])
-  {
-    cell.contentView.backgroundColor = [UIColor colorWithHexString:@"abcede"];
-    cell.cellIcon.image = [UIImage imageNamed:@"add_event_live"];
-  } else if([event isClosed])
-  {
-    cell.contentView.backgroundColor = [UIColor colorWithHexString:@"e0c7c4"];
-    cell.cellIcon.image = [UIImage imageNamed:@"closed_event"];
-    [cell.eventTitleLabel setAlpha:0.5];
-    [cell.teacherNameLabel setAlpha:0.5];
-    [cell.profileImage setAlpha:0.5];
-  } else
-  {
-    cell.cellIcon.image = [UIImage imageNamed:@"add_event"];
-  }
-  
+  cell.cellIcon.image = [UIImage imageNamed:@"add_event_live"];
   cell.eventTitleLabel.text = event.title;
   cell.teacherNameLabel.text = event.teacher.name;
-  
-  //cell.profileImage.image = event.teacher.pictureURLString;
+  cell.profileImage.image = [UIImage imageNamed:event.teacher.pictureURLString];
+  cell.dateLabel.text = @"13/08";
+  cell.timeLabel.text = @"24:00";
   
   return cell;
 }
@@ -143,7 +129,7 @@
   _session.currentEvent = [_session.currentOrganization.events objectAtIndex:indexPath.row];
   
   DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
-
+  
   [self.navigationController pushViewController:tvc animated:YES];
 }
 

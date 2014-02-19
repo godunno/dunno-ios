@@ -12,6 +12,8 @@
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *title;
 
+@property (nonatomic, strong) NSDate *startAt;
+
 @property (nonatomic, strong) DUNTeacher *teacher;
 @property (nonatomic, strong) DUNTimeline *timeline;
 

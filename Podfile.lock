@@ -3,6 +3,7 @@ PODS:
   - FlatUIKit (1.3)
   - GoogleAnalytics-iOS-SDK (3.0.2)
   - HexColors (2.2.1)
+  - ISO8601DateFormatter (0.7)
   - JSONModel (0.11.0)
   - libPusher (1.5):
     - libPusher/Core
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - FlatUIKit
   - GoogleAnalytics-iOS-SDK (~> 3.0)
   - HexColors
+  - ISO8601DateFormatter (~> 0.7)
   - JSONModel
   - libPusher (~> 1.4)
   - MBProgressHUD (~> 0.8)
@@ -39,6 +41,7 @@ SPEC CHECKSUMS:
   FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
   GoogleAnalytics-iOS-SDK: 86393b99f7328ae8d8e975fcaa8632a39dafafe8
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
+  ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
   JSONModel: a5f2eb85c46df008a67569447ec408d1040d4bf4
   libPusher: 295f281f1003aa678382a387e3043c298f270e4d
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622

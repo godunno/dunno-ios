@@ -19,6 +19,8 @@ pod 'JSONModel'
 
 pod 'FlatUIKit'
 
+pod 'ISO8601DateFormatter', '~> 0.7'
+
 target :dunnoTests, :exclusive => true do
   pod 'OCMock'
   pod 'OCHamcrest', '~> 3.0'

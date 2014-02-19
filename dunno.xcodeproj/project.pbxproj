@@ -27,6 +27,7 @@
 		C35C3D101899D0A9001A16D2 /* DUNSideMenuTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C3D0F1899D0A9001A16D2 /* DUNSideMenuTVC.m */; };
 		C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C3D121899E488001A16D2 /* DUNEventCell.m */; };
 		C36EBA9318B5446500AB7F7B /* DUNStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = C36EBA9218B5446500AB7F7B /* DUNStudent.m */; };
+		C36EBA9718B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = C36EBA9618B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m */; };
 		C371C62018A2B7DD00186EC0 /* DUNTimelineStartPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */; };
 		C371EA2518A2CBC7001C9450 /* DUNTimelineEndPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C371EA2418A2CBC7001C9450 /* DUNTimelineEndPointCell.m */; };
 		C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */; };
@@ -104,6 +105,8 @@
 		C36EBA9118B5446500AB7F7B /* DUNStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNStudent.h; sourceTree = "<group>"; };
 		C36EBA9218B5446500AB7F7B /* DUNStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNStudent.m; sourceTree = "<group>"; };
 		C36EBA9418B55EBB00AB7F7B /* DUNDismissModalVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNDismissModalVCDelegate.h; sourceTree = "<group>"; };
+		C36EBA9518B56B5F00AB7F7B /* JSONValueTransformer+NSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+NSDate.h"; sourceTree = "<group>"; };
+		C36EBA9618B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+NSDate.m"; sourceTree = "<group>"; };
 		C371C61E18A2B7DD00186EC0 /* DUNTimelineStartPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineStartPointCell.h; sourceTree = "<group>"; };
 		C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineStartPointCell.m; sourceTree = "<group>"; };
 		C371EA2318A2CBC7001C9450 /* DUNTimelineEndPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineEndPointCell.h; sourceTree = "<group>"; };
@@ -298,6 +301,8 @@
 			children = (
 				C3068AA518A15FD400A8C279 /* NSDate-Utilities.h */,
 				C3068AA618A15FD400A8C279 /* NSDate-Utilities.m */,
+				C36EBA9518B56B5F00AB7F7B /* JSONValueTransformer+NSDate.h */,
+				C36EBA9618B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -314,14 +319,14 @@
 		C3850B03188F9AD3008E46FE /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				C35C3D111899E488001A16D2 /* DUNEventCell.h */,
+				C35C3D121899E488001A16D2 /* DUNEventCell.m */,
 				C371C61E18A2B7DD00186EC0 /* DUNTimelineStartPointCell.h */,
 				C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */,
 				C371EA2318A2CBC7001C9450 /* DUNTimelineEndPointCell.h */,
 				C371EA2418A2CBC7001C9450 /* DUNTimelineEndPointCell.m */,
 				C3850B04188F9ADF008E46FE /* DUNTimelineMessageCell.h */,
 				C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */,
-				C35C3D111899E488001A16D2 /* DUNEventCell.h */,
-				C35C3D121899E488001A16D2 /* DUNEventCell.m */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				C3006F6718859432007B0790 /* main.m in Sources */,
 				C36EBA9318B5446500AB7F7B /* DUNStudent.m in Sources */,
 				C35C3D101899D0A9001A16D2 /* DUNSideMenuTVC.m in Sources */,
+				C36EBA9718B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m in Sources */,
 				C3850B09188F9CAD008E46FE /* DUNTimelineTVC.m in Sources */,
 				C3D56DB5189D7499009DAFAC /* DUNTimeline.m in Sources */,
 				C34B67AB1893188600407497 /* DUNAPI.m in Sources */,

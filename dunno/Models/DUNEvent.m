@@ -1,3 +1,4 @@
+#import "JSONValueTransformer+NSDate.h"
 #import "DUNEvent.h"
 
 @implementation DUNEvent
@@ -13,5 +14,10 @@
   return false;
 }
 
+
++(JSONKeyMapper*)keyMapper
+{
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"start_at": @"startAt"}];
+}
 
 @end
