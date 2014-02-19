@@ -12,7 +12,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
 
-@interface DUNTimelineTVC ()
+@interface DUNTimelineTVC () <DUNDismissModalVCDelegate>
 
 @property (nonatomic, strong) DUNEvent *event;
 @property (strong, nonatomic) DUNSession *session;
@@ -34,12 +34,14 @@
 - (IBAction)sendNewMessage:(id)sender {
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
+  newMessageVC.ownerViewController = self;
   [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
 - (IBAction)showFakePoll:(id)sender {
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
   [pollVC setModalInPopover:TRUE];
+  pollVC.ownerViewController = self;
   [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
@@ -68,7 +70,7 @@
       __block NSString *topicsString = @"Tópicos do evento: \n\n";
       [_event.topics enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         DUNTopic *topic =(DUNTopic*)_event.topics[idx];
-       topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
+        topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
       }];
       cell.messageText.text = topicsString;
       
@@ -91,6 +93,14 @@
 heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   return 150;
+}
+
+// ------------------------------
+#pragma mark DUNDismissModalVCDelegate
+// ------------------------------
+- (void)dismiss
+{
+  [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
 // ------------------------------

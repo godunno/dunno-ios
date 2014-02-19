@@ -34,10 +34,11 @@
   message.owner = [_session currentStudent];
   
   [DUNAPI sendTimelineMessage:message success:nil error:^(NSError *error) {
-      //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda enviando mensagem");
+    //TODO show generic 'modal'/'view' with error
+    NSLog(@"deu merda enviando mensagem na timeline");
   }];
   
+  [_ownerViewController dismiss];
 }
 
 - (void) customize
