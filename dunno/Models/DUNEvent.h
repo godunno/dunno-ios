@@ -1,6 +1,5 @@
 #import "JSONModel.h"
 #import "DUNTeacher.h"
-#import "DUNOrganization.h"
 #import "DUNTimeline.h"
 #import "DUNTopic.h"
 

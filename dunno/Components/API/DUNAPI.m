@@ -7,6 +7,33 @@
 
 @implementation DUNAPI
 
++ (void) loginStudentUsername:(NSString*)username withPassword:(NSString*)password success:(void(^)(DUNStudent *student))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  NSParameterAssert(username!=nil);
+  NSParameterAssert(password!=nil);
+  
+  NSMutableDictionary * params = [self mandatoryParams:false];
+  
+  [params setObject:username forKey:@"username"];
+  [params setObject:password forKey:@"password"];
+  
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/login.json"];
+  
+  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
+    
+    if(successBlock && json != nil){
+      DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&err];
+      
+      successBlock(student);
+    }
+    else {
+      errorCallback(err);
+    }
+    
+  }];
+  
+}
+
 + (void) organizationActiveSuccess:(void(^)(DUNOrganization *organization))successBlock error:(void(^)(NSError *error))errorCallback
 {
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"organizations"];
@@ -56,15 +83,24 @@
 ////////////////////////////////////
 #pragma mark Private Methods
 ////////////////////////////////////
-
 + (NSMutableDictionary*)mandatoryParams
 {
-  NSParameterAssert([DUNSession sharedInstance].currentStudent!=nil);
-  NSParameterAssert([DUNSession sharedInstance].currentStudent.entityId!=nil);
+  return [DUNAPI mandatoryParams:true];
+}
+
++ (NSMutableDictionary*)mandatoryParams:(BOOL)validatesStudent
+{
+  if(validatesStudent)
+  {
+    NSParameterAssert([DUNSession sharedInstance].currentStudent!=nil);
+    NSParameterAssert([DUNSession sharedInstance].currentStudent.entityId!=nil);
+    
+    NSString *userId = [DUNSession sharedInstance].currentStudent.entityId;
+    
+    return [[NSMutableDictionary alloc] initWithDictionary:@{@"app_token" : kAppToken, @"student_id" : userId}];
+  }
   
-  NSString *userId = [DUNSession sharedInstance].currentStudent.entityId;
-  
-  return [[NSMutableDictionary alloc] initWithDictionary:@{@"app_token" : kAppToken, @"student_id" : userId}];
+  return [[NSMutableDictionary alloc] initWithDictionary:@{@"app_token" : kAppToken}];
 }
 
 + (NSString*)appendToURLString:(NSString*)urlString dictionaryParams:(NSDictionary*)params

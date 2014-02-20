@@ -45,15 +45,12 @@
 
 - (void) loadInitialData
 {
-  //mock student data
-  _session.currentStudent = [DUNStudent new];
-  _session.currentStudent.entityId = @"666";
-  
-  // get student organization
-  [DUNAPI organizationActiveSuccess:^(DUNOrganization *organization) {
-    _session.currentOrganization = organization;
+
+  [DUNAPI loginStudentUsername:@"gildo" withPassword:@"666" success:^(DUNStudent *student) {
     
-    _organizationNameLabel.text = organization.name;
+    _session.currentOrganization = student.organization;
+    
+    _organizationNameLabel.text = student.organization.name;
     
     [_eventsTableView reloadData];
     
@@ -61,6 +58,8 @@
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda carregando a Organization atual");
   }];
+  
+
 }
 
 ////////////////////////////////////////////////////////////
@@ -73,7 +72,7 @@
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
   
   DUNStudent *user = [DUNSession sharedInstance].currentStudent;
-  [self.profileImage setImageWithURL:[NSURL URLWithString:user.pictureURLString]];
+  [self.profileImage setImageWithURL:[NSURL URLWithString:user.avatarURLString]];
 }
 
 - (void) configureSideMenu
@@ -117,7 +116,7 @@
   cell.cellIcon.image = [UIImage imageNamed:@"add_event_live"];
   cell.eventTitleLabel.text = event.title;
   cell.teacherNameLabel.text = event.teacher.name;
-  cell.profileImage.image = [UIImage imageNamed:event.teacher.pictureURLString];
+  cell.profileImage.image = [UIImage imageNamed:event.teacher.avatarURLString];
   cell.dateLabel.text = @"13/08";
   cell.timeLabel.text = @"24:00";
   
