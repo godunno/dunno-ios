@@ -45,11 +45,10 @@
 
 - (void) loadInitialData
 {
-
-  [DUNAPI loginStudentUsername:@"gildo" withPassword:@"666" success:^(DUNStudent *student) {
-    
+  
+  [DUNAPI loginStudentUsername:@"dow@dunno.vc" withPassword:@"#dunnovc" success:^(DUNStudent *student) {
+    _session.currentStudent = student;
     _session.currentOrganization = student.organization;
-    
     _organizationNameLabel.text = student.organization.name;
     
     [_eventsTableView reloadData];
@@ -59,7 +58,7 @@
     NSLog(@"deu merda carregando a Organization atual");
   }];
   
-
+  
 }
 
 ////////////////////////////////////////////////////////////

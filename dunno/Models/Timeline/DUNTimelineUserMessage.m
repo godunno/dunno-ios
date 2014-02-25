@@ -13,12 +13,12 @@
 
 - (void) addOneUpVote
 {
-  self.upVoteCount += 1;
+  self.upVotes += 1;
 }
 
 - (void) addOneDownVote
 {
-  self.downVoteCount += 1;
+  self.downVotes += 1;
 }
 
 +(JSONKeyMapper*)keyMapper

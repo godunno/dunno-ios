@@ -1,6 +1,6 @@
-#import "DUNTimelineInteraction.h"
+#import "JSONModel.h"
 
-@interface DUNTimelinePoll : DUNTimelineInteraction
+@interface DUNTimelinePoll : JSONModel
 
 @property (nonatomic, copy) NSString *question;
 

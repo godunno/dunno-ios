@@ -30,10 +30,11 @@
 
 - (IBAction)sendMessage:(id)sender {
   
-  DUNTimelineUserMessage * message = [DUNTimelineUserMessage initWithContent:_messageTextView.text];
-  message.owner = [_session currentStudent];
-  
-  [DUNAPI sendTimelineMessage:message success:nil error:^(NSError *error) {
+  [DUNAPI sendTimelineMessage:_messageTextView.text success:^(DUNTimelineUserMessage *messageCreated) {
+    
+    [_session.currentEvent.timeline.interactions addObject:messageCreated];
+    
+  }error:^(NSError *error) {
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda enviando mensagem na timeline");
   }];

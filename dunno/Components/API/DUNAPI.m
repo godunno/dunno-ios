@@ -14,10 +14,10 @@
   
   NSMutableDictionary * params = [self mandatoryParams:false];
   
-  [params setObject:username forKey:@"username"];
-  [params setObject:password forKey:@"password"];
+  [params setObject:username forKey:@"student[email]"];
+  [params setObject:password forKey:@"student[password]"];
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/login.json"];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/sign_in.json"];
   
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
     
@@ -54,31 +54,36 @@
   
 }
 
-
-+ (void) sendTimelineMessage:(DUNTimelineUserMessage*)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorCallback
 {
   NSString *timelineId = [DUNSession sharedInstance].currentEvent.timeline.entityId;
+  NSString *studentId = [DUNSession sharedInstance].currentStudent.entityId;
   
   NSParameterAssert(timelineId!=nil);
-  NSParameterAssert(message.content!=nil);
+  NSParameterAssert(studentId!=nil);
+  NSParameterAssert(content!=nil);
   
   NSMutableDictionary * params = [self mandatoryParams];
-  
-  [params setObject:timelineId forKey:@"timeline_id"];
-  [params setObject:message.content forKey:@"content"];
+
+  [params setObject:studentId forKey:@"timeline_user_message[student_id]"];
+  [params setObject:timelineId forKey:@"timeline_user_message[timeline_id]"];
+  [params setObject:content forKey:@"timeline_user_message[content]"];
   
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"timeline/messages"];
   
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
-    if(successBlock && json != nil){
-      successBlock();
-    } else {
+    if(successBlock){
+      
+      DUNTimelineUserMessage *messageCreated = [[DUNTimelineUserMessage alloc] initWithDictionary:json error:&err];
+      
+      successBlock(messageCreated);
+      
+    } else if(err) {
       errorCallback(err);
     }
   }];
   
 }
-
 
 ////////////////////////////////////
 #pragma mark Private Methods
@@ -90,17 +95,23 @@
 
 + (NSMutableDictionary*)mandatoryParams:(BOOL)validatesStudent
 {
+  NSMutableDictionary *mandatoryParams = [[NSMutableDictionary alloc] init];
+  DUNSession *_session = [DUNSession sharedInstance];
+  
   if(validatesStudent)
   {
-    NSParameterAssert([DUNSession sharedInstance].currentStudent!=nil);
-    NSParameterAssert([DUNSession sharedInstance].currentStudent.entityId!=nil);
+    NSParameterAssert(_session.currentStudent!=nil);
+    NSParameterAssert(_session.currentStudent.email!=nil);
+    NSParameterAssert(_session.currentStudent.authToken!=nil);
     
-    NSString *userId = [DUNSession sharedInstance].currentStudent.entityId;
-    
-    return [[NSMutableDictionary alloc] initWithDictionary:@{@"app_token" : kAppToken, @"student_id" : userId}];
+    [mandatoryParams setObject:_session.currentStudent.email forKey:@"student_email"];
+    [mandatoryParams setObject:_session.currentStudent.authToken forKey:@"student_token"];
   }
   
-  return [[NSMutableDictionary alloc] initWithDictionary:@{@"app_token" : kAppToken}];
+  // TODO security approach still not defined
+  //[mandatoryParams setObject:kAppToken forKey:@"app_token"];
+  
+  return mandatoryParams;
 }
 
 + (NSString*)appendToURLString:(NSString*)urlString dictionaryParams:(NSDictionary*)params

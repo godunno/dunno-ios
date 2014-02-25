@@ -1,6 +1,5 @@
 #import <JSONModel/JSONModel.h>
-
-#import "DUNTimelineInteraction.h"
+#import "DUNTimelineUserMessage.h"
 
 @interface DUNTimeline : JSONModel
 
@@ -8,6 +7,6 @@
 
 @property (nonatomic, strong) NSDate<Optional> *startAt;
 
-@property (nonatomic, strong) NSMutableArray<Optional> *interactions;
+@property (nonatomic, strong) NSMutableArray<DUNTimelineUserMessage, Optional> *interactions;
 
 @end

@@ -7,7 +7,8 @@
 {
   return [[JSONKeyMapper alloc] initWithDictionary:
           @{@"id": @"entityId",
-            @"avatar" : @"avatarURLString"
+            @"avatar" : @"avatarURLString",
+            @"authentication_token" : @"authToken",
             }
           ];
 }

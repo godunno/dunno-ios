@@ -19,20 +19,20 @@
 {
   _userMessage = userMessage;
   
-  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVotes] intValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVotes] intValue]];
   
     _messageText.text = self.userMessage.content;
 }
 
 - (IBAction)upVote:(id)sender {
   [self.userMessage addOneUpVote];
-  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVoteCount] intValue]];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVotes] intValue]];
 }
 
 - (IBAction)downVote:(id)sender {
   [self.userMessage addOneDownVote];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVoteCount] intValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVotes] intValue]];
 }
 
 @end

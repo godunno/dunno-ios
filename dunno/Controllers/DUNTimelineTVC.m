@@ -73,19 +73,19 @@
         topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
       }];
       cell.messageText.text = topicsString;
-      
       cell.startHour.text = _event.timeline.startAt.description;
     }
     
-    
     return cell;
+    
   } else if(indexPath.row==[self countCells]) {
     DUNTimelineEndPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineEndPointCellId forIndexPath:indexPath];
-    
     return cell;
   }
   
   DUNTimelineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineMessageCellId forIndexPath:indexPath];
+  DUNTimelineUserMessage *message = [_event.timeline.interactions objectAtIndex:indexPath.row];
+  [cell setUserMessage:message];
   return cell;
 }
 
@@ -100,6 +100,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 // ------------------------------
 - (void)dismiss
 {
+  [self.tableView reloadData];
   [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
