@@ -21,14 +21,9 @@
 }
 
 - (IBAction)yesTapped:(id)sender {
-  
-  //send to server
-  [_ownerViewController dismiss];
 }
 
 - (IBAction)noTapped:(id)sender {
-    //send to server
-  [_ownerViewController dismiss];
 }
 
 

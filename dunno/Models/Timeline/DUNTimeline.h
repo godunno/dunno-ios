@@ -7,6 +7,6 @@
 
 @property (nonatomic, strong) NSDate<Optional> *startAt;
 
-@property (nonatomic, strong) NSMutableArray<DUNTimelineUserMessage, Optional> *interactions;
+@property (nonatomic, strong) NSMutableArray<DUNTimelineUserMessage, Optional> *messages;
 
 @end

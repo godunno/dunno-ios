@@ -75,7 +75,9 @@
     if(successBlock){
       
       DUNTimelineUserMessage *messageCreated = [[DUNTimelineUserMessage alloc] initWithDictionary:json error:&err];
-      
+      messageCreated.owner = [DUNSession sharedInstance].currentStudent;
+      messageCreated.downVotes = 0;
+      messageCreated.upVotes = 0;
       successBlock(messageCreated);
       
     } else if(err) {

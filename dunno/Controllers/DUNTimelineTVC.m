@@ -12,7 +12,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
 
-@interface DUNTimelineTVC () <DUNDismissModalVCDelegate>
+@interface DUNTimelineTVC () <DUNNewMessageDelegate>
 
 @property (nonatomic, strong) DUNEvent *event;
 @property (strong, nonatomic) DUNSession *session;
@@ -34,14 +34,14 @@
 - (IBAction)sendNewMessage:(id)sender {
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
-  newMessageVC.ownerViewController = self;
+  newMessageVC.delegate = self;
   [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
 - (IBAction)showFakePoll:(id)sender {
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
   [pollVC setModalInPopover:TRUE];
-  pollVC.ownerViewController = self;
+//  pollVC.delegate = self;
   [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
@@ -52,10 +52,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  NSParameterAssert(_event!=nil);
-  NSParameterAssert(_event.timeline!=nil);
+  if(!_event.timeline || !_event.timeline.messages)
+  {
+    return 0;
+  }
   
-  return [self countCells];;
+  return [self countCells];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,7 +66,7 @@
   {
     DUNTimelineStartPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineStartPointCellId forIndexPath:indexPath];
     
-    if(_event.topics.count == 0){
+    if(_event.topics.count == 0){ // start point
       cell.messageText.text = @"Evento sem tópico específico - Tema livre";
     } else {
       __block NSString *topicsString = @"Tópicos do evento: \n\n";
@@ -78,29 +80,31 @@
     
     return cell;
     
-  } else if(indexPath.row==[self countCells]) {
+  } else if(indexPath.row==[self countCells]) { // end point
     DUNTimelineEndPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineEndPointCellId forIndexPath:indexPath];
     return cell;
   }
   
   DUNTimelineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineMessageCellId forIndexPath:indexPath];
-  DUNTimelineUserMessage *message = [_event.timeline.interactions objectAtIndex:indexPath.row];
-  [cell setUserMessage:message];
+  [cell setUserMessage:[self messageAtIndex:indexPath.row]];
+  
   return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   return 150;
 }
 
 // ------------------------------
-#pragma mark DUNDismissModalVCDelegate
+#pragma mark DUNNewMessageDelegate
 // ------------------------------
-- (void)dismiss
+- (void)messageSent:(DUNTimelineUserMessage *)message
 {
+  [_session.currentEvent.timeline.messages addObject:message];
+  
   [self.tableView reloadData];
+  
   [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
@@ -109,7 +113,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 // ------------------------------
 - (NSInteger) countCells
 {
-  return _event.timeline.interactions.count + 1;
+  return _event.timeline.messages.count + 1;
+}
+- (DUNTimelineUserMessage*) messageAtIndex:(NSInteger)index
+{
+  return [_event.timeline.messages objectAtIndex:index-1];
 }
 
 @end

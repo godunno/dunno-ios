@@ -2,11 +2,12 @@
 
 @implementation DUNTimeline
 
+
 +(JSONKeyMapper*)keyMapper
 {
   return [[JSONKeyMapper alloc] initWithDictionary:
-          @{@"id": @"entityId",
-            @"timeline_interactions":@"interactions"
+          @{
+            @"id": @"entityId",
             }
           ];
 }

@@ -338,7 +338,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeline-end" translatesAutoresizingMaskIntoConstraints="NO" id="veS-qj-fZZ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="veS-qj-fZZ">
                                             <rect key="frame" x="6" y="-53" width="32" height="141"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -406,7 +406,6 @@
         <image name="date" width="512" height="512"/>
         <image name="down-vote" width="45" height="45"/>
         <image name="fag-timeline" width="100" height="102"/>
-        <image name="timeline-end" width="25" height="90"/>
         <image name="timeline-interaction" width="35" height="150"/>
         <image name="timeline-pedro" width="37" height="40"/>
         <image name="timeline-start" width="35" height="150"/>

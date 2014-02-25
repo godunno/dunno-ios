@@ -32,14 +32,12 @@
   
   [DUNAPI sendTimelineMessage:_messageTextView.text success:^(DUNTimelineUserMessage *messageCreated) {
     
-    [_session.currentEvent.timeline.interactions addObject:messageCreated];
+    [_delegate messageSent:messageCreated];
     
-  }error:^(NSError *error) {
+  } error:^(NSError *error) {
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda enviando mensagem na timeline");
   }];
-  
-  [_ownerViewController dismiss];
 }
 
 - (void) customize

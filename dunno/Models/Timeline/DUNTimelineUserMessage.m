@@ -13,12 +13,12 @@
 
 - (void) addOneUpVote
 {
-  self.upVotes += 1;
+  self.upVotes = [NSNumber numberWithInt:[self.upVotes intValue] + 1];
 }
 
 - (void) addOneDownVote
 {
-  self.downVotes += 1;
+  self.downVotes = [NSNumber numberWithInt:[self.downVotes intValue] + 1];
 }
 
 +(JSONKeyMapper*)keyMapper

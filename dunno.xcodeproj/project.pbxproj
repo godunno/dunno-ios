@@ -104,7 +104,6 @@
 		C35C3D121899E488001A16D2 /* DUNEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventCell.m; sourceTree = "<group>"; };
 		C36EBA9118B5446500AB7F7B /* DUNStudent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNStudent.h; sourceTree = "<group>"; };
 		C36EBA9218B5446500AB7F7B /* DUNStudent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNStudent.m; sourceTree = "<group>"; };
-		C36EBA9418B55EBB00AB7F7B /* DUNDismissModalVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNDismissModalVCDelegate.h; sourceTree = "<group>"; };
 		C36EBA9518B56B5F00AB7F7B /* JSONValueTransformer+NSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONValueTransformer+NSDate.h"; sourceTree = "<group>"; };
 		C36EBA9618B56B5F00AB7F7B /* JSONValueTransformer+NSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONValueTransformer+NSDate.m"; sourceTree = "<group>"; };
 		C371C61E18A2B7DD00186EC0 /* DUNTimelineStartPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineStartPointCell.h; sourceTree = "<group>"; };
@@ -371,7 +370,6 @@
 				C3AF446A18B53F1C00D51575 /* DUNNewMessageVC.h */,
 				C3AF446B18B53F1C00D51575 /* DUNNewMessageVC.m */,
 				C3AF446C18B53F1C00D51575 /* DUNNewMessageVC.xib */,
-				C36EBA9418B55EBB00AB7F7B /* DUNDismissModalVCDelegate.h */,
 			);
 			path = Modals;
 			sourceTree = "<group>";

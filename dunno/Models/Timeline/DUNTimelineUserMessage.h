@@ -7,12 +7,12 @@
 @interface DUNTimelineUserMessage : JSONModel
 
 @property (nonatomic, copy) NSString *entityId;
-@property (nonatomic, strong) DUNStudent *owner;
+@property (nonatomic, strong) DUNStudent<Optional> *owner;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, strong) NSDate<Optional> *sentAt;
 
-@property (nonatomic, assign) NSInteger upVotes;
-@property (nonatomic, assign) NSInteger downVotes;
+@property (nonatomic, assign) NSNumber<Optional> *upVotes;
+@property (nonatomic, assign) NSNumber<Optional> *downVotes;
 
 - (void) addOneUpVote;
 - (void) addOneDownVote;
