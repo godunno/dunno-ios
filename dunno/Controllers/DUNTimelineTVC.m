@@ -86,6 +86,7 @@
   }
   
   DUNTimelineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineMessageCellId forIndexPath:indexPath];
+
   [cell setUserMessage:[self messageAtIndex:indexPath.row]];
   
   return cell;

@@ -5,6 +5,6 @@
 
 @interface DUNTimelineMessageCell : UITableViewCell
 
-@property (nonatomic, strong) DUNTimelineUserMessage *userMessage;
+@property (nonatomic, weak) DUNTimelineUserMessage *userMessage;
 
 @end

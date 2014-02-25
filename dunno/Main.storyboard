@@ -326,6 +326,7 @@
                                     <outlet property="downVoteLabel" destination="v6x-MR-2UK" id="98c-ZP-dHQ"/>
                                     <outlet property="messageText" destination="LPe-lf-KMs" id="RUN-pH-GYP"/>
                                     <outlet property="profilePicture" destination="oG4-rD-xg4" id="qNE-qn-WsE"/>
+                                    <outlet property="sentAt" destination="FnR-Em-qUf" id="E61-xe-ayu"/>
                                     <outlet property="timelineCellBackground" destination="Rnr-GV-FMp" id="o1a-x5-7Nu"/>
                                     <outlet property="upVoteButton" destination="ROa-nk-PME" id="pSZ-tW-A8t"/>
                                     <outlet property="upVoteLabel" destination="HyL-Pr-Ay2" id="JdC-WX-brw"/>
