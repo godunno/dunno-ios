@@ -1,9 +1,13 @@
 #import <JSONModel/JSONHTTPClient.h>
 #import "DUNAPI.h"
 
-#define kBaseURL @"http://localhost:3000/api/v1/"
+// loopback not works on device :p
+//#define kBaseURL @"http://localhost:3000/api/v1/"
 
-#define kAppToken @"f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+
+#define kBaseURL @"http://192.168.0.188:3000/api/v1/"
+
+//#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
 
 @implementation DUNAPI
 
@@ -109,9 +113,6 @@
     [mandatoryParams setObject:_session.currentStudent.email forKey:@"student_email"];
     [mandatoryParams setObject:_session.currentStudent.authToken forKey:@"student_token"];
   }
-  
-  // TODO security approach still not defined
-  //[mandatoryParams setObject:kAppToken forKey:@"app_token"];
   
   return mandatoryParams;
 }

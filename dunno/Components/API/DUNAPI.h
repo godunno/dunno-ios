@@ -1,5 +1,6 @@
 #import "DUNStudent.h"
 #import "DUNOrganization.h"
+#import "DUNTimeline.h"
 #import "DUNTimelineUserMessage.h"
 
 @interface DUNAPI : NSObject
@@ -9,4 +10,5 @@
 + (void) organizationActiveSuccess:(void(^)(DUNOrganization *organization))successBlock error:(void(^)(NSError *error))errorCallback;
 
 + (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorCallback;
+
 @end
