@@ -5,7 +5,7 @@
 //#define kBaseURL @"http://localhost:3000/api/v1/"
 
 
-#define kBaseURL @"http://192.168.0.188:3000/api/v1/"
+#define kBaseURL @"http://192.168.0.3:3000/api/v1/"
 
 //#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
 
@@ -33,7 +33,6 @@
     else {
       errorCallback(err);
     }
-    
   }];
   
 }
@@ -53,7 +52,6 @@
     else {
       errorCallback(err);
     }
-    
   }];
   
 }
@@ -87,6 +85,30 @@
     } else if(err) {
       errorCallback(err);
     }
+  }];
+  
+}
+
++ (void) attendEventWithUUID:(NSString*)eventUUID onOrganizationWithUUID:(NSString*)organizationUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  NSParameterAssert(eventUUID!=nil);
+  NSParameterAssert(organizationUUID!=nil);
+  
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/organizations/%@/events/%@/attend.json",kBaseURL,organizationUUID,eventUUID];
+  
+  endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
+  
+  [JSONHTTPClient getJSONFromURLWithString:endpointURL completion:^(id json, JSONModelError *err) {
+    
+    if(successBlock && json != nil){
+      DUNEvent *event = [[DUNEvent alloc] initWithDictionary:json error:&err];
+      
+      successBlock(event);
+    }
+    else {
+      errorCallback(err);
+    }
+    
   }];
   
 }

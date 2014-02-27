@@ -11,4 +11,6 @@
 
 + (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorCallback;
 
++ (void) attendEventWithUUID:(NSString*)eventUUID onOrganizationWithUUID:(NSString*)organizationUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback;
+
 @end

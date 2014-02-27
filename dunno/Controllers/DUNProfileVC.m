@@ -124,11 +124,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  _session.currentEvent = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+  DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
   
-  DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
+  [DUNAPI attendEventWithUUID:event.uuid onOrganizationWithUUID:_session.currentOrganization.uuid success:^(DUNEvent *event) {
+    
+    _session.currentEvent = event;
+    
+    DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
+    [self.navigationController pushViewController:tvc animated:YES];
+    
+  } error:^(NSError *error) {
+    //TODO show generic 'modal'/'view' with error
+    NSLog(@"deu merda attend um Event");
+  }];
   
-  [self.navigationController pushViewController:tvc animated:YES];
+  
 }
 
 @end

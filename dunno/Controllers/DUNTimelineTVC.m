@@ -7,6 +7,8 @@
 
 #import "DUNTopic.h"
 
+#import "DUNPusher.h"
+
 #import "UIViewController+MJPopupViewController.h"
 #import "UIColor+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
@@ -28,7 +30,38 @@
   _session = [DUNSession sharedInstance];
   _event = _session.currentEvent;
   
+  [self registerPusherEvents];
+  
   self.navigationController.navigationBar.topItem.title = @"";
+}
+
+
+- (void) registerPusherEvents
+{
+  NSParameterAssert(_event!=nil);
+  NSParameterAssert(_event.studentMessageEvent!=nil);
+  NSParameterAssert(_event.upDownVoteMessageEvent!=nil);
+  
+  DUNPusher *pusher = [DUNPusher sharedInstance].connect;
+  
+  [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.studentMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+    
+    DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
+    
+    if(newMessage.owner.entityId==_session.currentStudent.entityId){
+      return;
+    }else {
+      [_session.currentEvent.timeline.messages addObject:newMessage];
+      [self.tableView reloadData];
+    }
+    
+  }];
+  
+  [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.upDownVoteMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+    NSLog(@"up down vote received on timeline");
+  }];
+  
+  // TODO register another events: poll, rating..
 }
 
 - (IBAction)sendNewMessage:(id)sender {
@@ -41,7 +74,7 @@
 - (IBAction)showFakePoll:(id)sender {
   DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
   [pollVC setModalInPopover:TRUE];
-//  pollVC.delegate = self;
+  //  pollVC.delegate = self;
   [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
@@ -86,7 +119,7 @@
   }
   
   DUNTimelineMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineMessageCellId forIndexPath:indexPath];
-
+  
   [cell setUserMessage:[self messageAtIndex:indexPath.row]];
   
   return cell;

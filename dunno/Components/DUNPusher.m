@@ -45,18 +45,19 @@
     // channelEvent.data is a NSDictionary of the JSON object received.
     // convert back to json
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:channelEvent.data options:0 error:&error];
     
-    if (!jsonData) {
-      
+    if (!channelEvent.data) {
       NSLog(@"Pusher error on receive message: %@", error);
       handler(nil);
       
     } else {
-      NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-      NSLog(@"Pusher received message: %@",jsonString);
+       NSLog(@"Pusher received message (type: %@)",[channelEvent.data class],channelEvent.data);
+
+      if ([[channelEvent.data class] isKindOfClass:[NSDictionary class]]) {
+        
+      }
       
-      handler(jsonData);
+      handler(channelEvent.data);
     }
   }];
   
@@ -66,9 +67,10 @@
 #pragma mark - Public API
 /////////////////////////////////
 
-- (void) connect
+- (DUNPusher*) connect
 {
   [self.client connect];
+  return self;
 }
 
 

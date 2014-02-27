@@ -1,12 +1,12 @@
 #import <Pusher/Pusher.h>
 
-typedef void (^DUNPusherEventBlockHandler)(NSData *);
+typedef void (^DUNPusherEventBlockHandler)(NSDictionary *jsonDictionary);
 
 @interface DUNPusher : NSObject<PTPusherDelegate>
 
 + (DUNPusher*) sharedInstance;
 
-- (void) connect;
+- (DUNPusher*) connect;
 - (void) subscribeToChannelNamed:(NSString*)channelName withEventNamed:(NSString*)eventName handleWithBlock:(DUNPusherEventBlockHandler)handler;
 
 @end
