@@ -14,7 +14,7 @@
   
   _sentAt.text = [NSString stringWithFormat:@"%d:%d",[userMessage.sentAt hour],[userMessage.sentAt minute]];
   
-  //  [_profilePicture setImageWithURL:userMessage.student.profilePicture]];
+  [_profilePicture setImageWithURL:[NSURL URLWithString:userMessage.owner.avatarURLString]];
   
   _messageText.text = userMessage.content;
   

@@ -851,12 +851,12 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415658175.39597"
+                  timestampString = "415658471.710599"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "756">
+                  offsetFromSymbolStart = "694">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -865,12 +865,12 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415658175.39634"
+                  timestampString = "415658471.710787"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "862">
+                  offsetFromSymbolStart = "1404">
                </Location>
             </Locations>
          </BreakpointContent>
