@@ -5,8 +5,7 @@
 
 +(JSONKeyMapper*)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId"}];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId",@"avatar" : @"avatarURLString",}];
 }
-
 
 @end

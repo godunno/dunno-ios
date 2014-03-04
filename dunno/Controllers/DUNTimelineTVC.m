@@ -9,6 +9,7 @@
 
 #import "DUNPusher.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "UIViewController+MJPopupViewController.h"
 #import "UIColor+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
@@ -104,6 +105,8 @@
   if(indexPath.row==0)
   {
     DUNTimelineStartPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineStartPointCellId forIndexPath:indexPath];
+    
+    [cell.profilePicture setImageWithURL:[NSURL URLWithString:_event.teacher.avatarURLString]];
     
     if(_event.topics.count == 0){ // start point
       cell.messageText.text = @"Evento sem tópico específico - Tema livre";
