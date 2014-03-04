@@ -66,7 +66,7 @@
   NSParameterAssert(content!=nil);
   
   NSMutableDictionary * params = [self mandatoryParams];
-
+  
   [params setObject:studentId forKey:@"timeline_user_message[student_id]"];
   [params setObject:timelineId forKey:@"timeline_user_message[timeline_id]"];
   [params setObject:content forKey:@"timeline_user_message[content]"];
@@ -113,6 +113,56 @@
   
 }
 
++ (void) upVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  DUNSession *_session = [DUNSession sharedInstance];
+  
+  NSParameterAssert(_session.currentStudent!=nil);
+  NSParameterAssert(_session.currentStudent.entityId!=nil);
+  NSParameterAssert(message!=nil);
+  NSParameterAssert(message.entityId!=nil);
+  
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/up",kBaseURL,message.entityId];
+  
+  NSMutableDictionary * params = [self mandatoryParams];
+  [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
+  
+  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error){
+    
+    if(successBlock && error==nil){
+      successBlock();
+    } else if(error) {
+      errorCallback(error);
+    }
+    
+  }];
+}
+
++ (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  DUNSession *_session = [DUNSession sharedInstance];
+  
+  NSParameterAssert(_session.currentStudent!=nil);
+  NSParameterAssert(_session.currentStudent.entityId!=nil);
+  NSParameterAssert(message!=nil);
+  NSParameterAssert(message.entityId!=nil);
+  
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/down",kBaseURL,message.entityId];
+  
+  NSMutableDictionary * params = [self mandatoryParams];
+  [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
+  
+  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+    
+    if(successBlock && error==nil){
+      successBlock();
+    } else if(error) {
+      errorCallback(error);
+    }
+  }];
+}
+
+
 ////////////////////////////////////
 #pragma mark Private Methods
 ////////////////////////////////////
@@ -152,7 +202,5 @@
   urlString = [urlString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
   return urlString;
 }
-
-
 
 @end

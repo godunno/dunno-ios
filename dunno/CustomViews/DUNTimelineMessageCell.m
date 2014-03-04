@@ -1,5 +1,8 @@
 #import "DUNTimelineMessageCell.h"
 #import "NSDate-Utilities.h"
+
+#import "DUNAPI.h"
+
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DUNTimelineMessageCell()
@@ -30,19 +33,34 @@
   
   _messageText.text = self.userMessage.content;
   
-  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVotes] intValue]];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVotes] intValue]];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.upVotes integerValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.downVotes integerValue]];
   
 }
 
 - (IBAction)upVote:(id)sender {
-  [self.userMessage addOneUpVote];
-  _upVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.upVotes] intValue]];
+  
+  [DUNAPI upVoteTimelineMessage:_userMessage success:^{
+
+    [self.userMessage addOneUpVote];
+    _upVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.upVotes integerValue]];
+    
+  } error:^(NSError *error) {
+    NSLog(@"deu merda upVote message..");
+  }];
+  
 }
 
 - (IBAction)downVote:(id)sender {
-  [self.userMessage addOneDownVote];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%i",[[NSNumber numberWithInteger:(NSInteger)self.userMessage.downVotes] intValue]];
+
+  [DUNAPI downVoteTimelineMessage:_userMessage success:^{
+    
+    [self.userMessage addOneDownVote];
+    _downVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.downVotes integerValue]];
+    
+  } error:^(NSError *error) {
+    NSLog(@"deu merda downVote message..");
+  }];
 }
 
 @end

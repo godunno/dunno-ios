@@ -13,4 +13,7 @@
 
 + (void) attendEventWithUUID:(NSString*)eventUUID onOrganizationWithUUID:(NSString*)organizationUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback;
 
++ (void) upVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
+
++ (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 @end
