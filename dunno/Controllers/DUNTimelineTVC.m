@@ -48,17 +48,23 @@
     
     DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
     
+    [_session.currentEvent.timeline.messages addObject:newMessage];
     if([newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
       return;
     }else {
-      [_session.currentEvent.timeline.messages addObject:newMessage];
       [self.tableView reloadData];
     }
     
   }];
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.upDownVoteMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
-    NSLog(@"up down vote received on timeline");
+    
+    DUNTimelineUserMessage *messageVoted = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
+    
+    [_session.currentEvent.timeline updateMessage:messageVoted];
+    
+    [self.tableView reloadData];
+    
   }];
   
   // TODO register another events: poll, rating..

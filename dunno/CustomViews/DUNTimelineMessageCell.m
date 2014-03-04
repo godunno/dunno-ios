@@ -5,46 +5,28 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface DUNTimelineMessageCell()
-
-@property (weak, nonatomic) IBOutlet UIImageView *timelineCellBackground;
-
-@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
-@property (weak, nonatomic) IBOutlet UILabel *sentAt;
-
-@property (weak, nonatomic) IBOutlet UITextView *messageText;
-
-@property (weak, nonatomic) IBOutlet UIButton *upVoteButton;
-@property (weak, nonatomic) IBOutlet UILabel *upVoteLabel;
-@property (weak, nonatomic) IBOutlet UIButton *downVoteButton;
-@property (weak, nonatomic) IBOutlet UILabel *downVoteLabel;
-
-@end
-
 @implementation DUNTimelineMessageCell
 
 - (void) setUserMessage:(DUNTimelineUserMessage *)userMessage
 {
+  
   _userMessage = userMessage;
   
-  _sentAt.text = [NSString stringWithFormat:@"%d:%d",[_userMessage.sentAt hour],[_userMessage.sentAt minute]];
+  _sentAt.text = [NSString stringWithFormat:@"%d:%d",[userMessage.sentAt hour],[userMessage.sentAt minute]];
   
-//  [_profilePicture setImageWithURL:userMessage.student.profilePicture]];
+  //  [_profilePicture setImageWithURL:userMessage.student.profilePicture]];
   
-  _messageText.text = self.userMessage.content;
+  _messageText.text = userMessage.content;
   
-  _upVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.upVotes integerValue]];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.downVotes integerValue]];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.upVotes integerValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.downVotes integerValue]];
   
 }
 
 - (IBAction)upVote:(id)sender {
   
   [DUNAPI upVoteTimelineMessage:_userMessage success:^{
-
-    [self.userMessage addOneUpVote];
-    _upVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.upVotes integerValue]];
-    
+    NSLog(@"up vote message OK..");
   } error:^(NSError *error) {
     NSLog(@"deu merda upVote message..");
   }];
@@ -52,11 +34,10 @@
 }
 
 - (IBAction)downVote:(id)sender {
-
+  
   [DUNAPI downVoteTimelineMessage:_userMessage success:^{
     
-    [self.userMessage addOneDownVote];
-    _downVoteLabel.text = [NSString stringWithFormat:@"%d", [self.userMessage.downVotes integerValue]];
+    NSLog(@"down vote message OK..");
     
   } error:^(NSError *error) {
     NSLog(@"deu merda downVote message..");
