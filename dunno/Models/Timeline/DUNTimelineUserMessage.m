@@ -23,7 +23,7 @@
 
 +(JSONKeyMapper*)keyMapper
 {
-  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId", @"created_at":@"sentAt"}];
+  return [[JSONKeyMapper alloc] initWithDictionary:@{@"id": @"entityId", @"student" : @"owner", @"created_at":@"sentAt"}];
 }
 
 @end

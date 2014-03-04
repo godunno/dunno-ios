@@ -48,7 +48,7 @@
     
     DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
     
-    if(newMessage.owner.entityId==_session.currentStudent.entityId){
+    if([newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
       return;
     }else {
       [_session.currentEvent.timeline.messages addObject:newMessage];

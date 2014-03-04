@@ -5,9 +5,9 @@
 
 @interface DUNStudent : DUNUser
 
-@property (nonatomic, strong) NSString *authToken;
+@property (nonatomic, strong) NSString<Optional> *authToken;
 
-@property (nonatomic, strong) DUNOrganization *organization;
+@property (nonatomic, strong) DUNOrganization<Optional> *organization;
 
 
 
