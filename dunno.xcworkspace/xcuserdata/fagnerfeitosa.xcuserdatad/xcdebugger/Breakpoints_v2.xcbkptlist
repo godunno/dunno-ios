@@ -768,7 +768,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
@@ -851,12 +851,12 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415659670.058423"
+                  timestampString = "415826518.098281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "694">
+                  offsetFromSymbolStart = "794">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -865,12 +865,12 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415659670.060888"
+                  timestampString = "415826518.098707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
                   endingLineNumber = "300"
-                  offsetFromSymbolStart = "1404">
+                  offsetFromSymbolStart = "886">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1138,11 +1138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/CustomViews/DUNTimelineMessageCell.m"
-            timestampString = "415658175.076268"
+            timestampString = "415826517.764332"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-upVote:"
             landmarkType = "5">
             <Locations>
@@ -1180,7 +1180,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNTimelineTVC.m"
@@ -1190,6 +1190,22 @@
             startingLineNumber = "109"
             endingLineNumber = "109"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/CustomViews/DUNTimelineMessageCell.m"
+            timestampString = "415826086.2877"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-setUserMessage:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,7 +16,7 @@
   
   [_profilePicture setImageWithURL:[NSURL URLWithString:userMessage.owner.avatarURLString]];
   
-  _messageText.text = userMessage.content;
+  _messageText.text = [NSString stringWithFormat:@"%@ - %@", userMessage.content, ([userMessage isAlreadyVoted]?@"votou":@"não votou")];
   
   _upVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.upVotes integerValue]];
   _downVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.downVotes integerValue]];
@@ -24,7 +24,11 @@
 }
 
 - (IBAction)upVote:(id)sender {
-  
+  if (_userMessage.alreadyVoted) {
+    NSLog(@"usuario ja votou");
+    return;
+  }
+
   [DUNAPI upVoteTimelineMessage:_userMessage success:^{
     NSLog(@"up vote message OK..");
   } error:^(NSError *error) {
@@ -34,6 +38,10 @@
 }
 
 - (IBAction)downVote:(id)sender {
+  if (_userMessage.alreadyVoted) {
+    NSLog(@"usuario ja votou");
+    return;
+  }
   
   [DUNAPI downVoteTimelineMessage:_userMessage success:^{
     
