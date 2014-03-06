@@ -21,9 +21,14 @@
   self.downVotes = [NSNumber numberWithInt:[self.downVotes intValue] + 1];
 }
 
-- (BOOL) isAlreadyVoted
+- (BOOL)alreadyUpVoted
 {
-  return (_alreadyVoted!=nil&&![_alreadyVoted isEqualToString:@"0"]);
+  return [_alreadyVoted isEqualToString:@"up"];
+}
+
+- (BOOL)alreadyDownVoted
+{
+  return [_alreadyVoted isEqualToString:@"down"];
 }
 
 +(JSONKeyMapper*)keyMapper

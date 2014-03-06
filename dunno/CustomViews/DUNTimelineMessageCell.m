@@ -24,7 +24,7 @@
 }
 
 - (IBAction)upVote:(id)sender {
-  if (_userMessage.alreadyVoted) {
+  if ([_userMessage alreadyUpVoted]) {
     NSLog(@"usuario ja votou");
     return;
   }
@@ -38,7 +38,7 @@
 }
 
 - (IBAction)downVote:(id)sender {
-  if (_userMessage.alreadyVoted) {
+  if ([_userMessage alreadyDownVoted]) {
     NSLog(@"usuario ja votou");
     return;
   }

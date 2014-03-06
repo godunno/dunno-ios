@@ -14,12 +14,13 @@
 @property (nonatomic, assign) NSNumber<Optional> *upVotes;
 @property (nonatomic, assign) NSNumber<Optional> *downVotes;
 
-@property (nonatomic, copy) NSString<Optional> *alreadyVoted;
+@property (nonatomic, copy, getter=isAlreadyVoted) NSString<Optional> *alreadyVoted;
 
 - (void) addOneUpVote;
 - (void) addOneDownVote;
 
-- (BOOL) isAlreadyVoted;
+- (BOOL)alreadyUpVoted;
+- (BOOL)alreadyDownVoted;
 
 + (instancetype) initWithContent:(NSString*)content;
 
