@@ -177,7 +177,6 @@
   
   [params setObject:ratingValue forKey:@"rating[value]"];
   [params setObject:thermometer.uuid forKey:@"thermometer_id"];
-  [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
 
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
     

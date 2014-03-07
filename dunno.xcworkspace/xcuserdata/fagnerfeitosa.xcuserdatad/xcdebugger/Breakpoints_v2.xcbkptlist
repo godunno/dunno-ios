@@ -755,7 +755,7 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415923456.043981"
+                  timestampString = "415924279.436382"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -769,7 +769,7 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "415923456.044385"
+                  timestampString = "415924279.438476"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -1148,7 +1148,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNThermometerTVC.m"
@@ -1164,7 +1164,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/CustomViews/DUNThermometerCell.m"
@@ -1190,6 +1190,116 @@
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "-registerPusherEvents"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/CustomViews/DUNThermometerCell.m"
+            timestampString = "415923835.548938"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-sendRating:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/CustomViews/DUNThermometerCell.m"
+            timestampString = "415923837.225336"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-sendRating:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DUNThermometerCell sendRating:]"
+                  moduleName = "dunno"
+                  urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/dunno/CustomViews/DUNThermometerCell.m"
+                  timestampString = "415924279.439452"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "165">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__33-[DUNThermometerCell sendRating:]_block_invoke"
+                  moduleName = "dunno"
+                  urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/dunno/CustomViews/DUNThermometerCell.m"
+                  timestampString = "415924279.43974"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/Components/API/DUNAPI.m"
+            timestampString = "415924147.88852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "+sendThermometer:withRatingValue:success:error:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/Components/API/DUNAPI.m"
+            timestampString = "415924219.343233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "+sendThermometer:withRatingValue:success:error:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/Components/API/DUNAPI.m"
+            timestampString = "415924221.536864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "+sendThermometer:withRatingValue:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
