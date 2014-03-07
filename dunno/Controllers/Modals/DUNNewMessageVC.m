@@ -4,8 +4,6 @@
 #import "DUNAPI.h"
 
 #import "FUIButton.h"
-#import "UIColor+FlatUI.h"
-#import "UIFont+FlatUI.h"
 
 @interface DUNNewMessageVC ()
 
@@ -51,14 +49,7 @@
   [_messageTextView.layer setBorderWidth:1.0f];
   [_messageTextView.layer setCornerRadius:8.0f];
   
-  _sendMessageButton.buttonColor = [UIColor turquoiseColor];
-  _sendMessageButton.shadowColor = [UIColor greenSeaColor];
-  _sendMessageButton.shadowHeight = 3.0f;
-  _sendMessageButton.cornerRadius = 6.0f;
-  _sendMessageButton.titleLabel.font = [UIFont boldFlatFontOfSize:16];
-  [_sendMessageButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
-  [_sendMessageButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
-  
+  _sendMessageButton = [DUNStyles customizeOKButton:_sendMessageButton];
 }
 
 @end

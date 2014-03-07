@@ -4,6 +4,7 @@
 #import "DUNTimelineEndPointCell.h"
 #import "DUNPollVC.h"
 #import "DUNNewMessageVC.h"
+#import "DUNThermometerTVC.h"
 
 #import "DUNTopic.h"
 
@@ -15,7 +16,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
 
-@interface DUNTimelineTVC () <DUNNewMessageDelegate>
+@interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
 
 @property (nonatomic, strong) DUNEvent *event;
 @property (strong, nonatomic) DUNSession *session;
@@ -36,12 +37,15 @@
   self.navigationController.navigationBar.topItem.title = @"";
 }
 
-
+//------------------------------------------------
+# pragma mark - Pusher events..
+//------------------------------------------------
 - (void) registerPusherEvents
 {
   NSParameterAssert(_event!=nil);
   NSParameterAssert(_event.studentMessageEvent!=nil);
   NSParameterAssert(_event.upDownVoteMessageEvent!=nil);
+  NSParameterAssert(_event.closeEvent!=nil);
   
   DUNPusher *pusher = [DUNPusher sharedInstance].connect;
   
@@ -68,10 +72,23 @@
     
   }];
   
-  // TODO register another events: poll, rating..
+  [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+    
+    DUNEvent *eventClosed = [[DUNEvent alloc] initWithDictionary:jsonDictionary error:nil];
+    _event.status = @"closed";
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
+    
+  }];
 }
 
+//------------------------------------------------
+#pragma mark - interactions
+//------------------------------------------------
+
 - (IBAction)sendNewMessage:(id)sender {
+  
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
   newMessageVC.delegate = self;
@@ -85,6 +102,15 @@
   [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
+//------------------------------------
+#pragma mark UIAlertViewDelegate
+//------------------------------------
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  DUNThermometerTVC *thermometersVC =   [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
+  thermometersVC.event = _event;
+  [self.navigationController pushViewController:thermometersVC animated:YES];
+}
 
 //------------------------------------
 #pragma mark UITableViewDelegate
