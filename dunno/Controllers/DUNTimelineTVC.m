@@ -77,8 +77,15 @@
     DUNEvent *eventClosed = [[DUNEvent alloc] initWithDictionary:jsonDictionary error:nil];
     // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alert show];
+    
+    if(_session.currentEvent.thermometers!=nil && [_session.currentEvent.thermometers count] > 0)
+    {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+      [alert show];
+    } else {
+      UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+      [alert show];
+    }
     
     // TODO when finish thermometers, redirect to events list or offline timeline..
     
