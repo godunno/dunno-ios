@@ -8,7 +8,6 @@
   [super viewDidLoad];
 }
 
-
 //------------------------------------
 #pragma mark UITableViewDelegate
 //------------------------------------
@@ -28,7 +27,7 @@
   DUNThermometerCell *cell = [tableView dequeueReusableCellWithIdentifier:kThermometerCell forIndexPath:indexPath];
   DUNThermometer *thermometer = [_event.thermometers objectAtIndex:indexPath.row];
   
-  cell.questionTextView.text = thermometer.content;
+  [cell setThermometer:thermometer];
   
   return cell;
 

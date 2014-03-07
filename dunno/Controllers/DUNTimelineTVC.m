@@ -75,10 +75,12 @@
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
     DUNEvent *eventClosed = [[DUNEvent alloc] initWithDictionary:jsonDictionary error:nil];
-    _event.status = @"closed";
+    // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alert show];
+    
+    // TODO when finish thermometers, redirect to events list or offline timeline..
     
   }];
 }
@@ -89,6 +91,7 @@
 
 - (IBAction)sendNewMessage:(id)sender {
   
+  //TODO hide button when event is closed
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
   newMessageVC.delegate = self;

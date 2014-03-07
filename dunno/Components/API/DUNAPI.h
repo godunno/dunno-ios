@@ -2,6 +2,7 @@
 #import "DUNOrganization.h"
 #import "DUNTimeline.h"
 #import "DUNTimelineUserMessage.h"
+#import "DUNThermometer.h"
 
 @interface DUNAPI : NSObject
 
@@ -16,4 +17,7 @@
 + (void) upVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 
 + (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
+
++ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSDecimalNumber*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
+
 @end

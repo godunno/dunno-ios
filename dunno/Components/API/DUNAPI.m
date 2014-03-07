@@ -162,6 +162,34 @@
   }];
 }
 
++ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSDecimalNumber*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  DUNSession *_session = [DUNSession sharedInstance];
+  
+  NSParameterAssert(_session.currentStudent!=nil);
+  NSParameterAssert(_session.currentStudent.entityId!=nil);
+  NSParameterAssert(thermometer!=nil);
+  NSParameterAssert(ratingValue!=nil);
+
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/ratings",kBaseURL];
+  
+  NSMutableDictionary * params = [self mandatoryParams];
+  
+  [params setObject:ratingValue forKey:@"rating[value]"];
+  [params setObject:thermometer.uuid forKey:@"thermometer_id"];
+  [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
+
+  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+    
+    if(successBlock && error==nil){
+      successBlock();
+    } else if(error) {
+      errorCallback(error);
+    }
+  }];
+  
+}
+
 
 ////////////////////////////////////
 #pragma mark Private Methods

@@ -12,6 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet FUIButton *sendRatingButton;
 
-@property (nonatomic, strong) DUNEvent *event;
+@property (nonatomic, strong) DUNThermometer *thermometer;
 
 @end
