@@ -5,7 +5,7 @@
 #import "DUNPollVC.h"
 #import "DUNNewMessageVC.h"
 #import "DUNThermometerTVC.h"
-
+#import "DUNPoll.h"
 #import "DUNTopic.h"
 
 #import "DUNPusher.h"
@@ -15,6 +15,9 @@
 #import "UIColor+FlatUI.h"
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
+
+#define kReleasePoll 100
+#define kCloseEventTag 200
 
 @interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
 
@@ -72,6 +75,15 @@
     
   }];
   
+  [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.releasePollEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+    
+    // TODO return full Poll instead uuid
+    NSString * pollUUID = (NSString*)jsonDictionary;
+    
+    [self showPoll:[_event findPollByUUID:pollUUID]];
+  }];
+  
+  
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
     DUNEvent *eventClosed = [[DUNEvent alloc] initWithDictionary:jsonDictionary error:nil];
@@ -81,9 +93,11 @@
     if(_session.currentEvent.thermometers!=nil && [_session.currentEvent.thermometers count] > 0)
     {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+      alert.tag = kCloseEventTag;
       [alert show];
     } else {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+      alert.tag = kCloseEventTag;
       [alert show];
     }
     
@@ -105,11 +119,15 @@
   [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideTopBottom];
 }
 
-- (IBAction)showFakePoll:(id)sender {
-  DUNPollVC *pollVC = [[DUNPollVC alloc] initWithNibName:kDUNPollVCNibName bundle:nil];
-  [pollVC setModalInPopover:TRUE];
-  //  pollVC.delegate = self;
-  [self presentPopupViewController:pollVC animationType:MJPopupViewAnimationSlideTopBottom];
+- (void)showPoll:(DUNPoll*)poll {
+  NSParameterAssert(poll!=nil);
+  
+  //TODO verify if already exists poll active..
+  _session.currentPoll = poll;
+  
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Professor enviou uma enquete, vamos lá?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+  alert.tag = kReleasePoll;
+  [alert show];
 }
 
 //------------------------------------
@@ -117,9 +135,16 @@
 //------------------------------------
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-  DUNThermometerTVC *thermometersVC =   [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
-  thermometersVC.event = _event;
-  [self.navigationController pushViewController:thermometersVC animated:YES];
+  if (alertView.tag == kCloseEventTag) {
+    DUNThermometerTVC *thermometersVC =   [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
+    thermometersVC.event = _event;
+    [self.navigationController pushViewController:thermometersVC animated:YES];
+  }else if(alertView.tag == kReleasePoll)
+  {
+    DUNPollVC *pollVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNPollVCStoryboardId];
+    [self.navigationController pushViewController:pollVC animated:YES];
+  }
+  
 }
 
 //------------------------------------

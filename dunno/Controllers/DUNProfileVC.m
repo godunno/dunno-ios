@@ -125,6 +125,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+
+  [self attendEvent:event];
+}
+
+#pragma mark - Private methods
+
+- (void) attendEvent:(DUNEvent*)event
+{
+  NSParameterAssert(event!=nil);
+  NSParameterAssert(_session.currentOrganization!=nil);
   
   [DUNAPI attendEventWithUUID:event.uuid onOrganizationWithUUID:_session.currentOrganization.uuid success:^(DUNEvent *event) {
     
@@ -137,7 +147,6 @@
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda attend um Event");
   }];
-  
   
 }
 

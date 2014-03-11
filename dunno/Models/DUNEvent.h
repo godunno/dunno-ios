@@ -1,6 +1,7 @@
 #import "JSONModel.h"
 #import "DUNTeacher.h"
 #import "DUNTimeline.h"
+#import "DUNPoll.h"
 #import "DUNThermometer.h"
 #import "DUNTopic.h"
 
@@ -24,16 +25,18 @@
 @property (nonatomic, strong) NSArray<DUNTopic, Optional> *topics;
 
 @property (nonatomic, strong) NSArray<DUNThermometer, Optional> *thermometers;
+@property (nonatomic, strong) NSArray<DUNPoll, Optional> *polls;
 
 //pusher properties
 @property (nonatomic, copy) NSString<Optional> *channelName;
 @property (nonatomic, copy) NSString<Optional> *studentMessageEvent;
 @property (nonatomic, copy) NSString<Optional> *upDownVoteMessageEvent;
 @property (nonatomic, copy) NSString<Optional> *closeEvent;
-@property (nonatomic, copy) NSString<Optional> *receivePollEvent;
+@property (nonatomic, copy) NSString<Optional> *releasePollEvent;
 
 
 - (BOOL) isOpen;
 - (BOOL) isClosed;
 
+- (DUNPoll*)findPollByUUID:(NSString*)pollUUID;
 @end

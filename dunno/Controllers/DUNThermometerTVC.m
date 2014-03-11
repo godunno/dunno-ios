@@ -14,8 +14,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  if(_event==nil || _event.thermometers==nil)
-  {
+  if(_event==nil || _event.thermometers==nil){
     return 0;
   }
   
