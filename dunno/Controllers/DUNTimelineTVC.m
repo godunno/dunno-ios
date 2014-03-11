@@ -54,7 +54,7 @@
     DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
     
     [_session.currentEvent.timeline.messages addObject:newMessage];
-    if([newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
+    if(![newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
       return;
     }else {
       [self.tableView reloadData];
@@ -180,10 +180,6 @@
 // ------------------------------
 - (void)messageSent:(DUNTimelineUserMessage *)message
 {
-  [_session.currentEvent.timeline.messages addObject:message];
-  
-  [self.tableView reloadData];
-  
   [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
