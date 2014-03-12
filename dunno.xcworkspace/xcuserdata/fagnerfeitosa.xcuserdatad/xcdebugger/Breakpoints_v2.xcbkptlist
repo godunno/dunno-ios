@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNProfileVC.m"
-            timestampString = "415054294.585306"
+            timestampString = "416346024.854899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "+organizationActiveSuccess:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "+organizationActiveSuccess:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,27 +106,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "+organizationActiveSuccess:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
+            landmarkName = "+organizationActiveSuccess:error:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dunno/Components/API/DUNAPI.m"
+            timestampString = "416346662.515225"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "+organizationActiveSuccess:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -388,15 +388,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "+loginStudentUsername:withPassword:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -408,28 +408,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "+loginStudentUsername:withPassword:success:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dunno/Controllers/DUNProfileVC.m"
-            timestampString = "415054215.67795"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-loadInitialData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -456,11 +440,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "+sendTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -612,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -660,11 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -676,11 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -692,11 +676,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -708,11 +692,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -739,7 +723,7 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "416343381.673864"
+                  timestampString = "416346876.653979"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -753,7 +737,7 @@
                   symbolName = "__84+[JSONHTTPClient JSONFromURLWithString:method:params:orBodyData:headers:completion:]_block_invoke"
                   moduleName = "dunno"
                   urlString = "file:///Users/fagnerfeitosa/Development/personal/dunno-ios/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m"
-                  timestampString = "416343381.67576"
+                  timestampString = "416346876.654404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "300"
@@ -930,11 +914,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1072,11 +1056,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1230,11 +1214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "+sendThermometer:withRatingValue:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1246,11 +1230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "+sendThermometer:withRatingValue:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1262,11 +1246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416336203.675735"
+            timestampString = "416346662.515225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "+sendThermometer:withRatingValue:success:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1356,11 +1340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNProfileVC.m"
-            timestampString = "416262986.424728"
+            timestampString = "416346024.854899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-attendEvent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1436,11 +1420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNPollVC.m"
-            timestampString = "416343210.794696"
+            timestampString = "416344457.576905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-pickerView:titleForRow:forComponent:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1467,28 +1451,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dunno/Controllers/DUNProfileVC.m"
-            timestampString = "416336142.012945"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-loadInitialData"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNPollVC.m"
-            timestampString = "416343210.794696"
+            timestampString = "416344457.576905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-sendAnswer:"
             landmarkType = "5">
          </BreakpointContent>

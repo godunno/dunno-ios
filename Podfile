@@ -14,7 +14,6 @@ pod 'SDWebImage', '~> 3.5'
 pod 'libPusher', '~> 1.4'
 pod 'MBProgressHUD', '~> 0.8'
 pod 'MJPopupViewController', '~> 0.4'
-pod 'SWRevealViewController', '~> 1.1.1'
 pod 'JSONModel'
 
 pod 'FlatUIKit'

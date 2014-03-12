@@ -22,7 +22,9 @@
   
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
     
-    if(successBlock && json != nil){
+    NSString *error = [json valueForKey:@"error"];
+    
+    if(successBlock && json!=nil && error == nil){
       DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&err];
       
       successBlock(student);

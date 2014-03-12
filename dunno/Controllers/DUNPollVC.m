@@ -7,7 +7,7 @@
 
 #import "FUIButton.h"
 
-@interface DUNPollVC ()<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface DUNPollVC()<UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) DUNSession *session;
 

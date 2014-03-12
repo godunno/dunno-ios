@@ -1,6 +1,5 @@
 #import "DUNProfileVC.h"
 #import "DUNTimelineTVC.h"
-#import "SWRevealViewController.h"
 #import "DUNEventCell.h"
 
 #import "DUNStudent.h"
@@ -36,28 +35,7 @@
   
   [self setupProfileView];
   
-  [self configureSideMenu];
-  
   [self setupEventsTable];
-  
-  [self loadInitialData];
-}
-
-- (void) loadInitialData
-{
-  
-  [DUNAPI loginStudentUsername:@"dow@dunno.vc" withPassword:@"#dunnovc" success:^(DUNStudent *student) {
-    _session.currentStudent = student;
-    _session.currentOrganization = student.organization;
-    _organizationNameLabel.text = student.organization.name;
-    
-    [_eventsTableView reloadData];
-    
-  } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda carregando a Organization atual");
-  }];
-  
   
 }
 
@@ -67,21 +45,13 @@
 
 - (void) setupProfileView
 {
+  _organizationNameLabel.text = _session.currentStudent.organization.name;
+
   self.eventsTableView.backgroundColor = [DUNStyles menuBackgroundColor];
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
   
   DUNStudent *user = [DUNSession sharedInstance].currentStudent;
   [self.profileImage setImageWithURL:[NSURL URLWithString:user.avatarURLString]];
-}
-
-- (void) configureSideMenu
-{
-  self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-  
-  _revealSideMenuButton.image = [UIImage imageNamed:@"menu"];
-  _revealSideMenuButton.target = self.revealViewController;
-  _revealSideMenuButton.action = @selector(revealToggle:);
-  [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 - (void) setupEventsTable

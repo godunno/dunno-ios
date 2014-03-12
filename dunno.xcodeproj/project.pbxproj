@@ -54,6 +54,7 @@
 		C3D56DB2189D742E009DAFAC /* DUNTimelineInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB1189D742E009DAFAC /* DUNTimelineInteraction.m */; };
 		C3D56DB5189D7499009DAFAC /* DUNTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB4189D7499009DAFAC /* DUNTimeline.m */; };
 		C3D56DB8189D7647009DAFAC /* DUNTimelineRating.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB7189D7647009DAFAC /* DUNTimelineRating.m */; };
+		C3D8E66918D0E7E50061D4F8 /* DUNLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */; };
 		C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3DFCB49188813E200C19D1F /* DUNTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB48188813E200C19D1F /* DUNTeacher.m */; };
 		C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4B1888146900C19D1F /* DUNOrganization.m */; };
@@ -148,6 +149,8 @@
 		C3D56DB4189D7499009DAFAC /* DUNTimeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimeline.m; sourceTree = "<group>"; };
 		C3D56DB6189D7647009DAFAC /* DUNTimelineRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineRating.h; sourceTree = "<group>"; };
 		C3D56DB7189D7647009DAFAC /* DUNTimelineRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineRating.m; sourceTree = "<group>"; };
+		C3D8E66718D0E7E50061D4F8 /* DUNLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNLoginVC.h; sourceTree = "<group>"; };
+		C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNLoginVC.m; sourceTree = "<group>"; };
 		C3DFCB44188805FE00C19D1F /* DUNEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNEvent.h; sourceTree = "<group>"; };
 		C3DFCB45188805FE00C19D1F /* DUNEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEvent.m; sourceTree = "<group>"; };
 		C3DFCB47188813E200C19D1F /* DUNTeacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTeacher.h; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				C331F99518C91C24000C4375 /* DUNThermometerTVC.m */,
 				C3F63A2018CFB10900FF2F4E /* DUNPollVC.h */,
 				C3F63A2118CFB10900FF2F4E /* DUNPollVC.m */,
+				C3D8E66718D0E7E50061D4F8 /* DUNLoginVC.h */,
+				C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -581,6 +586,7 @@
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
 				C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */,
 				C38D27C918991C70008B8181 /* DUNSession.m in Sources */,
+				C3D8E66918D0E7E50061D4F8 /* DUNLoginVC.m in Sources */,
 				C3006F6B18859432007B0790 /* DUNAppDelegate.m in Sources */,
 				C3D56DB8189D7647009DAFAC /* DUNTimelineRating.m in Sources */,
 				C3AF446318B5154400D51575 /* DUNTopic.m in Sources */,
