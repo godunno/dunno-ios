@@ -1,8 +1,7 @@
 #import "DUNAppDelegate.h"
 #import "DUNAppearance.h"
-#import "SWRevealViewController.h"
 
-#import "DUNAPI.h"
+#import <Reachability/Reachability.h>
 
 @implementation DUNAppDelegate
 
@@ -11,6 +10,21 @@
 {
   
   [DUNAppearance applyGlobalAppearance];
+  
+  Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+  
+  reach.unreachableBlock = ^(Reachability*reach)
+  {
+    NetworkStatus networkStatus = [reach currentReachabilityStatus];
+    if(networkStatus == NotReachable)
+    {
+      dispatch_sync(dispatch_get_main_queue(), ^{
+        [DUNErrorVC showWithTitle:@"Erro Conexão" andMessage:@"Conexão com internet foi perdida."];
+      });
+    }
+  };
+  
+  [reach startNotifier];
   
   return YES;
 }
