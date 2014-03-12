@@ -41,8 +41,7 @@
     [self.navigationController popViewControllerAnimated:TRUE];
     
   } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda enviando Poll Answer");
+    [DUNErrorVC showWithTitle:@"Enquete" andMessage:@"Erro enviando resposta da enquete."];
   }];
 }
 

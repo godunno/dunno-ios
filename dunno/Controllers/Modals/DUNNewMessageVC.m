@@ -33,8 +33,7 @@
     [_delegate messageSent:messageCreated];
     
   } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda enviando mensagem na timeline");
+    [DUNErrorVC showWithTitle:@"Timeline Message" andMessage:@"Erro enviando mensagem para timeline."];
   }];
 }
 

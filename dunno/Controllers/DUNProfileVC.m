@@ -114,8 +114,7 @@
     [self.navigationController pushViewController:tvc animated:YES];
     
   } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda attend um Event");
+    [DUNErrorVC showWithTitle:@"Participar do Evento" andMessage:@"Não foi possíve participar desse Evento."];    
   }];
   
 }

@@ -32,7 +32,7 @@
   [DUNAPI upVoteTimelineMessage:_userMessage success:^{
     NSLog(@"up vote message OK..");
   } error:^(NSError *error) {
-    NSLog(@"deu merda upVote message..");
+    [DUNErrorVC showWithTitle:@"Timeline Message UpVote" andMessage:@"Erro enviando up vote à Timeline Message."];
   }];
   
 }
@@ -48,7 +48,7 @@
     NSLog(@"down vote message OK..");
     
   } error:^(NSError *error) {
-    NSLog(@"deu merda downVote message..");
+    [DUNErrorVC showWithTitle:@"Timeline Message DownVote" andMessage:@"Erro enviando down vote à Timeline Message."];
   }];
 }
 

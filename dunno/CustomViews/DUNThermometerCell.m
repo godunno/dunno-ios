@@ -38,8 +38,7 @@
     [alert show];
     
   } error:^(NSError *error) {
-    //TODO show generic 'modal'/'view' with error
-    NSLog(@"deu merda enviando rating do termometro");
+    [DUNErrorVC showWithTitle:@"Termômetro" andMessage:@"Erro enviando rating do Termômetro."];
   }];
 }
 
