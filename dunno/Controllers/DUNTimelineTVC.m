@@ -16,7 +16,7 @@
 #import "UIBarButtonItem+FlatUI.h"
 #import "UINavigationBar+FlatUI.h"
 
-#define kReleasePoll 100
+#define kReleasePollTag 100
 #define kCloseEventTag 200
 
 @interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
@@ -40,9 +40,8 @@
   self.navigationController.navigationBar.topItem.title = @"";
 }
 
-//------------------------------------------------
+
 # pragma mark - Pusher events..
-//------------------------------------------------
 - (void) registerPusherEvents
 {
   NSParameterAssert(_event!=nil);
@@ -77,10 +76,10 @@
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.releasePollEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
-    // TODO return full Poll instead uuid
-    NSString * pollUUID = (NSString*)jsonDictionary;
+    DUNPoll *poll = [[DUNPoll alloc] initWithDictionary:jsonDictionary error:nil];
+    NSAssert(poll!=nil, @"JSON Dictionary (Poll) came from Pusher is invalid.");
     
-    [self showPoll:[_event findPollByUUID:pollUUID]];
+    [self showPoll:poll];
   }];
   
   
@@ -106,9 +105,8 @@
   }];
 }
 
-//------------------------------------------------
-#pragma mark - interactions
-//------------------------------------------------
+
+#pragma mark - Interactions
 
 - (IBAction)sendNewMessage:(id)sender {
   
@@ -122,24 +120,29 @@
 - (void)showPoll:(DUNPoll*)poll {
   NSParameterAssert(poll!=nil);
   
+  if([self.mj_popupViewController isViewLoaded])
+  {
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+  }
+  
   //TODO verify if already exists poll active..
   _session.currentPoll = poll;
   
   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Professor enviou uma enquete, vamos lá?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-  alert.tag = kReleasePoll;
+  alert.tag = kReleasePollTag;
   [alert show];
 }
 
-//------------------------------------
+
 #pragma mark UIAlertViewDelegate
-//------------------------------------
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   if (alertView.tag == kCloseEventTag) {
     DUNThermometerTVC *thermometersVC =   [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
     thermometersVC.event = _event;
     [self.navigationController pushViewController:thermometersVC animated:YES];
-  }else if(alertView.tag == kReleasePoll)
+  }else if(alertView.tag == kReleasePollTag)
   {
     DUNPollVC *pollVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNPollVCStoryboardId];
     [self.navigationController pushViewController:pollVC animated:YES];
@@ -147,9 +150,7 @@
   
 }
 
-//------------------------------------
 #pragma mark UITableViewDelegate
-//------------------------------------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -200,17 +201,16 @@
   return 150;
 }
 
-// ------------------------------
+
 #pragma mark DUNNewMessageDelegate
-// ------------------------------
+
 - (void)messageSent:(DUNTimelineUserMessage *)message
 {
   [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
 }
 
-// ------------------------------
 #pragma mark Private Methods
-// ------------------------------
+
 - (NSInteger) countCells
 {
   return _event.timeline.messages.count + 1;
