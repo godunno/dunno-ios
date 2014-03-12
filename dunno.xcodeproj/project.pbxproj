@@ -55,6 +55,8 @@
 		C3D56DB5189D7499009DAFAC /* DUNTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB4189D7499009DAFAC /* DUNTimeline.m */; };
 		C3D56DB8189D7647009DAFAC /* DUNTimelineRating.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D56DB7189D7647009DAFAC /* DUNTimelineRating.m */; };
 		C3D8E66918D0E7E50061D4F8 /* DUNLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */; };
+		C3D8E66D18D0F63E0061D4F8 /* DUNErrorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D8E66B18D0F63E0061D4F8 /* DUNErrorVC.m */; };
+		C3D8E66E18D0F63E0061D4F8 /* DUNErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D8E66C18D0F63E0061D4F8 /* DUNErrorVC.xib */; };
 		C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB45188805FE00C19D1F /* DUNEvent.m */; };
 		C3DFCB49188813E200C19D1F /* DUNTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB48188813E200C19D1F /* DUNTeacher.m */; };
 		C3DFCB4C1888146900C19D1F /* DUNOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DFCB4B1888146900C19D1F /* DUNOrganization.m */; };
@@ -151,6 +153,9 @@
 		C3D56DB7189D7647009DAFAC /* DUNTimelineRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineRating.m; sourceTree = "<group>"; };
 		C3D8E66718D0E7E50061D4F8 /* DUNLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNLoginVC.h; sourceTree = "<group>"; };
 		C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNLoginVC.m; sourceTree = "<group>"; };
+		C3D8E66A18D0F63E0061D4F8 /* DUNErrorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNErrorVC.h; sourceTree = "<group>"; };
+		C3D8E66B18D0F63E0061D4F8 /* DUNErrorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNErrorVC.m; sourceTree = "<group>"; };
+		C3D8E66C18D0F63E0061D4F8 /* DUNErrorVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUNErrorVC.xib; sourceTree = "<group>"; };
 		C3DFCB44188805FE00C19D1F /* DUNEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNEvent.h; sourceTree = "<group>"; };
 		C3DFCB45188805FE00C19D1F /* DUNEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEvent.m; sourceTree = "<group>"; };
 		C3DFCB47188813E200C19D1F /* DUNTeacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTeacher.h; sourceTree = "<group>"; };
@@ -397,6 +402,9 @@
 				C3AF446A18B53F1C00D51575 /* DUNNewMessageVC.h */,
 				C3AF446B18B53F1C00D51575 /* DUNNewMessageVC.m */,
 				C3AF446C18B53F1C00D51575 /* DUNNewMessageVC.xib */,
+				C3D8E66A18D0F63E0061D4F8 /* DUNErrorVC.h */,
+				C3D8E66B18D0F63E0061D4F8 /* DUNErrorVC.m */,
+				C3D8E66C18D0F63E0061D4F8 /* DUNErrorVC.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -488,6 +496,7 @@
 				C3006F7318859432007B0790 /* Images.xcassets in Resources */,
 				C3AF446E18B53F1C00D51575 /* DUNNewMessageVC.xib in Resources */,
 				C3006F6518859432007B0790 /* InfoPlist.strings in Resources */,
+				C3D8E66E18D0F63E0061D4F8 /* DUNErrorVC.xib in Resources */,
 				C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +602,7 @@
 				C3DFCB46188805FE00C19D1F /* DUNEvent.m in Sources */,
 				C3F63A2218CFB10900FF2F4E /* DUNPollVC.m in Sources */,
 				C3DFCB49188813E200C19D1F /* DUNTeacher.m in Sources */,
+				C3D8E66D18D0F63E0061D4F8 /* DUNErrorVC.m in Sources */,
 				C385EF07188B34870022A574 /* NSString+Cool.m in Sources */,
 				C3D56DB2189D742E009DAFAC /* DUNTimelineInteraction.m in Sources */,
 				C385EF0D188B36880022A574 /* DUNProfileVC.m in Sources */,

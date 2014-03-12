@@ -18,7 +18,7 @@
   [params setObject:username forKey:@"student[email]"];
   [params setObject:password forKey:@"student[password]"];
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/sign_in.json"];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/sign_in"];
   
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
     
@@ -27,7 +27,13 @@
     if(successBlock && json!=nil && error == nil){
       DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&err];
       
-      successBlock(student);
+      if(student==nil)
+      {
+        errorCallback(err);
+      }else{
+        successBlock(student);
+      }
+      
     }
     else {
       errorCallback(err);

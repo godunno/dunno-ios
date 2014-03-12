@@ -45,8 +45,7 @@
     [self presentViewController:nvc animated:YES completion:nil];    
     
   } error:^(NSError *error) {
-    //TODO show errors
-    NSLog(@"deu merda no login");
+    [DUNErrorVC showWithTitle:@"Login" andMessage:@"Erro no login."];
   }];
 }
 

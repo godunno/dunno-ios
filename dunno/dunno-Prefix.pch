@@ -18,5 +18,6 @@
   #import "DUNStyles.h"
   #import "DUNConfig.h"
   #import "DUNSession.h"
+  #import "DUNErrorVC.h"
 
 #endif
