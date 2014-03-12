@@ -1,11 +1,8 @@
 #import <JSONModel/JSONHTTPClient.h>
 #import "DUNAPI.h"
 
-// loopback not works on device :p
-//#define kBaseURL @"http://localhost:3000/api/v1/"
-
-
-#define kBaseURL @"http://192.168.0.3:3000/api/v1/"
+//#define kBaseURL @"http://192.168.0.101:3000/api/v1/"
+#define kBaseURL @"http://localhost:3000/api/v1/"
 
 //#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
 
@@ -102,13 +99,13 @@
     
     if(successBlock && json != nil){
       DUNEvent *event = [[DUNEvent alloc] initWithDictionary:json error:&err];
-          
+      
       successBlock(event);
     }
     else {
       errorCallback(err);
     }
-
+    
   }];
   
 }
@@ -170,14 +167,14 @@
   NSParameterAssert(_session.currentStudent.entityId!=nil);
   NSParameterAssert(thermometer!=nil);
   NSParameterAssert(ratingValue!=nil);
-
+  
   NSString *endpointURL = [NSString stringWithFormat:@"%@/ratings",kBaseURL];
   
   NSMutableDictionary * params = [self mandatoryParams];
   
   [params setObject:ratingValue forKey:@"rating[value]"];
   [params setObject:thermometer.uuid forKey:@"thermometer_id"];
-
+  
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
     
     if(successBlock && error==nil){
@@ -189,6 +186,31 @@
   
 }
 
++ (void) sendAnswerPollOptionUUID:(NSString*)pollOptionUUID success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
+{
+  DUNSession *_session = [DUNSession sharedInstance];
+  
+  NSParameterAssert(_session.currentStudent!=nil);
+  NSParameterAssert(_session.currentStudent.entityId!=nil);
+  NSParameterAssert(pollOptionUUID!=nil);
+  
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/answers",kBaseURL];
+  
+  NSMutableDictionary * params = [self mandatoryParams];
+  
+  [params setObject:pollOptionUUID forKey:@"option_id"];
+  [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
+  
+  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+    
+    if(successBlock && error==nil){
+      successBlock();
+    } else if(error) {
+      errorCallback(error);
+    }
+  }];
+  
+}
 
 ////////////////////////////////////
 #pragma mark Private Methods

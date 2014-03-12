@@ -1,5 +1,7 @@
 #import "DUNPollVC.h"
 
+#import "DUNAPI.h"
+
 #import "DUNPoll.h"
 #import "DUNPollOption.h"
 
@@ -32,7 +34,17 @@
 
 - (IBAction)sendAnswer:(id)sender
 {
-  NSLog(@"send answer..");
+  NSString *pollUUID = ((DUNPollOption*)_session.currentPoll.options[[_optionPicker selectedRowInComponent:0]]).uuid;
+  
+  [DUNAPI sendAnswerPollOptionUUID:pollUUID success:^{
+    
+    [self.navigationController popViewControllerAnimated:TRUE];
+    
+  } error:^(NSError *error) {
+    //TODO show generic 'modal'/'view' with error
+    NSLog(@"deu merda enviando Poll Answer");
+  }];
+  
 }
 
 #pragma mark - UIPickerViewDelegate, UIPickerViewDataSource

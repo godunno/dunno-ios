@@ -18,6 +18,8 @@
 
 + (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 
++ (void) sendAnswerPollOptionUUID:(NSString*)pollOptionUUID success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
+
 + (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSDecimalNumber*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 
 @end
