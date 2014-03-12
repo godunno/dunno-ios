@@ -159,7 +159,7 @@
   }];
 }
 
-+ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSDecimalNumber*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSString*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
 {
   DUNSession *_session = [DUNSession sharedInstance];
   
@@ -172,7 +172,7 @@
   
   NSMutableDictionary * params = [self mandatoryParams];
   
-  [params setObject:ratingValue forKey:@"rating[value]"];
+  [params setObject:ratingValue   forKey:@"rating[value]"];
   [params setObject:thermometer.uuid forKey:@"thermometer_id"];
   
   [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {

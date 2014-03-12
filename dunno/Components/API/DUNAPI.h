@@ -20,6 +20,6 @@
 
 + (void) sendAnswerPollOptionUUID:(NSString*)pollOptionUUID success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 
-+ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSDecimalNumber*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
++ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSString*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback;
 
 @end

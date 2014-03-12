@@ -44,7 +44,6 @@
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda enviando Poll Answer");
   }];
-  
 }
 
 #pragma mark - UIPickerViewDelegate, UIPickerViewDataSource

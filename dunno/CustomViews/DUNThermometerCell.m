@@ -1,6 +1,9 @@
 #import "DUNAPI.h"
 #import "DUNThermometerCell.h"
 
+@interface DUNThermometerCell()<UIAlertViewDelegate>
+@end
+
 @implementation DUNThermometerCell
 
 - (void)layoutSubviews
@@ -27,17 +30,22 @@
 
 - (IBAction)sendRating:(id)sender
 {
-  
-  NSDecimalNumber *ratingValue = (NSDecimalNumber*)[NSNumber numberWithFloat:_thermometerSlider.value];
+  NSString* ratingValue = [NSString stringWithFormat:@"%.02f", _thermometerSlider.value];
   
   [DUNAPI sendThermometer:_thermometer withRatingValue:ratingValue success:^{
-    
-    NSLog(@"enviou thermometer com sucesso..");
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:[NSString stringWithFormat:@"Avaliação enviada: %@%%", ratingValue] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
     
   } error:^(NSError *error) {
     //TODO show generic 'modal'/'view' with error
     NSLog(@"deu merda enviando rating do termometro");
   }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+  _sendRatingButton.hidden = TRUE;
 }
 
 @end
