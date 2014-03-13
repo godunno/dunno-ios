@@ -21,8 +21,8 @@ typedef enum {
     MJPopupViewAnimationSlideRightLeft,
     MJPopupViewAnimationSlideRightRight,
   
-    MJPopupViewAnimationSlideBellowNavbarTop,
-    MJPopupViewAnimationSlideBellowNavbarBottom,
+    MJPopupViewAnimationSlideBelowNavbarTop,
+    MJPopupViewAnimationSlideBelowNavbarBottom,
 } MJPopupViewAnimation;
 
 @interface UIViewController (MJPopupViewController)
@@ -31,6 +31,7 @@ typedef enum {
 @property (nonatomic, retain) MJPopupBackgroundView *mj_popupBackgroundView;
 
 - (void)presentPopupViewController:(UIViewController*)popupViewController animationType:(MJPopupViewAnimation)animationType;
+- (void)presentPopupViewController:(UIViewController*)popupViewController animationType:(MJPopupViewAnimation)animationType dismissed:(void(^)(void))dismissed;
 - (void)dismissPopupViewControllerWithanimationType:(MJPopupViewAnimation)animationType;
 
 @end

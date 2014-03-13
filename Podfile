@@ -13,7 +13,7 @@ pod 'Reachability', '~> 3.1.1'
 pod 'SDWebImage', '~> 3.5'
 pod 'libPusher', '~> 1.4'
 pod 'MBProgressHUD', '~> 0.8'
-pod 'MJPopupViewController', '~> 0.4'
+pod 'MJPopupViewController', :git => "https://github.com/seufagner/MJPopupViewController"
 pod 'JSONModel'
 
 pod 'FlatUIKit'

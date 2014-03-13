@@ -18,7 +18,6 @@ PODS:
     - SDWebImage/Core
   - SDWebImage/Core (3.5.2)
   - SocketRocket (0.3.1-beta2)
-  - SWRevealViewController (1.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.0)
@@ -29,12 +28,15 @@ DEPENDENCIES:
   - JSONModel
   - libPusher (~> 1.4)
   - MBProgressHUD (~> 0.8)
-  - MJPopupViewController (~> 0.4)
+  - MJPopupViewController (from `https://github.com/seufagner/MJPopupViewController`)
   - OCHamcrest (~> 3.0)
   - OCMock
   - Reachability (~> 3.1.1)
   - SDWebImage (~> 3.5)
-  - SWRevealViewController (~> 1.1.1)
+
+EXTERNAL SOURCES:
+  MJPopupViewController:
+    :git: https://github.com/seufagner/MJPopupViewController
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
@@ -51,6 +53,5 @@ SPEC CHECKSUMS:
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735
   SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
-  SWRevealViewController: de412df00a42c2f90fde7f300de05c29e0cb7bf3
 
-COCOAPODS: 0.27.1
+COCOAPODS: 0.29.0
