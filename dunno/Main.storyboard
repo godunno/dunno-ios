@@ -153,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfS-NB-Ef7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="240"/>
+            <point key="canvasLocation" x="1091" y="216"/>
         </scene>
         <!--TimelineTVC-->
         <scene sceneID="Hm6-al-CGF">
@@ -329,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RI2-LV-0iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="240"/>
+            <point key="canvasLocation" x="1557" y="222"/>
         </scene>
         <!--PollVC-->
         <scene sceneID="uMl-Bg-uij">
@@ -387,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWO-mY-lC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="448"/>
+            <point key="canvasLocation" x="2079" y="580"/>
         </scene>
         <!--ThermometerTVC-->
         <scene sceneID="87C-A4-Rkf">
@@ -445,7 +445,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcf-O2-hb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="-228"/>
+            <point key="canvasLocation" x="2081" y="-96"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="C5B-Pg-tlm">
