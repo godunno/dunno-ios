@@ -81,13 +81,7 @@
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
   DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
-  
-  cell.cellIcon.image = [UIImage imageNamed:@"add_event_live"];
-  cell.eventTitleLabel.text = event.title;
-  cell.teacherNameLabel.text = event.teacher.name;
-  cell.profileImage.image = [UIImage imageNamed:event.teacher.avatarURLString];
-  cell.dateLabel.text = @"13/08";
-  cell.timeLabel.text = @"24:00";
+  [cell setEvent:event];
   
   return cell;
 }

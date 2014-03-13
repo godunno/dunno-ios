@@ -141,7 +141,9 @@
                             <constraint firstItem="ALK-xV-CDZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="ArX-my-2Qj" secondAttribute="top" constant="63" id="nJN-X2-ujK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3bM-L0-CDk"/>
+                    <navigationItem key="navigationItem" id="3bM-L0-CDk">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="prF-PI-IV8"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="Z3d-M5-3N1" id="hOc-AD-DrI"/>
                         <outlet property="organizationNameLabel" destination="jhL-sl-j4k" id="st9-AX-HCE"/>

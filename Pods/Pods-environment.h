@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_MJPopupViewController 4
 #define COCOAPODS_VERSION_PATCH_MJPopupViewController 0
 
+// NSDate+Calendar
+#define COCOAPODS_POD_AVAILABLE_NSDate_Calendar
+#define COCOAPODS_VERSION_MAJOR_NSDate_Calendar 0
+#define COCOAPODS_VERSION_MINOR_NSDate_Calendar 0
+#define COCOAPODS_VERSION_PATCH_NSDate_Calendar 3
+
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
 #define COCOAPODS_VERSION_MAJOR_Reachability 3

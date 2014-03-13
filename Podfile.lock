@@ -11,6 +11,7 @@ PODS:
     - SocketRocket (= 0.3.1-beta2)
   - MBProgressHUD (0.8)
   - MJPopupViewController (0.4)
+  - NSDate+Calendar (0.0.3)
   - OCHamcrest (3.0.1)
   - OCMock (2.2.2)
   - Reachability (3.1.1)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - libPusher (~> 1.4)
   - MBProgressHUD (~> 0.8)
   - MJPopupViewController (from `https://github.com/seufagner/MJPopupViewController`)
+  - NSDate+Calendar
   - OCHamcrest (~> 3.0)
   - OCMock
   - Reachability (~> 3.1.1)
@@ -48,6 +50,7 @@ SPEC CHECKSUMS:
   libPusher: 295f281f1003aa678382a387e3043c298f270e4d
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052
+  NSDate+Calendar: 72bea251b7a377c5783d358155b9ad68435bbc1f
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735

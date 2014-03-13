@@ -33,7 +33,7 @@
   //show errors if user dont input the username
   //show errors if user dont input the password
 
-  [DUNAPI loginStudentUsername:username withPassword:password success:^(DUNStudent *student) {
+  [DUNAPI loginStudentUsername:@"dow@dunno.vc" withPassword:@"#dunnovc" success:^(DUNStudent *student) {
     
     _session = [DUNSession sharedInstance];
     
