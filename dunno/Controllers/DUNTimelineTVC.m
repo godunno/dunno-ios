@@ -114,7 +114,7 @@
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
   newMessageVC.delegate = self;
-  [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideTopBottom];
+  [self presentPopupViewController:newMessageVC animationType:MJPopupViewAnimationSlideBellowNavbarTop];
 }
 
 - (void)showPoll:(DUNPoll*)poll {

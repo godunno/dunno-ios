@@ -1,3 +1,0 @@
-@interface DUNSideMenuTVC : UITableViewController
-
-@end
