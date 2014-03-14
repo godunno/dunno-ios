@@ -1,10 +1,8 @@
 #import "DUNLoginVC.h"
-#import "DUNProfileVC.h"
+#import "DUNTutorialVC.h"
 
 #import "DUNAPI.h"
 #import "DUNStudent.h"
-
-#define kDUNInitialNVC @"DUNInitialNVC"
 
 @interface DUNLoginVC ()<UITextFieldDelegate>
 
@@ -23,6 +21,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+  
 }
 
 
@@ -41,9 +40,14 @@
     _session.currentStudent = student;
     _session.currentOrganization = student.organization;
     
-    UINavigationController *nvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNInitialNVC];
-    
-    [self presentViewController:nvc animated:YES completion:nil];
+    if(![DUNTutorialVC hasBeenExhibited]){
+      DUNTutorialVC *tutorialVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTutorialVCStoryboardId];
+      [self presentViewController:tutorialVC
+                         animated:YES completion:nil];
+    } else {
+      UINavigationController *initialNVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNInitialNVC];
+      [self presentViewController:initialNVC animated:YES completion:nil];
+    }
     
   } error:^(NSError *error) {
     [DUNErrorVC showWithTitle:@"Login" andMessage:@"Erro no login."];

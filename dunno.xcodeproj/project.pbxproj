@@ -21,6 +21,7 @@
 		C3006F8418859432007B0790 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3006F8218859432007B0790 /* InfoPlist.strings */; };
 		C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9718859A1B007B0790 /* DUNStyles.m */; };
 		C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3006F9A1885B369007B0790 /* DUNAppearance.m */; };
+		C302058418D3BEFE006C72AA /* DUNTutorialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C302058318D3BEFE006C72AA /* DUNTutorialVC.m */; };
 		C3068AA718A15FD400A8C279 /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C3068AA618A15FD400A8C279 /* NSDate-Utilities.m */; };
 		C331F99618C91C24000C4375 /* DUNThermometerTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C331F99518C91C24000C4375 /* DUNThermometerTVC.m */; };
 		C34B67A518929F4200407497 /* DUNTimelinePoll.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A418929F4200407497 /* DUNTimelinePoll.m */; };
@@ -98,6 +99,8 @@
 		C3006F9718859A1B007B0790 /* DUNStyles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNStyles.m; sourceTree = "<group>"; };
 		C3006F991885B369007B0790 /* DUNAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNAppearance.h; sourceTree = "<group>"; };
 		C3006F9A1885B369007B0790 /* DUNAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNAppearance.m; sourceTree = "<group>"; };
+		C302058218D3BEFE006C72AA /* DUNTutorialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTutorialVC.h; sourceTree = "<group>"; };
+		C302058318D3BEFE006C72AA /* DUNTutorialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTutorialVC.m; sourceTree = "<group>"; };
 		C3068AA518A15FD400A8C279 /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
 		C3068AA618A15FD400A8C279 /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
 		C331F99418C91C24000C4375 /* DUNThermometerTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNThermometerTVC.h; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 				C3D8E66818D0E7E50061D4F8 /* DUNLoginVC.m */,
 				C385EF0B188B36880022A574 /* DUNProfileVC.h */,
 				C385EF0C188B36880022A574 /* DUNProfileVC.m */,
+				C302058218D3BEFE006C72AA /* DUNTutorialVC.h */,
+				C302058318D3BEFE006C72AA /* DUNTutorialVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */,
 				C3006F9818859A1B007B0790 /* DUNStyles.m in Sources */,
+				C302058418D3BEFE006C72AA /* DUNTutorialVC.m in Sources */,
 				C3850B0D188F9E25008E46FE /* DUNTimelineUserMessage.m in Sources */,
 				C38D27C918991C70008B8181 /* DUNSession.m in Sources */,
 				C3D8E66918D0E7E50061D4F8 /* DUNLoginVC.m in Sources */,

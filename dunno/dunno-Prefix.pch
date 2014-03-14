@@ -14,7 +14,9 @@
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
 
-  // ---
+  // first UINavigationViewController
+  #define kDUNInitialNVC @"DUNInitialNVC"
+
   #import "DUNStyles.h"
   #import "DUNConfig.h"
   #import "DUNSession.h"

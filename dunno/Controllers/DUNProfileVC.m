@@ -9,11 +9,9 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <HexColors/HexColor.h>
 
-#import <EAIntroView/EAIntroView.h>
-
-#define kTutorialPagesNibName @"DUNTutorialPages"
-
 @interface DUNProfileVC () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 
 @property (weak, nonatomic) IBOutlet UIView *profileContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -24,7 +22,6 @@
 @property (strong, nonatomic) DUNSession *session;
 
 @end
-
 
 @implementation DUNProfileVC
 
@@ -37,8 +34,6 @@
   [self setupProfileView];
   
   [self setupEventsTable];
-  
-  [self showTutorial];
 }
 
 #pragma mark - Initializers
@@ -59,20 +54,6 @@
   _eventsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
   _eventsTableView.delegate = self;
   _eventsTableView.dataSource  = self;
-}
-
-
-- (void) showTutorial
-{
-  NSArray *views = [[NSBundle mainBundle] loadNibNamed:kTutorialPagesNibName owner:self options:nil];
-  
-  EAIntroPage *page1 = [EAIntroPage pageWithCustomView:views[0]];
-  EAIntroPage *page2 = [EAIntroPage pageWithCustomView:views[1]];
-  EAIntroPage *page3 = [EAIntroPage pageWithCustomView:views[2]];
-  
-  EAIntroView *container = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3]];
-  
-  [container showInView:self.view animateDuration:0.0];
 }
 
 
@@ -125,5 +106,7 @@
   }];
   
 }
+
+
 
 @end

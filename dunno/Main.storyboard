@@ -142,18 +142,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3bM-L0-CDk">
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="prF-PI-IV8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="prF-PI-IV8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="eventsTableView" destination="Z3d-M5-3N1" id="hOc-AD-DrI"/>
                         <outlet property="organizationNameLabel" destination="jhL-sl-j4k" id="st9-AX-HCE"/>
                         <outlet property="profileContainerView" destination="ALK-xV-CDZ" id="nNL-WZ-voz"/>
                         <outlet property="profileImage" destination="6fB-6N-03r" id="KyW-2G-6J2"/>
+                        <outlet property="searchButton" destination="prF-PI-IV8" id="mf0-H3-N7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfS-NB-Ef7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="216"/>
+            <point key="canvasLocation" x="1051" y="250"/>
         </scene>
         <!--TimelineTVC-->
         <scene sceneID="Hm6-al-CGF">
