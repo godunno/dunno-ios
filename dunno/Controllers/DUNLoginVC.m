@@ -1,7 +1,8 @@
-#import "DUNAPI.h"
-#import "DUNStudent.h"
 #import "DUNLoginVC.h"
 #import "DUNProfileVC.h"
+
+#import "DUNAPI.h"
+#import "DUNStudent.h"
 
 #define kDUNInitialNVC @"DUNInitialNVC"
 
@@ -32,7 +33,7 @@
   
   //show errors if user dont input the username
   //show errors if user dont input the password
-
+  
   [DUNAPI loginStudentUsername:@"dow@dunno.vc" withPassword:@"#dunnovc" success:^(DUNStudent *student) {
     
     _session = [DUNSession sharedInstance];
@@ -42,7 +43,7 @@
     
     UINavigationController *nvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNInitialNVC];
     
-    [self presentViewController:nvc animated:YES completion:nil];    
+    [self presentViewController:nvc animated:YES completion:nil];
     
   } error:^(NSError *error) {
     [DUNErrorVC showWithTitle:@"Login" andMessage:@"Erro no login."];

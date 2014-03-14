@@ -514,7 +514,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voY-Cx-LRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="248"/>
+            <point key="canvasLocation" x="-164" y="248"/>
+        </scene>
+        <!--TutorialVC-->
+        <scene sceneID="X00-vK-e9c">
+            <objects>
+                <viewController storyboardIdentifier="DUNTutorialVCStoryboardId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dp0-7c-w0F" customClass="DUNTutorialVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DVS-BN-jBV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sil-Cc-0va"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hV1-Jo-vFm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAo-cx-yj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236" y="250"/>
         </scene>
         <!--Navigation Controller - Dunno-->
         <scene sceneID="X9j-bw-ix1">

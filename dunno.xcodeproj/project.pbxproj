@@ -62,6 +62,7 @@
 		C3F63A1C18CF9F6700FF2F4E /* DUNPollOption.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F63A1B18CF9F6700FF2F4E /* DUNPollOption.m */; };
 		C3F63A1F18CF9F9A00FF2F4E /* DUNPoll.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F63A1E18CF9F9A00FF2F4E /* DUNPoll.m */; };
 		C3F63A2218CFB10900FF2F4E /* DUNPollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F63A2118CFB10900FF2F4E /* DUNPollVC.m */; };
+		C3F9DFBB18D3B97E00AE3A95 /* DUNTutorialPages.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3F9DFBA18D3B97E00AE3A95 /* DUNTutorialPages.xib */; };
 		CCBF397B59D6404DB23C7F98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1976053BB44A65A795ECBC /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +166,7 @@
 		C3F63A1E18CF9F9A00FF2F4E /* DUNPoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DUNPoll.m; path = ../DUNPoll.m; sourceTree = "<group>"; };
 		C3F63A2018CFB10900FF2F4E /* DUNPollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNPollVC.h; sourceTree = "<group>"; };
 		C3F63A2118CFB10900FF2F4E /* DUNPollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNPollVC.m; sourceTree = "<group>"; };
+		C3F9DFBA18D3B97E00AE3A95 /* DUNTutorialPages.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DUNTutorialPages.xib; sourceTree = "<group>"; };
 		DF1976053BB44A65A795ECBC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F3B731C29E42E080946113 /* Pods-dunnoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dunnoTests.xcconfig"; path = "Pods/Pods-dunnoTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -365,6 +367,7 @@
 				C303F2FC18D22E6200E1C1F1 /* Timeline */,
 				C35C3D111899E488001A16D2 /* DUNEventCell.h */,
 				C35C3D121899E488001A16D2 /* DUNEventCell.m */,
+				C3F9DFBA18D3B97E00AE3A95 /* DUNTutorialPages.xib */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				C3AF446E18B53F1C00D51575 /* DUNNewMessageVC.xib in Resources */,
 				C3006F6518859432007B0790 /* InfoPlist.strings in Resources */,
 				C3D8E66E18D0F63E0061D4F8 /* DUNErrorVC.xib in Resources */,
+				C3F9DFBB18D3B97E00AE3A95 /* DUNTutorialPages.xib in Resources */,
 				C38D27CB18992DFF008B8181 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
