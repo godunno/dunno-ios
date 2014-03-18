@@ -38,5 +38,4 @@
 - (BOOL) isOpen;
 - (BOOL) isClosed;
 
-- (DUNPoll*)findPollByUUID:(NSString*)pollUUID;
 @end

@@ -1,10 +1,12 @@
 PODS:
   - AFNetworking (1.3.3)
+  - dunno-shared (0.0.1):
+    - JSONModel
   - EAIntroView (2.3.1)
   - FlatUIKit (1.3)
   - HexColors (2.2.1)
   - ISO8601DateFormatter (0.7)
-  - JSONModel (0.11.0)
+  - JSONModel (0.12.0)
   - libPusher (1.5):
     - libPusher/Core
   - libPusher/Core (1.5):
@@ -20,11 +22,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.0)
+  - dunno-shared (from `https://github.com/godunno/dunno-shared.git`)
   - EAIntroView (~> 2.3.0)
   - FlatUIKit
   - HexColors
   - ISO8601DateFormatter (~> 0.7)
-  - JSONModel
   - libPusher (~> 1.4)
   - MBProgressHUD (~> 0.8)
   - MJPopupViewController (from `https://github.com/seufagner/MJPopupViewController`)
@@ -33,16 +35,19 @@ DEPENDENCIES:
   - SDWebImage (~> 3.5)
 
 EXTERNAL SOURCES:
+  dunno-shared:
+    :git: https://github.com/godunno/dunno-shared.git
   MJPopupViewController:
     :git: https://github.com/seufagner/MJPopupViewController
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  dunno-shared: 17513ab73b2949aaaaf5a0e60b965a1a7ea896d1
   EAIntroView: 44482e1dfb11cdcb2fca0b4abcffc8a16a9c9a99
   FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
   ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
-  JSONModel: a5f2eb85c46df008a67569447ec408d1040d4bf4
+  JSONModel: f391da60a15e11f8fa8950fb980b8f799ae3453f
   libPusher: 295f281f1003aa678382a387e3043c298f270e4d
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052

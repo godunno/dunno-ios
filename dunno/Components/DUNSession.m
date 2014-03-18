@@ -3,7 +3,7 @@
 
 @implementation DUNSession
 
-+ (instancetype) sharedInstance
++ (DUNSession*) sharedInstance
 {
   static dispatch_once_t p = 0;
   __strong static DUNSession *sharedObject = nil;

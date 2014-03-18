@@ -12,6 +12,8 @@
 	<dict>
 		<key>2ACF69F4-D9A2-4883-ADBB-22FEFD79FA66</key>
 		<string>ssh://github.com/godunno/dunno-ios.git</string>
+		<key>86E9577A-1E33-415E-B672-5DD6FC76FE22</key>
+		<string>https://github.com/godunno/dunno-shared.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>dunno.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>2ACF69F4-D9A2-4883-ADBB-22FEFD79FA66</key>
 		<string>..</string>
+		<key>86E9577A-1E33-415E-B672-5DD6FC76FE22</key>
+		<string>../../dunno-shared</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/godunno/dunno-ios.git</string>
@@ -35,6 +39,14 @@
 			<string>2ACF69F4-D9A2-4883-ADBB-22FEFD79FA66</string>
 			<key>IDESourceControlWCCName</key>
 			<string>dunno</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86E9577A-1E33-415E-B672-5DD6FC76FE22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dunno-shared</string>
 		</dict>
 	</array>
 </dict>

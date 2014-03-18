@@ -27,7 +27,7 @@
   buttonTemplate.titleLabel.font = [UIFont boldFlatFontOfSize:16];
   [buttonTemplate setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal];
   [buttonTemplate setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted];
-  
+
   return buttonTemplate;
 }
 

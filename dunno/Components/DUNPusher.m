@@ -51,7 +51,7 @@
       handler(nil);
       
     } else {
-       NSLog(@"Pusher received message (type: %@)",[channelEvent.data class],channelEvent.data);
+       NSLog(@"Pusher received message (type: %@)",[channelEvent.data class]);
 
       if ([[channelEvent.data class] isKindOfClass:[NSDictionary class]]) {
         

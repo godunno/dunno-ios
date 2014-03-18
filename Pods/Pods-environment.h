@@ -39,7 +39,7 @@
 // JSONModel
 #define COCOAPODS_POD_AVAILABLE_JSONModel
 #define COCOAPODS_VERSION_MAJOR_JSONModel 0
-#define COCOAPODS_VERSION_MINOR_JSONModel 11
+#define COCOAPODS_VERSION_MINOR_JSONModel 12
 #define COCOAPODS_VERSION_PATCH_JSONModel 0
 
 // MBProgressHUD
@@ -83,6 +83,12 @@
 #define COCOAPODS_VERSION_MAJOR_SocketRocket 0
 #define COCOAPODS_VERSION_MINOR_SocketRocket 3
 #define COCOAPODS_VERSION_PATCH_SocketRocket 1
+
+// dunno-shared
+#define COCOAPODS_POD_AVAILABLE_dunno_shared
+#define COCOAPODS_VERSION_MAJOR_dunno_shared 0
+#define COCOAPODS_VERSION_MINOR_dunno_shared 0
+#define COCOAPODS_VERSION_PATCH_dunno_shared 1
 
 // libPusher
 #define COCOAPODS_POD_AVAILABLE_libPusher

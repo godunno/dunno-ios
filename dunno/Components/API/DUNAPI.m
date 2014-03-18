@@ -25,7 +25,7 @@
     NSString *error = [json valueForKey:@"error"];
     
     if(successBlock && json!=nil && error == nil){
-      DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&err];
+      DUNStudent *student = [[DUNStudent alloc] init];
       
       if(student==nil)
       {

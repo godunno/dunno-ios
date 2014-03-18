@@ -1,7 +1,7 @@
 //
 //  JSONModel.m
 //
-//  @version 0.11.0
+//  @version 0.12.0
 //  @author Marin Todorov, http://www.touch-code-magazine.com
 //
 
@@ -22,6 +22,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+
 #import "JSONModel.h"
 #import "JSONModelClassProperty.h"
 #import "JSONModelArray.h"
@@ -36,6 +37,7 @@ static const char * kIndexPropertyNameKey;
 static NSArray* allowedJSONTypes = nil;
 static NSArray* allowedPrimitiveTypes = nil;
 static JSONValueTransformer* valueTransformer = nil;
+static Class JSONModelClass = NULL;
 
 #pragma mark - model cache
 static JSONKeyMapper* globalKeyMapper = nil;
@@ -63,8 +65,13 @@ static JSONKeyMapper* globalKeyMapper = nil;
                 //and some famous aliases
                 @"NSInteger", @"NSUInteger"
             ];
-            
+
             valueTransformer = [[JSONValueTransformer alloc] init];
+            
+            // This is quite strange, but I found the test isSubclassOfClass: (line ~291) to fail if using [JSONModel class].
+            // somewhat related: https://stackoverflow.com/questions/6524165/nsclassfromstring-vs-classnamednsstring
+            // //; seems to break the unit tests
+            JSONModelClass = [JSONModel class];
 		}
     });
 }
@@ -96,6 +103,19 @@ static JSONKeyMapper* globalKeyMapper = nil;
         [self __setup__];
     }
     return self;
+}
+
+-(instancetype)initWithData:(NSData *)data error:(NSError *__autoreleasing *)err
+{
+    //turn nsdata to an nsstring
+    NSString* string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    if (!string) return nil;
+    
+    //create an instance
+    JSONModelError* initError = nil;
+    id objModel = [self initWithString:string usingEncoding:NSUTF8StringEncoding error:&initError];
+    if (initError && err) *err = initError;
+    return objModel;
 }
 
 -(id)initWithString:(NSString*)string error:(JSONModelError**)err
@@ -294,7 +314,8 @@ static JSONKeyMapper* globalKeyMapper = nil;
 
             
             // 1) check if property is itself a JSONModel
-            if ([[property.type class] isSubclassOfClass:[JSONModel class]]) {
+            
+            if ([self __isJSONModelSubClass:property.type]) {
                 
                 //initialize the property's model, store it
                 JSONModelError* initErr = nil;
@@ -367,8 +388,21 @@ static JSONKeyMapper* globalKeyMapper = nil;
                                               sourceClass]; //source name
                     SEL selector = NSSelectorFromString(selectorName);
                     
-                    //check if there's a transformer with that name
+                    //check for custom transformer
+                    BOOL foundCustomTransformer = NO;
                     if ([valueTransformer respondsToSelector:selector]) {
+                        foundCustomTransformer = YES;
+                    } else {
+                        //try for hidden custom transformer
+                        selectorName = [NSString stringWithFormat:@"__%@",selectorName];
+                        selector = NSSelectorFromString(selectorName);
+                        if ([valueTransformer respondsToSelector:selector]) {
+                            foundCustomTransformer = YES;
+                        }
+                    }
+                    
+                    //check if there's a transformer with that name
+                    if (foundCustomTransformer) {
                         
                         //it's OK, believe me...
 #pragma clang diagnostic push
@@ -411,6 +445,17 @@ static JSONKeyMapper* globalKeyMapper = nil;
 }
 
 #pragma mark - property inspection methods
+
+-(BOOL)__isJSONModelSubClass:(Class)class
+{
+// http://stackoverflow.com/questions/19883472/objc-nsobject-issubclassofclass-gives-incorrect-failure
+#ifdef UNIT_TESTING
+    return [@"JSONModel" isEqualToString: NSStringFromClass([class superclass])];
+#else
+    return [class isSubclassOfClass:JSONModelClass];
+#endif
+}
+
 //returns a set of the required keys for the model
 -(NSMutableSet*)__requiredPropertyNames
 {
@@ -619,7 +664,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     }
     
     //if the protocol is actually a JSONModel class
-    if ([[protocolClass class] isSubclassOfClass:[JSONModel class]]) {
+    if ([self __isJSONModelSubClass:protocolClass]) {
 
         //check if it's a list of models
         if ([property.type isSubclassOfClass:[NSArray class]]) {
@@ -698,7 +743,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
     if (!protocolClass) return value;
     
     //if the protocol is actually a JSONModel class
-    if ([[protocolClass class] isSubclassOfClass:[JSONModel class]]) {
+    if ([self __isJSONModelSubClass:protocolClass]) {
 
         //check if should export list of dictionaries
         if (property.type == [NSArray class] || property.type == [NSMutableArray class]) {
@@ -883,7 +928,7 @@ static JSONKeyMapper* globalKeyMapper = nil;
         }
         
         //check if the property is another model
-        if ([value isKindOfClass:[JSONModel class]]) {
+        if ([value isKindOfClass:JSONModelClass]) {
 
             //recurse models
             value = [(JSONModel*)value toDictionary];
@@ -915,8 +960,20 @@ static JSONKeyMapper* globalKeyMapper = nil;
                 NSString* selectorName = [NSString stringWithFormat:@"%@From%@:", @"JSONObject", p.type?p.type:p.structName];
                 SEL selector = NSSelectorFromString(selectorName);
                 
-                //check if there's a transformer declared
+                BOOL foundCustomTransformer = NO;
                 if ([valueTransformer respondsToSelector:selector]) {
+                    foundCustomTransformer = YES;
+                } else {
+                    //try for hidden transformer
+                    selectorName = [NSString stringWithFormat:@"__%@",selectorName];
+                    selector = NSSelectorFromString(selectorName);
+                    if ([valueTransformer respondsToSelector:selector]) {
+                        foundCustomTransformer = YES;
+                    }
+                }
+                
+                //check if there's a transformer declared
+                if (foundCustomTransformer) {
                     
                     //it's OK, believe me...
 #pragma clang diagnostic push
@@ -967,6 +1024,14 @@ static JSONKeyMapper* globalKeyMapper = nil;
 +(NSMutableArray*)arrayOfModelsFromDictionaries:(NSArray*)array
 {
 	return [self arrayOfModelsFromDictionaries:array error:nil];
+}
+
++(NSMutableArray*)arrayOfModelsFromData:(NSData *)data error:(NSError *__autoreleasing *)err
+{
+    id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:err];
+    if (!json || ![json isKindOfClass:[NSArray class]]) return nil;
+    
+    return [self arrayOfModelsFromDictionaries:json error:err];
 }
 
 // Same as above, but with error reporting

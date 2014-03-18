@@ -11,7 +11,7 @@
 @property (nonatomic, strong) DUNStudent *currentStudent;
 @property (nonatomic, strong) DUNPoll *currentPoll;
 
-+ (instancetype) sharedInstance;
++ (DUNSession*) sharedInstance;
 
 + (BOOL) hasActiveEvent;
 
