@@ -47,7 +47,11 @@
   
   DUNStudent *user = [DUNSession sharedInstance].currentStudent;
   [self.profileImage setImageWithURL:[NSURL URLWithString:user.avatarURLString]];
+  
+  [DUNStyles roundView:self.profileImage];
 }
+
+
 
 - (void) setupEventsTable
 {

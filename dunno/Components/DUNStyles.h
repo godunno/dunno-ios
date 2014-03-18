@@ -7,4 +7,5 @@
 
 + (FUIButton*) customizeOKButton:(FUIButton*)buttonTemplate;
 
++ (void) roundView:(UIView*)view;
 @end

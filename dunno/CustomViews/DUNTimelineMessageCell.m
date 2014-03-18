@@ -21,6 +21,7 @@
   _upVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.upVotes integerValue]];
   _downVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.downVotes integerValue]];
   
+  [DUNStyles roundView:_profilePicture];
 }
 
 - (IBAction)upVote:(id)sender {
