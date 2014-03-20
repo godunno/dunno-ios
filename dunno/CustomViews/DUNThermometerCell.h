@@ -4,6 +4,8 @@
 
 #define kThermometerCell @"ThermometerCellId"
 
+@class DUNThermometer;
+
 @interface DUNThermometerCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;

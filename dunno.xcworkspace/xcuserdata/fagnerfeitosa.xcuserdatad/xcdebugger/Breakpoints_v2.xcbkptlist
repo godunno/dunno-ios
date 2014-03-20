@@ -73,70 +73,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416349576.969278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "+organizationActiveSuccess:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416349576.969278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "+organizationActiveSuccess:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416349576.969278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "+organizationActiveSuccess:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dunno/Components/API/DUNAPI.m"
-            timestampString = "416349576.969278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "+organizationActiveSuccess:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "dunno/Controllers/DUNTimelineTVC.m"
             timestampString = "416342673.925554"
             startingColumnNumber = "9223372036854775807"
@@ -445,7 +381,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "+sendTimelineMessage:success:error:"
+            landmarkName = "+attendEventWithUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -601,7 +537,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
             endingLineNumber = "109"
-            landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
+            landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -649,7 +585,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
+            landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -665,7 +601,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
             endingLineNumber = "108"
-            landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
+            landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,7 +617,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
             endingLineNumber = "132"
-            landmarkName = "+upVoteTimelineMessage:success:error:"
+            landmarkName = "+downVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -697,7 +633,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "+upVoteTimelineMessage:success:error:"
+            landmarkName = "+downVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1031,7 +967,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "+attendEventWithUUID:onOrganizationWithUUID:success:error:"
+            landmarkName = "+upVoteTimelineMessage:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1189,7 +1125,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
             endingLineNumber = "188"
-            landmarkName = "+sendThermometer:withRatingValue:success:error:"
+            landmarkName = "+sendAnswerPollOptionUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1205,7 +1141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
             endingLineNumber = "191"
-            landmarkName = "+sendThermometer:withRatingValue:success:error:"
+            landmarkName = "+sendAnswerPollOptionUUID:success:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

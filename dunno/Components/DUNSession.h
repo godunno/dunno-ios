@@ -1,18 +1,23 @@
 #import "DUNOrganization.h"
-#import "DUNEvent.h"
-#import "DUNStudent.h"
-#import "DUNPoll.h"
+
+@class DUNEvent;
+@class DUNStudent;
+@class DUNPoll;
 
 @interface DUNSession : NSObject
 
-@property (nonatomic, strong) DUNOrganization *currentOrganization;
-@property (nonatomic, strong) DUNEvent *currentEvent;
-@property (nonatomic, copy) NSString *userChannel;
+@property (nonatomic, strong) DUNEvent *activeEvent;
 @property (nonatomic, strong) DUNStudent *currentStudent;
+// TODO wtf?????? remove this..
 @property (nonatomic, strong) DUNPoll *currentPoll;
+
+@property (nonatomic, copy) NSString *pusherUserChannel;
 
 + (DUNSession*) sharedInstance;
 
 + (BOOL) hasActiveEvent;
+
+
+
 
 @end

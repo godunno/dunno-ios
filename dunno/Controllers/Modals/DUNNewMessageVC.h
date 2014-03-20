@@ -1,3 +1,5 @@
+#import "DUNTimelineUserMessage.h"
+
 #define kDUNNewMessageVCNibName @"DUNNewMessageVC"
 
 @protocol DUNNewMessageDelegate

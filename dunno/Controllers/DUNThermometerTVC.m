@@ -1,5 +1,6 @@
 #import "DUNThermometerTVC.h"
 #import "DUNThermometerCell.h"
+#import "DUNThermometer.h"
 
 @implementation DUNThermometerTVC
 

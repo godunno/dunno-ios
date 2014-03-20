@@ -70,13 +70,13 @@
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage 5
-#define COCOAPODS_VERSION_PATCH_SDWebImage 2
+#define COCOAPODS_VERSION_PATCH_SDWebImage 4
 
 // SDWebImage/Core
 #define COCOAPODS_POD_AVAILABLE_SDWebImage_Core
 #define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 5
-#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
+#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 4
 
 // SocketRocket
 #define COCOAPODS_POD_AVAILABLE_SocketRocket
@@ -87,8 +87,8 @@
 // dunno-shared
 #define COCOAPODS_POD_AVAILABLE_dunno_shared
 #define COCOAPODS_VERSION_MAJOR_dunno_shared 0
-#define COCOAPODS_VERSION_MINOR_dunno_shared 0
-#define COCOAPODS_VERSION_PATCH_dunno_shared 1
+#define COCOAPODS_VERSION_MINOR_dunno_shared 2
+#define COCOAPODS_VERSION_PATCH_dunno_shared 3
 
 // libPusher
 #define COCOAPODS_POD_AVAILABLE_libPusher

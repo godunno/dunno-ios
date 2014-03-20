@@ -21,6 +21,7 @@
   return [[JSONKeyMapper alloc] initWithDictionary:
           @{
             @"id": @"entityId",
+            @"started_at":@"startedAt"
             }
           ];
 }

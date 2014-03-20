@@ -7,6 +7,11 @@
 #import "DUNThermometerTVC.h"
 #import "DUNPoll.h"
 #import "DUNTopic.h"
+#import "DUNEvent.h"
+#import "DUNTimeline.h"
+#import "DUNStudent.h"
+#import "DUNTeacher.h"
+#import "DUNCourse.h"
 
 #import "DUNPusher.h"
 
@@ -33,7 +38,7 @@
   [super viewDidLoad];
   
   _session = [DUNSession sharedInstance];
-  _event = _session.currentEvent;
+  _event = _session.activeEvent;
   
   [self registerPusherEvents];
   
@@ -55,7 +60,7 @@
     
     DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
     
-    [_session.currentEvent.timeline.messages addObject:newMessage];
+    [_session.activeEvent.timeline.messages addObject:newMessage];
     if(![newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
       return;
     }else {
@@ -68,7 +73,7 @@
     
     DUNTimelineUserMessage *messageVoted = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
     
-    [_session.currentEvent.timeline updateMessage:messageVoted];
+    [_session.activeEvent.timeline updateMessage:messageVoted];
     
     [self.tableView reloadData];
     
@@ -89,7 +94,7 @@
     // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
     
     
-    if(_session.currentEvent.thermometers!=nil && [_session.currentEvent.thermometers count] > 0)
+    if(_session.activeEvent.thermometers!=nil && [_session.activeEvent.thermometers count] > 0)
     {
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"A aula foi finalizada pelo Professor. Vamos a avaliação dos tópicos?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
       alert.tag = kCloseEventTag;
@@ -168,7 +173,7 @@
   {
     DUNTimelineStartPointCell *cell = [tableView dequeueReusableCellWithIdentifier:kTimelineStartPointCellId forIndexPath:indexPath];
     
-    [cell.profilePicture setImageWithURL:[NSURL URLWithString:_event.teacher.avatarURLString]];
+    [cell.profilePicture setImageWithURL:[NSURL URLWithString:_event.course.teacher.avatarURLString]];
     
     if(_event.topics.count == 0){ // start point
       cell.messageText.text = @"Evento sem tópico específico - Tema livre";
@@ -179,7 +184,7 @@
         topicsString = [topicsString stringByAppendingString:[@"\u2022 " stringByAppendingString:[topic.title stringByAppendingString:@"\n"]]];
       }];
       cell.messageText.text = topicsString;
-      cell.startHour.text = _event.timeline.startAt.description;
+      cell.startHour.text = _event.timeline.startedAt.description;
     }
     
     return cell;

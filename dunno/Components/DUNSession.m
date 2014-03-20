@@ -1,4 +1,9 @@
 #import "DUNSession.h"
+
+#import "DUNEvent.h"
+#import "DUNStudent.h"
+#import "DUNPoll.h"
+
 #import "DUNPusher.h"
 
 @implementation DUNSession
@@ -16,7 +21,7 @@
 
 + (BOOL) hasActiveEvent
 {
-  return ([DUNSession sharedInstance].currentEvent!=nil);
+  return ([DUNSession sharedInstance].activeEvent!=nil);
 }
 
 @end

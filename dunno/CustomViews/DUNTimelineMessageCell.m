@@ -1,8 +1,7 @@
 #import "DUNTimelineMessageCell.h"
 #import "NSDate-Utilities.h"
-
 #import "DUNAPI.h"
-
+#import "DUNStudent.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation DUNTimelineMessageCell

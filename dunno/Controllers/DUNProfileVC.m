@@ -1,7 +1,6 @@
 #import "DUNProfileVC.h"
 #import "DUNTimelineTVC.h"
 #import "DUNEventCell.h"
-
 #import "DUNStudent.h"
 
 #import "DUNAPI.h"
@@ -40,7 +39,7 @@
 
 - (void) setupProfileView
 {
-  _organizationNameLabel.text = _session.currentStudent.organization.name;
+  _organizationNameLabel.text = _session.currentStudent.name;
 
   self.eventsTableView.backgroundColor = [DUNStyles menuBackgroundColor];
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
@@ -70,7 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return _session.currentOrganization.events.count;
+  return _session.currentStudent.events.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,7 +77,7 @@
   static NSString *CellIdentifier = @"EventsCellId";
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+  DUNEvent *event = [_session.currentStudent.events objectAtIndex:indexPath.row];
   [cell setEvent:event];
   
   return cell;
@@ -86,7 +85,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  DUNEvent *event = [_session.currentOrganization.events objectAtIndex:indexPath.row];
+  DUNEvent *event = [_session.currentStudent.events objectAtIndex:indexPath.row];
 
   [self attendEvent:event];
 }
@@ -96,11 +95,11 @@
 - (void) attendEvent:(DUNEvent*)event
 {
   NSParameterAssert(event!=nil);
-  NSParameterAssert(_session.currentOrganization!=nil);
+  NSParameterAssert(_session.currentStudent!=nil);
   
-  [DUNAPI attendEventWithUUID:event.uuid onOrganizationWithUUID:_session.currentOrganization.uuid success:^(DUNEvent *event) {
+  [DUNAPI attendEventWithUUID:event.uuid success:^(DUNEvent *event) {
     
-    _session.currentEvent = event;
+    _session.activeEvent = event;
     
     DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
     [self.navigationController pushViewController:tvc animated:YES];

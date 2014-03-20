@@ -1,4 +1,11 @@
 #import <JSONModel/JSONHTTPClient.h>
+
+#import "DUNEvent.h"
+#import "DUNOrganization.h"
+#import "DUNTimeline.h"
+#import "DUNTimelineUserMessage.h"
+#import "DUNThermometer.h"
+#import "DUNStudent.h"
 #import "DUNAPI.h"
 
 #define kBaseURL @"http://192.168.0.101:3000/api/v1/"
@@ -42,28 +49,9 @@
   
 }
 
-+ (void) organizationActiveSuccess:(void(^)(DUNOrganization *organization))successBlock error:(void(^)(NSError *error))errorCallback
-{
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"organizations"];
-  endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
-  
-  [JSONHTTPClient getJSONFromURLWithString:endpointURL completion:^(id json, JSONModelError *err) {
-    
-    if(successBlock && json != nil){
-      DUNOrganization *organization = [[DUNOrganization alloc] initWithDictionary:json error:&err];
-      
-      successBlock(organization);
-    }
-    else {
-      errorCallback(err);
-    }
-  }];
-  
-}
-
 + (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorCallback
 {
-  NSString *timelineId = [DUNSession sharedInstance].currentEvent.timeline.entityId;
+  NSString *timelineId = [DUNSession sharedInstance].activeEvent.timeline.entityId;
   NSString *studentId = [DUNSession sharedInstance].currentStudent.entityId;
   
   NSParameterAssert(timelineId!=nil);
@@ -94,12 +82,11 @@
   
 }
 
-+ (void) attendEventWithUUID:(NSString*)eventUUID onOrganizationWithUUID:(NSString*)organizationUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) attendEventWithUUID:(NSString*)eventUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback
 {
   NSParameterAssert(eventUUID!=nil);
-  NSParameterAssert(organizationUUID!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/organizations/%@/events/%@/attend.json",kBaseURL,organizationUUID,eventUUID];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/events/%@/attend.json",kBaseURL,eventUUID];
   
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   

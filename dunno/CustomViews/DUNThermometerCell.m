@@ -1,5 +1,6 @@
 #import "DUNAPI.h"
 #import "DUNThermometerCell.h"
+#import "DUNThermometer.h"
 
 @interface DUNThermometerCell()<UIAlertViewDelegate>
 @end

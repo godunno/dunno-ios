@@ -2,7 +2,6 @@
 #import "DUNTutorialVC.h"
 
 #import "DUNAPI.h"
-#import "DUNStudent.h"
 
 @interface DUNLoginVC ()<UITextFieldDelegate>
 
@@ -38,7 +37,6 @@
     _session = [DUNSession sharedInstance];
     
     _session.currentStudent = student;
-    _session.currentOrganization = student.organization;
     
     if(![DUNTutorialVC hasBeenExhibited]){
       DUNTutorialVC *tutorialVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTutorialVCStoryboardId];
