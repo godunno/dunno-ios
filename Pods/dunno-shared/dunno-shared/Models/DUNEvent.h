@@ -1,9 +1,11 @@
 #import "JSONModel.h"
-#import "DUNTimeline.h"
-#import "DUNPoll.h"
-#import "DUNThermometer.h"
-#import "DUNTopic.h"
-#import "DUNCourse.h"
+
+@class DUNCourse;
+@class DUNTimeline;
+
+@protocol DUNThermometer;
+@protocol DUNTopic;
+@protocol DUNPoll;
 
 @protocol DUNEvent
 @end

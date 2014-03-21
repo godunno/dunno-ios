@@ -1,5 +1,6 @@
 #import "JSONModel.h"
-#import "DUNCourse.h"
+
+@protocol DUNCourse;
 
 @interface DUNOrganization : JSONModel
 

@@ -23,8 +23,8 @@ pod 'HexColors'
 pod 'ISO8601DateFormatter', '~> 0.7'
 pod 'NSDate+Calendar'
 
-pod 'dunno-shared', :path => '../dunno-shared'
-#, :git => "https://github.com/godunno/dunno-shared.git"
+#pod 'dunno-shared', :path => '../dunno-shared'
+pod 'dunno-shared', :git => "https://github.com/godunno/dunno-shared.git"
 
 target :dunnoTests, :exclusive => true do
   # specta ??

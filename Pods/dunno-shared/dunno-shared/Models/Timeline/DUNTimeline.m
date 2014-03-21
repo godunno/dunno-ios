@@ -1,4 +1,5 @@
 #import "DUNTimeline.h"
+#import "DUNTimelineUserMessage.h"
 
 @implementation DUNTimeline
 

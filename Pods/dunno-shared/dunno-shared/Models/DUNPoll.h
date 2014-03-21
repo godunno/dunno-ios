@@ -1,5 +1,6 @@
 #import "JSONModel.h"
-#import "DUNPollOption.h"
+
+@protocol DUNPollOption;
 
 @protocol DUNPoll
 @end

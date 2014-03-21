@@ -1,1 +1,1 @@
-../../../../dunno-shared/dunno-shared/Models/DUNCourse.h
+../../dunno-shared/dunno-shared/Models/DUNCourse.h

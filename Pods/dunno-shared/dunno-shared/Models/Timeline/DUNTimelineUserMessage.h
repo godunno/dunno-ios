@@ -1,5 +1,6 @@
 #import "JSONModel.h"
-#import "DUNStudent.h"
+
+@class DUNStudent;
 
 @protocol DUNTimelineUserMessage
 @end

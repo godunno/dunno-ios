@@ -1,6 +1,6 @@
 PODS:
   - AFNetworking (1.3.3)
-  - dunno-shared (0.2.3):
+  - dunno-shared (1.0):
     - JSONModel
   - EAIntroView (2.3.1)
   - FlatUIKit (1.3)
@@ -22,7 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 1.0)
-  - dunno-shared (from `../dunno-shared`)
+  - dunno-shared (from `https://github.com/godunno/dunno-shared.git`)
   - EAIntroView (~> 2.3.0)
   - FlatUIKit
   - HexColors
@@ -36,13 +36,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   dunno-shared:
-    :path: ../dunno-shared
+    :git: https://github.com/godunno/dunno-shared.git
   MJPopupViewController:
     :git: https://github.com/seufagner/MJPopupViewController
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
-  dunno-shared: 47aa48d40842dfe7eae19c46437e4db142923263
+  dunno-shared: 25d5174b8bf6f52a613ad0973dc645879d2c0dca
   EAIntroView: 44482e1dfb11cdcb2fca0b4abcffc8a16a9c9a99
   FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934

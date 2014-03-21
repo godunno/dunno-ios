@@ -1,5 +1,7 @@
 #import <JSONModel/JSONModel.h>
-#import "DUNTimelineUserMessage.h"
+
+@protocol DUNTimelineUserMessage;
+@class DUNTimelineUserMessage;
 
 @interface DUNTimeline : JSONModel
 
