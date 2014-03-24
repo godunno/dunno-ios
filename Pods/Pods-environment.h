@@ -87,8 +87,8 @@
 // dunno-shared
 #define COCOAPODS_POD_AVAILABLE_dunno_shared
 #define COCOAPODS_VERSION_MAJOR_dunno_shared 1
-#define COCOAPODS_VERSION_MINOR_dunno_shared 0
-#define COCOAPODS_VERSION_PATCH_dunno_shared 0
+#define COCOAPODS_VERSION_MINOR_dunno_shared 1
+#define COCOAPODS_VERSION_PATCH_dunno_shared 4
 
 // libPusher
 #define COCOAPODS_POD_AVAILABLE_libPusher

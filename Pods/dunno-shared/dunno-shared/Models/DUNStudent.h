@@ -1,5 +1,7 @@
 #import "DUNUser.h"
 
+@protocol DUNEvent;
+
 @protocol DUNStudent
 @end
 
@@ -7,6 +9,6 @@
 
 @property (nonatomic, copy) NSString<Optional> * avatarURLString;
 @property (nonatomic, copy) NSString<Optional> *authToken;
-@property (nonatomic, strong) NSArray<Optional> *events;
+@property (nonatomic, strong) NSArray<DUNEvent, Optional> *events;
 
 @end

@@ -8,8 +8,8 @@
 #import "DUNStudent.h"
 #import "DUNAPI.h"
 
-#define kBaseURL @"http://192.168.0.101:3000/api/v1/"
-//#define kBaseURL @"http://localhost:3000/api/v1/"
+//#define kBaseURL @"http://192.168.0.101:3000/api/v1/"
+#define kBaseURL @"http://localhost:3000/api/v1/"
 
 //#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
 
@@ -31,14 +31,18 @@
     
     NSString *error = [json valueForKey:@"error"];
     
+    JSONModelError *errorJson = nil;
+    
     if(successBlock && json!=nil && error == nil){
-      DUNStudent *student = [[DUNStudent alloc] init];
+      DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&errorJson];
       
-      if(student==nil)
+      if(student!=nil)
       {
-        errorCallback(err);
-      }else{
         successBlock(student);
+      } else if (errorJson) {
+        errorCallback(errorJson);
+      } else {
+        errorCallback(err);
       }
       
     }

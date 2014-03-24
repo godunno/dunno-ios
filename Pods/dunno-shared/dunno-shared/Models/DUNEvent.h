@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString<Optional> *status;
-@property (nonatomic, assign) NSNumber<Optional> *duration;
+//@property (nonatomic, assign) NSNumber<Optional> *duration;
 @property (nonatomic, strong) NSDate *startAt;
 
 @property (nonatomic, strong) DUNTimeline<Optional> *timeline;
