@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "dunno-shared"
-  s.version      = "1.1.4"
+  s.version      = "1.1.5"
   s.summary      = 'Common classes to iPad and iPhone module'
   s.homepage     = "https://github.com/godunno/dunno-shared"
   s.license      = 'MIT'
