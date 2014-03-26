@@ -10,10 +10,8 @@ pod 'EAIntroView', '~> 2.3.0'
 pod 'MJPopupViewController', :git => 'https://github.com/seufagner/MJPopupViewController'
 
 # network
-pod 'Reachability', '~> 3.1.1'
 pod 'AFNetworking', '~> 1.0'
 pod 'SDWebImage', '~> 3.5'
-pod 'libPusher', '~> 1.4'
 
 # visual
 pod 'MBProgressHUD', '~> 0.8'
