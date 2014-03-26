@@ -40,7 +40,7 @@
 - (void) setupProfileView
 {
   _organizationNameLabel.text = _session.currentStudent.name;
-
+  
   self.eventsTableView.backgroundColor = [DUNStyles menuBackgroundColor];
   self.profileContainerView.backgroundColor = [DUNStyles backgroundColor];
   
@@ -86,8 +86,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
   DUNEvent *event = [_session.currentStudent.events objectAtIndex:indexPath.row];
-
-  [self attendEvent:event];
+  
+  if(event.status==DUNEventOpened){
+    [self attendEvent:event];
+  } 
 }
 
 #pragma mark - Private methods
@@ -105,7 +107,7 @@
     [self.navigationController pushViewController:tvc animated:YES];
     
   } error:^(NSError *error) {
-    [DUNErrorVC showWithTitle:@"Participar do Evento" andMessage:@"Não foi possíve participar desse Evento."];    
+    [DUNErrorVC showWithTitle:@"Participar do Evento" andMessage:@"Não foi possíve participar desse Evento."];
   }];
   
 }
