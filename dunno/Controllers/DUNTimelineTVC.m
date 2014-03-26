@@ -26,7 +26,6 @@
 
 @interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
 
-@property (nonatomic, strong) DUNEvent *event;
 @property (strong, nonatomic) DUNSession *session;
 
 @end
@@ -38,13 +37,22 @@
   [super viewDidLoad];
   
   _session = [DUNSession sharedInstance];
-  _event = _session.activeEvent;
   
   [self registerPusherEvents];
+  
+  _session.activeEvent = _event;
   
   self.navigationController.navigationBar.topItem.title = @"";
 }
 
+-(void) viewWillDisappear:(BOOL)animated {
+  
+  //when press back button, clear active event..
+  if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+    [_session clearActiveEvent];
+  }
+  [super viewWillDisappear:animated];
+}
 
 # pragma mark - Pusher events..
 - (void) registerPusherEvents
@@ -114,8 +122,6 @@
 #pragma mark - Interactions
 
 - (IBAction)sendNewMessage:(id)sender {
-  
-  //TODO hide button when event is closed
   DUNNewMessageVC *newMessageVC = [[DUNNewMessageVC alloc] initWithNibName:kDUNNewMessageVCNibName bundle:nil];
   [newMessageVC setModalInPopover:TRUE];
   newMessageVC.delegate = self;

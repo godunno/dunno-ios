@@ -7,8 +7,6 @@
 
 @implementation DUNPusher
 
-@synthesize client = _client;
-
 + (DUNPusher*) sharedInstance
 {
   static dispatch_once_t p = 0;
@@ -40,6 +38,7 @@
 {
   
   PTPusherChannel *channel = [_client subscribeToChannelNamed:channelName];
+  
   [channel bindToEventNamed:eventName handleWithBlock:^(PTPusherEvent *channelEvent) {
     
     // channelEvent.data is a NSDictionary of the JSON object received.
@@ -61,6 +60,12 @@
     }
   }];
   
+}
+
+- (void) unsubscribe:(NSString*)channelName
+{
+  PTPusherChannel *channel = [_client subscribeToChannelNamed:channelName];
+  [channel unsubscribe];
 }
 
 /////////////////////////////////

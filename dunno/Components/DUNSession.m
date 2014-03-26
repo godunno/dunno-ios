@@ -24,4 +24,12 @@
   return ([DUNSession sharedInstance].activeEvent!=nil);
 }
 
+- (void) clearActiveEvent
+{
+  if(_activeEvent==nil)
+    return;
+  
+  [[DUNPusher sharedInstance] unsubscribe:_activeEvent.channelName];
+  _activeEvent = nil;
+}
 @end

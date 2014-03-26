@@ -101,9 +101,8 @@
   
   [DUNAPI attendEventWithUUID:event.uuid success:^(DUNEvent *event) {
     
-    _session.activeEvent = event;
-    
     DUNTimelineTVC *tvc = [self.storyboard instantiateViewControllerWithIdentifier:kDUNTimelineTVCStoryboardId];
+    tvc.event = event;
     [self.navigationController pushViewController:tvc animated:YES];
     
   } error:^(NSError *error) {

@@ -7,6 +7,9 @@ typedef void (^DUNPusherEventBlockHandler)(NSDictionary *jsonDictionary);
 + (DUNPusher*) sharedInstance;
 
 - (DUNPusher*) connect;
+
+- (void) unsubscribe:(NSString*)channelName;
+
 - (void) subscribeToChannelNamed:(NSString*)channelName withEventNamed:(NSString*)eventName handleWithBlock:(DUNPusherEventBlockHandler)handler;
 
 @end
