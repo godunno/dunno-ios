@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_EAIntroView 3
 #define COCOAPODS_VERSION_PATCH_EAIntroView 1
 
+// EstimoteSDK
+#define COCOAPODS_POD_AVAILABLE_EstimoteSDK
+#define COCOAPODS_VERSION_MAJOR_EstimoteSDK 1
+#define COCOAPODS_VERSION_MINOR_EstimoteSDK 3
+#define COCOAPODS_VERSION_PATCH_EstimoteSDK 0
+
 // FlatUIKit
 #define COCOAPODS_POD_AVAILABLE_FlatUIKit
 #define COCOAPODS_VERSION_MAJOR_FlatUIKit 1
@@ -88,7 +94,7 @@
 #define COCOAPODS_POD_AVAILABLE_dunno_shared
 #define COCOAPODS_VERSION_MAJOR_dunno_shared 1
 #define COCOAPODS_VERSION_MINOR_dunno_shared 2
-#define COCOAPODS_VERSION_PATCH_dunno_shared 1
+#define COCOAPODS_VERSION_PATCH_dunno_shared 3
 
 // libPusher
 #define COCOAPODS_POD_AVAILABLE_libPusher

@@ -1,10 +1,11 @@
 PODS:
   - AFNetworking (1.3.3)
-  - dunno-shared (1.2.1):
+  - dunno-shared (1.2.3):
     - JSONModel
     - libPusher
     - Reachability
   - EAIntroView (2.3.1)
+  - EstimoteSDK (1.3.0)
   - FlatUIKit (1.3)
   - HexColors (2.2.1)
   - ISO8601DateFormatter (0.7)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - AFNetworking (~> 1.0)
   - dunno-shared (from `../dunno-shared`)
   - EAIntroView (~> 2.3.0)
+  - EstimoteSDK
   - FlatUIKit
   - HexColors
   - ISO8601DateFormatter (~> 0.7)
@@ -42,8 +44,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
-  dunno-shared: 3155001fd7cc25eaf24fb67c3cc9b90d883fdf10
+  dunno-shared: eb1c5cfdcf015b00b78373ad1d8a5533f2de3c84
   EAIntroView: 44482e1dfb11cdcb2fca0b4abcffc8a16a9c9a99
+  EstimoteSDK: f77e7cd88abd9b3be725041550e5aad727353d4f
   FlatUIKit: 3b32b52bb3c266477709cfe4812ab2c877ae942b
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
   ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
