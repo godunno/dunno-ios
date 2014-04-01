@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D08316078E54AB0870C2CE3"
+               BlueprintIdentifier = "38423B4BE4354CCA8E1A3B77"
                BuildableName = "libPods-dunnoTests-Expecta.a"
                BlueprintName = "Pods-dunnoTests-Expecta"
                ReferencedContainer = "container:Pods.xcodeproj">

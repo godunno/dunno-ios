@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EEDF703465D74B66A04F6584"
+               BlueprintIdentifier = "287AC409513F40F1A11D8A9A"
                BuildableName = "libPods-dunnoTests-OCMockito.a"
                BlueprintName = "Pods-dunnoTests-OCMockito"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -18,7 +18,6 @@
   return sharedObject;
 }
 
-
 + (BOOL) hasActiveEvent
 {
   return ([DUNSession sharedInstance].activeEvent!=nil);
