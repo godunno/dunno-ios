@@ -11,14 +11,14 @@
   
   _userMessage = userMessage;
   
-  _sentAt.text = [NSString stringWithFormat:@"%d:%d",[userMessage.sentAt hour],[userMessage.sentAt minute]];
+  _sentAt.text = [NSString stringWithFormat:@"%ld:%ld",(long)[userMessage.sentAt hour],[userMessage.sentAt minute]];
   
   [_profilePicture setImageWithURL:[NSURL URLWithString:userMessage.owner.avatarURLString]];
   
-  _messageText.text = [NSString stringWithFormat:@"%@ - %@", userMessage.content, ([userMessage isAlreadyVoted]?@"votou":@"não votou")];
+  _messageText.text = [NSString stringWithFormat:@"%@ - %@", userMessage.content, ([userMessage isAlreadyVoted]?@"****votou":@"****não votou")];
   
-  _upVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.upVotes integerValue]];
-  _downVoteLabel.text = [NSString stringWithFormat:@"%d", [userMessage.downVotes integerValue]];
+  _upVoteLabel.text = [NSString stringWithFormat:@"%ld", [userMessage.upVotes integerValue]];
+  _downVoteLabel.text = [NSString stringWithFormat:@"%ld", [userMessage.downVotes integerValue]];
   
   [DUNStyles roundView:_profilePicture];
 }

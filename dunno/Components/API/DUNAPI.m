@@ -1,21 +1,21 @@
-#import <JSONModel/JSONHTTPClient.h>
-
 #import "DUNEvent.h"
 #import "DUNOrganization.h"
 #import "DUNTimeline.h"
 #import "DUNTimelineUserMessage.h"
 #import "DUNThermometer.h"
 #import "DUNStudent.h"
+
 #import "DUNAPI.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 //#define kBaseURL @"http://192.168.0.101:3000/api/v1/"
 #define kBaseURL @"http://localhost:3000/api/v1/"
-
 //#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
 
 @implementation DUNAPI
 
-+ (void) loginStudentUsername:(NSString*)username withPassword:(NSString*)password success:(void(^)(DUNStudent *student))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) loginStudentUsername:(NSString*)username withPassword:(NSString*)password success:(void(^)(DUNStudent *student))successBlock error:(void(^)(NSError *error))errorBlock
 {
   NSParameterAssert(username!=nil);
   NSParameterAssert(password!=nil);
@@ -27,33 +27,25 @@
   
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/sign_in"];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
-    
-    NSString *error = [json valueForKey:@"error"];
-    
-    JSONModelError *errorJson = nil;
-    
-    if(successBlock && json!=nil && error == nil){
-      DUNStudent *student = [[DUNStudent alloc] initWithDictionary:json error:&errorJson];
-      
-      if(student!=nil)
-      {
-        successBlock(student);
-      } else if (errorJson) {
-        errorCallback(errorJson);
-      } else {
-        errorCallback(err);
-      }
-      
-    }
-    else {
-      errorCallback(err);
-    }
-  }];
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
   
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    NSError *error = nil;
+    DUNStudent *student = [MTLJSONAdapter modelOfClass:DUNStudent.class fromJSONDictionary:responseObject error:&error];
+    
+    if(!error)
+      successBlock(student);
+    else
+      errorBlock(error);
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
+  }];
 }
 
-+ (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorBlock
 {
   NSString *timelineId = [DUNSession sharedInstance].activeEvent.timeline.entityId;
   NSString *studentId = [DUNSession sharedInstance].currentStudent.entityId;
@@ -70,23 +62,29 @@
   
   NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"timeline/messages"];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *err) {
-    if(successBlock){
-      
-      DUNTimelineUserMessage *messageCreated = [[DUNTimelineUserMessage alloc] initWithDictionary:json error:&err];
-      messageCreated.owner = [DUNSession sharedInstance].currentStudent;
-      messageCreated.downVotes = 0;
-      messageCreated.upVotes = 0;
-      successBlock(messageCreated);
-      
-    } else if(err) {
-      errorCallback(err);
-    }
-  }];
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
   
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageCreated = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:responseObject error:&error];
+    messageCreated.owner = [DUNSession sharedInstance].currentStudent;
+    
+    if(!error)
+    {
+      successBlock(messageCreated);
+    } else {
+      errorBlock(error);
+    }
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
+  }];
+
 }
 
-+ (void) attendEventWithUUID:(NSString*)eventUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) attendEventWithUUID:(NSString*)eventUUID success:(void(^)(DUNEvent* event))successBlock error:(void(^)(NSError *error))errorBlock
 {
   NSParameterAssert(eventUUID!=nil);
   
@@ -94,22 +92,26 @@
   
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   
-  [JSONHTTPClient getJSONFromURLWithString:endpointURL completion:^(id json, JSONModelError *err) {
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+  
+  [manager GET:endpointURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if(successBlock && json != nil){
-      DUNEvent *event = [[DUNEvent alloc] initWithDictionary:json error:&err];
-      
+    NSError *error = nil;
+    DUNEvent *event = [MTLJSONAdapter modelOfClass:DUNEvent.class fromJSONDictionary:responseObject error:&error];
+
+    if(!error)
       successBlock(event);
-    }
-    else {
-      errorCallback(err);
-    }
+    else
+      errorBlock(error);
     
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
   }];
   
 }
 
-+ (void) upVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) upVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorBlock
 {
   DUNSession *_session = [DUNSession sharedInstance];
   
@@ -123,18 +125,25 @@
   NSMutableDictionary * params = [self mandatoryParams];
   [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error){
+
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+  
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if(successBlock && error==nil){
-      successBlock();
-    } else if(error) {
-      errorCallback(error);
-    }
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageCreated = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:responseObject error:&error];
+    messageCreated.owner = [DUNSession sharedInstance].currentStudent;
     
+    successBlock();
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
   }];
+  
 }
 
-+ (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) downVoteTimelineMessage:(DUNTimelineUserMessage *)message success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorBlock
 {
   DUNSession *_session = [DUNSession sharedInstance];
   
@@ -147,18 +156,26 @@
   
   NSMutableDictionary * params = [self mandatoryParams];
   [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
+
+
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if(successBlock && error==nil){
-      successBlock();
-    } else if(error) {
-      errorCallback(error);
-    }
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageCreated = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:responseObject error:&error];
+    messageCreated.owner = [DUNSession sharedInstance].currentStudent;
+    
+    successBlock();
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
   }];
+  
 }
 
-+ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSString*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) sendThermometer:(DUNThermometer *)thermometer withRatingValue:(NSString*)ratingValue success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorBlock
 {
   DUNSession *_session = [DUNSession sharedInstance];
   
@@ -174,18 +191,25 @@
   [params setObject:ratingValue   forKey:@"rating[value]"];
   [params setObject:thermometer.uuid forKey:@"thermometer_id"];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+  
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+  
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if(successBlock && error==nil){
-      successBlock();
-    } else if(error) {
-      errorCallback(error);
-    }
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageCreated = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:responseObject error:&error];
+    messageCreated.owner = [DUNSession sharedInstance].currentStudent;
+    
+    successBlock();
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
   }];
   
 }
 
-+ (void) sendAnswerPollOptionUUID:(NSString*)pollOptionUUID success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorCallback
++ (void) sendAnswerPollOptionUUID:(NSString*)pollOptionUUID success:(void(^)(void))successBlock error:(void(^)(NSError *error))errorBlock
 {
   DUNSession *_session = [DUNSession sharedInstance];
   
@@ -200,20 +224,26 @@
   [params setObject:pollOptionUUID forKey:@"option_id"];
   [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
   
-  [JSONHTTPClient postJSONFromURLWithString:endpointURL params:params completion:^(id json, JSONModelError *error) {
+  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+  [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+  
+  [manager POST:endpointURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
     
-    if(successBlock && error==nil){
-      successBlock();
-    } else if(error) {
-      errorCallback(error);
-    }
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageCreated = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:responseObject error:&error];
+    messageCreated.owner = [DUNSession sharedInstance].currentStudent;
+    
+    successBlock();
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    errorBlock(error);
   }];
   
 }
 
-////////////////////////////////////
-#pragma mark Private Methods
-////////////////////////////////////
+#pragma mark -
+#pragma mark - Private Methods
+
 + (NSMutableDictionary*)mandatoryParams
 {
   return [DUNAPI mandatoryParams:true];

@@ -33,9 +33,9 @@
 {
   _cellIcon.image = [UIImage imageNamed:@"add_event_live"];
   _eventTitleLabel.text = event.title;
-//  _teacherNameLabel.text = event.course.teacher.name;
-//  _profileImage.image = [UIImage imageNamed:event.course.teacher.avatarURLString];
-  _dateLabel.text = [NSString stringWithFormat:@"%d/%d",event.startAt.day, event.startAt.month];
-  _timeLabel.text = [NSString stringWithFormat:@"%d:%d",event.startAt.hour,event.startAt.minute];
+  _teacherNameLabel.text = event.course.teacher.name;true
+  _profileImage.image = [UIImage imageNamed:event.course.teacher.avatarURLString];
+  _dateLabel.text = [NSString stringWithFormat:@"%ld/%ld",event.startAt.day, event.startAt.month];
+  _timeLabel.text = [NSString stringWithFormat:@"%ld:%ld",event.startAt.hour,event.startAt.minute];
 }
 @end

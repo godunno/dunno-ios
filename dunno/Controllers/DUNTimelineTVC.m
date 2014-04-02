@@ -66,10 +66,20 @@
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.studentMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
-    DUNTimelineUserMessage *newMessage = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
+    NSError *error = nil;
+    DUNTimelineUserMessage *newMessage = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:jsonDictionary error:&error];
     
+#if DEBUG
+    NSAssert(error==nil, @"Error parsing JSON to DUNTimelineUserMessage on send Message to Timeline Pusher response");
+#else
+    //TODO show error on modal dialog?
+#endif
+    
+    /**
+     * instead control update timeline here and when POST new message, use Observer pattern.
+     */
     [_session.activeEvent.timeline.messages addObject:newMessage];
-    if(![newMessage.owner.entityId isEqualToString:_session.currentStudent.entityId]){
+    if(newMessage.owner.entityId != _session.currentStudent.entityId){
       return;
     }else {
       [self.tableView reloadData];
@@ -79,7 +89,14 @@
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.upDownVoteMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
-    DUNTimelineUserMessage *messageVoted = [[DUNTimelineUserMessage alloc] initWithDictionary:jsonDictionary error:nil];
+    NSError *error = nil;
+    DUNTimelineUserMessage *messageVoted = [MTLJSONAdapter modelOfClass:DUNTimelineUserMessage.class fromJSONDictionary:jsonDictionary error:&error];
+    
+#if DEBUG
+    NSAssert(error==nil, @"Error parsing JSON to DUNTimelineUserMessage on up/down vote Pusher response");
+#else
+    //TODO show error on modal dialog?
+#endif
     
     [_session.activeEvent.timeline updateMessage:messageVoted];
     
@@ -88,19 +105,32 @@
   }];
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.releasePollEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+
+    NSError *error = nil;
+    DUNPoll *poll = [MTLJSONAdapter modelOfClass:DUNPoll.class fromJSONDictionary:jsonDictionary error:&error];
     
-    DUNPoll *poll = [[DUNPoll alloc] initWithDictionary:jsonDictionary error:nil];
-    NSAssert(poll!=nil, @"JSON Dictionary (Poll) came from Pusher is invalid.");
+#if DEBUG
+    NSAssert(error==nil, @"Error parsing JSON to DUNPoll on receive Poll Pusher response");
+#else
+    //TODO show error on modal dialog?
+#endif
     
     [self showPoll:poll];
   }];
   
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
-    
-    DUNEvent *eventClosed = [[DUNEvent alloc] initWithDictionary:jsonDictionary error:nil];
+
+      NSError *error = nil;
+      DUNEvent *eventClosed = [MTLJSONAdapter modelOfClass:DUNEvent.class fromJSONDictionary:jsonDictionary error:&error];
+      
+#if DEBUG
+      NSAssert(error==nil, @"Error parsing JSON to DUNEvent on finish Event Pusher response");
+#else
+      //TODO show error on modal dialog?
+#endif
+      
     // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
-    
     
     if(_session.activeEvent.thermometers!=nil && [_session.activeEvent.thermometers count] > 0)
     {
