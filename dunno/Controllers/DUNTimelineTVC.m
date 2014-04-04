@@ -60,6 +60,7 @@
   NSParameterAssert(_event!=nil);
   NSParameterAssert(_event.studentMessageEvent!=nil);
   NSParameterAssert(_event.upDownVoteMessageEvent!=nil);
+  NSParameterAssert(_event.releasePollEvent!=nil);
   NSParameterAssert(_event.closeEvent!=nil);
   
   DUNPusher *pusher = [DUNPusher sharedInstance].connect;
@@ -105,7 +106,7 @@
   }];
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.releasePollEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
-
+    
     NSError *error = nil;
     DUNPoll *poll = [MTLJSONAdapter modelOfClass:DUNPoll.class fromJSONDictionary:jsonDictionary error:&error];
     
@@ -120,16 +121,16 @@
   
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
-
-      NSError *error = nil;
-      DUNEvent *eventClosed = [MTLJSONAdapter modelOfClass:DUNEvent.class fromJSONDictionary:jsonDictionary error:&error];
-      
+    
+    NSError *error = nil;
+    DUNEvent *eventClosed = [MTLJSONAdapter modelOfClass:DUNEvent.class fromJSONDictionary:jsonDictionary error:&error];
+    
 #if DEBUG
-      NSAssert(error==nil, @"Error parsing JSON to DUNEvent on finish Event Pusher response");
+    NSAssert(error==nil, @"Error parsing JSON to DUNEvent on finish Event Pusher response");
 #else
-      //TODO show error on modal dialog?
+    //TODO show error on modal dialog?
 #endif
-      
+    
     // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
     
     if(_session.activeEvent.thermometers!=nil && [_session.activeEvent.thermometers count] > 0)
