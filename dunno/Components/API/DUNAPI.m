@@ -8,10 +8,10 @@
 #import "DUNAPI.h"
 #import <AFNetworking/AFNetworking.h>
 
-
-//#define kBaseURL @"http://192.168.0.101:3000/api/v1/"
-#define kBaseURL @"http://localhost:3000/api/v1/"
-//#define kBaseURL @"http://dunnovc-staging.herokuapp.com/api/v1/"
+//static const NSString *BASE_URL = @"http://localhost:3000/api/v1/";
+//static const NSString *BASE_URL = @"http://192.168.2.4:3000/api/v1/";
+static const NSString *BASE_URL = @"http://5fac4d4e.ngrok.com/api/v1/";
+//static const NSString *BASE_URL = @"http://dunnovc-staging.herokuapp.com/api/v1/";
 
 @implementation DUNAPI
 
@@ -25,7 +25,7 @@
   [params setObject:username forKey:@"student[email]"];
   [params setObject:password forKey:@"student[password]"];
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"students/sign_in"];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",BASE_URL,@"students/sign_in"];
   
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -60,7 +60,7 @@
   [params setObject:timelineId forKey:@"timeline_user_message[timeline_id]"];
   [params setObject:content forKey:@"timeline_user_message[content]"];
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",kBaseURL,@"timeline/messages"];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/%@",BASE_URL,@"timeline/messages"];
   
   AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
   [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -88,7 +88,7 @@
 {
   NSParameterAssert(eventUUID!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/events/%@/attend.json",kBaseURL,eventUUID];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/events/%@/attend.json",BASE_URL,eventUUID];
   
   endpointURL = [DUNAPI appendToURLString:endpointURL dictionaryParams:[self mandatoryParams]];
   
@@ -120,7 +120,7 @@
   NSParameterAssert(message!=nil);
   NSParameterAssert(message.entityId!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/up",kBaseURL,message.entityId];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/up",BASE_URL,message.entityId];
   
   NSMutableDictionary * params = [self mandatoryParams];
   [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
@@ -152,7 +152,7 @@
   NSParameterAssert(message!=nil);
   NSParameterAssert(message.entityId!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/down",kBaseURL,message.entityId];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/timeline/messages/%@/down",BASE_URL,message.entityId];
   
   NSMutableDictionary * params = [self mandatoryParams];
   [params setObject:_session.currentStudent.entityId forKey:@"student_id"];
@@ -184,7 +184,7 @@
   NSParameterAssert(thermometer!=nil);
   NSParameterAssert(ratingValue!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/ratings",kBaseURL];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/ratings",BASE_URL];
   
   NSMutableDictionary * params = [self mandatoryParams];
   
@@ -217,7 +217,7 @@
   NSParameterAssert(_session.currentStudent.entityId!=nil);
   NSParameterAssert(pollOptionUUID!=nil);
   
-  NSString *endpointURL = [NSString stringWithFormat:@"%@/answers",kBaseURL];
+  NSString *endpointURL = [NSString stringWithFormat:@"%@/answers",BASE_URL];
   
   NSMutableDictionary * params = [self mandatoryParams];
   
