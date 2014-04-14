@@ -10,7 +10,7 @@
 
 //static const NSString *BASE_URL = @"http://localhost:3000/api/v1/";
 //static const NSString *BASE_URL = @"http://192.168.2.4:3000/api/v1/";
-static const NSString *BASE_URL = @"http://5fac4d4e.ngrok.com/api/v1/";
+static const NSString *BASE_URL = @"http://6a59491c.ngrok.com/api/v1/";
 //static const NSString *BASE_URL = @"http://dunnovc-staging.herokuapp.com/api/v1/";
 
 @implementation DUNAPI

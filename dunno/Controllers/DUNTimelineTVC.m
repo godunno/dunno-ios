@@ -6,6 +6,7 @@
 #import "DUNNewMessageVC.h"
 #import "DUNThermometerTVC.h"
 #import "DUNPoll.h"
+#import "DUNMedia.h"
 #import "DUNTopic.h"
 #import "DUNEvent.h"
 #import "DUNTimeline.h"
@@ -22,7 +23,8 @@
 #import "UINavigationBar+FlatUI.h"
 
 #define kReleasePollTag 100
-#define kCloseEventTag 200
+#define kReleaseMediaTag 200
+#define kCloseEventTag 300
 
 @interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
 
@@ -119,6 +121,19 @@
     [self showPoll:poll];
   }];
   
+  [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.releaseMediaEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
+    
+    NSError *error = nil;
+    DUNMedia *media = [MTLJSONAdapter modelOfClass:DUNMedia.class fromJSONDictionary:jsonDictionary error:&error];
+    
+#if DEBUG
+    NSAssert(error==nil, @"Error parsing JSON to DUNPoll on receive Poll Pusher response");
+#else
+    //TODO show error on modal dialog?
+#endif
+    
+    [self showMedia:media];
+  }];
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.closeEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
@@ -175,6 +190,12 @@
   [alert show];
 }
 
+- (void) showMedia:(DUNMedia*)media
+{
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Professor enviou conteúdo rico, quer visualizar?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+  alert.tag = kReleaseMediaTag;
+  [alert show];
+}
 
 #pragma mark UIAlertViewDelegate
 
@@ -188,6 +209,9 @@
   {
     DUNPollVC *pollVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNPollVCStoryboardId];
     [self.navigationController pushViewController:pollVC animated:YES];
+  }else if(alertView.tag == kReleaseMediaTag)
+  {
+    NSLog(@"show rich content..");
   }
   
 }
