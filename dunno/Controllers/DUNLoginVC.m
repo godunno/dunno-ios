@@ -1,6 +1,7 @@
 #import "DUNLoginVC.h"
 #import "DUNTutorialVC.h"
 
+#import "DUNEstimote.h"
 #import "DUNAPI.h"
 
 @interface DUNLoginVC ()<UITextFieldDelegate>
@@ -13,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet FUIButton *loginButton;
 
+@property (nonatomic, strong) DUNEstimote *estimote;
+
 @end
 
 @implementation DUNLoginVC
@@ -21,6 +24,7 @@
 {
   [super viewDidLoad];
   
+  _estimote = [[DUNEstimote alloc] init];
 }
 
 

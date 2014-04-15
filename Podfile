@@ -11,6 +11,7 @@ pod 'EAIntroView'
 pod 'MBProgressHUD'
 pod 'FlatUIKit'
 pod 'SDCAlertView'
+pod 'EstimoteSDK'
 pod 'MJPopupViewController', :git => 'https://github.com/seufagner/MJPopupViewController'
 
 pod 'dunno-shared', :path => '../dunno-shared'
