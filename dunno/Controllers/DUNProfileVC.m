@@ -69,7 +69,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return _session.currentStudent.events.count;
+  return [_session.currentStudent allEvents].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,7 +77,7 @@
   static NSString *CellIdentifier = @"EventsCellId";
   DUNEventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
   
-  DUNEvent *event = [_session.currentStudent.events objectAtIndex:indexPath.row];
+  DUNEvent *event = [[_session.currentStudent allEvents] objectAtIndex:indexPath.row];
   [cell setEvent:event];
   
   return cell;
@@ -85,7 +85,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  DUNEvent *event = [_session.currentStudent.events objectAtIndex:indexPath.row];
+  DUNEvent *event = [[_session.currentStudent allEvents] objectAtIndex:indexPath.row];
   
   if(event.status==DUNEventOpened){
     [self attendEvent:event];
