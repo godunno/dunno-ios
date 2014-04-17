@@ -10,7 +10,7 @@
 
 //static const NSString *BASE_URL = @"http://localhost:3000/api/v1/";
 //static const NSString *BASE_URL = @"http://192.168.2.4:3000/api/v1/";
-static const NSString *BASE_URL = @"http://6a59491c.ngrok.com/api/v1/";
+static const NSString *BASE_URL = @"http://dunno.ngrok.com/api/v1/";
 //static const NSString *BASE_URL = @"http://dunnovc-staging.herokuapp.com/api/v1/";
 
 @implementation DUNAPI
@@ -47,8 +47,8 @@ static const NSString *BASE_URL = @"http://6a59491c.ngrok.com/api/v1/";
 
 + (void) sendTimelineMessage:(NSString*)content success:(void(^)(DUNTimelineUserMessage *messageCreated))successBlock error:(void(^)(NSError *error))errorBlock
 {
-  NSString *timelineId = [DUNSession sharedInstance].activeEvent.timeline.entityId;
-  NSString *studentId = [DUNSession sharedInstance].currentStudent.entityId;
+  NSString *timelineId = [[DUNSession sharedInstance].activeEvent.timeline.entityId stringValue];
+  NSString *studentId = [[DUNSession sharedInstance].currentStudent.entityId stringValue];
   
   NSParameterAssert(timelineId!=nil);
   NSParameterAssert(studentId!=nil);
