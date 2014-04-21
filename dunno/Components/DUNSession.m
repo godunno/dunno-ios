@@ -4,8 +4,6 @@
 #import "DUNStudent.h"
 #import "DUNPoll.h"
 
-#import "DUNPusher.h"
-
 @implementation DUNSession
 
 + (DUNSession*) sharedInstance
@@ -18,17 +16,25 @@
   return sharedObject;
 }
 
-+ (BOOL) hasActiveEvent
-{
-  return ([DUNSession sharedInstance].activeEvent!=nil);
-}
-
 - (void) clearActiveEvent
 {
-  if(_activeEvent==nil)
+  if(self.activeEvent==nil)
     return;
   
-  [[DUNPusher sharedInstance] unsubscribe:_activeEvent.channelName];
-  _activeEvent = nil;
+  [self.pusher unsubscribe:self.activeEvent.channelName];
+  self.activeEvent = nil;
 }
+
+#pragma mark -
+#pragma mark - Private
+
+- (DUNPusher *)pusher
+{
+  if(_pusher==nil)
+    _pusher = [DUNPusher sharedInstance];
+    
+    return _pusher;
+}
+
+
 @end

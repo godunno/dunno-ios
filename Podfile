@@ -21,4 +21,5 @@ target :dunnoTests, :exclusive => true do
   pod 'Specta'
   pod 'Expecta'
   pod 'OCMockito'
+  pod 'OCMock'
 end

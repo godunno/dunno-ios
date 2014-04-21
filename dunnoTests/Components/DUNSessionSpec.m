@@ -7,7 +7,7 @@
 #import "DUNPusher.h"
 #import "DUNEvent.h"
 
-#define HC_SHORTHAND // needed by OCMockito
+#define HC_SHORTHAND
 #import <OCHamcrest/OCHamcrest.h>
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
@@ -16,24 +16,35 @@ SpecBegin(DUNSession)
 
 describe(@"DUNSession", ^{
   
-  context(@"#clearActiveEvent", ^{
+  __block DUNEvent *event = mock([DUNEvent class]);
+  __block  DUNPusher *pusher = mock([DUNPusher class]);
+  __block DUNSession *session = [DUNSession sharedInstance];
+  
+  beforeEach(^{
+    [given(event.channelName) willReturn:@"foo-channel"];
+    session.activeEvent = event;
+    session.pusher = pusher;
+  });
+  
+  describe(@"properties", ^{
+    expect([session respondsToSelector:@selector(currentStudent)]).to.beTruthy();
+    expect([session respondsToSelector:@selector(activeEvent)]).to.beTruthy();
+    expect([session respondsToSelector:@selector(currentPoll)]).to.beTruthy();
+  });
+  
+  describe(@"#clearActiveEvent", ^{
     
     it(@"change activeEvent to nil", ^{
-      DUNSession *session = [DUNSession sharedInstance];
-      session.activeEvent = [[DUNEvent alloc] init];
       [session clearActiveEvent];
       
       expect(session.activeEvent).to.beNil();
     });
-
+    
     it(@"call DUNPusher#unsubscribe using DUNEvent#channelName", ^{
-      //how test dependency (IoC to objective-c?)
-      DUNSession *session = [DUNSession sharedInstance];
-      session.activeEvent = [[DUNEvent alloc] init];
-      [session clearActiveEvent];
       
-      DUNPusher *pusher = mock([DUNPusher class]);
-      [verifyCount(pusher, atLeast(1)) unsubscribe:session.activeEvent.channelName];
+      [verifyCount(pusher, times(1)) unsubscribe:session.activeEvent.channelName];
+      
+      [session clearActiveEvent];
     });
     
   });
