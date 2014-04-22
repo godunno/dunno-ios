@@ -11,20 +11,7 @@
   
   [DUNAppearance applyGlobalAppearance];
   
-  Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
-  
-  reach.unreachableBlock = ^(Reachability*reach)
-  {
-    NetworkStatus networkStatus = [reach currentReachabilityStatus];
-    if(networkStatus == NotReachable)
-    {
-      dispatch_sync(dispatch_get_main_queue(), ^{
-        [DUNErrorVC showWithTitle:@"Erro Conexão" andMessage:@"Conexão com internet foi perdida."];
-      });
-    }
-  };
-  
-  [reach startNotifier];
+  [self registerReachability];
   
   return YES;
 }
@@ -56,4 +43,25 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark -
+#pragma mark - Reachability
+
+- (void) registerReachability
+{
+  
+  Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+  
+  reach.unreachableBlock = ^(Reachability*reach)
+  {
+    NetworkStatus networkStatus = [reach currentReachabilityStatus];
+    if(networkStatus == NotReachable)
+    {
+      dispatch_sync(dispatch_get_main_queue(), ^{
+        [DUNErrorVC showWithTitle:@"Erro Conexão" andMessage:@"Conexão com internet foi perdida."];
+      });
+    }
+  };
+  
+  [reach startNotifier];
+}
 @end
