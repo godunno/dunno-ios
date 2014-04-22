@@ -16,12 +16,15 @@ SpecBegin(DUNSession)
 
 describe(@"DUNSession", ^{
   
-  __block DUNEvent *event = mock([DUNEvent class]);
-  __block  DUNPusher *pusher = mock([DUNPusher class]);
+  __block DUNEvent *event;
+  __block  DUNPusher *pusher;
   __block DUNSession *session = [DUNSession sharedInstance];
   
   beforeEach(^{
+    pusher = mock([DUNPusher class]);
+    event = mock([DUNEvent class]);
     [given(event.channelName) willReturn:@"foo-channel"];
+    
     session.activeEvent = event;
     session.pusher = pusher;
   });

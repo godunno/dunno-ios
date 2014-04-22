@@ -65,7 +65,7 @@
   NSParameterAssert(_event.releasePollEvent!=nil);
   NSParameterAssert(_event.closeEvent!=nil);
   
-  DUNPusher *pusher = [DUNPusher sharedInstance].connect;
+  DUNPusher *pusher = [DUNPusher sharedInstance];
   
   [pusher subscribeToChannelNamed:_event.channelName withEventNamed:_event.studentMessageEvent handleWithBlock:^(NSDictionary *jsonDictionary) {
     
