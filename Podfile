@@ -4,6 +4,9 @@ inhibit_all_warnings!
 
 xcodeproj 'dunno'
 
+pod 'NSString+Ruby'
+pod 'ObjectiveSugar'
+
 # controllers / flow
 pod 'EAIntroView'
 

@@ -1,21 +1,21 @@
 PODS:
-  - AFNetworking (2.2.1):
+  - AFNetworking (2.2.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.2.1):
+  - AFNetworking/NSURLConnection (2.2.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.2.1):
+  - AFNetworking/NSURLSession (2.2.3):
     - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.2.1)
-  - AFNetworking/Security (2.2.1)
-  - AFNetworking/Serialization (2.2.1)
-  - AFNetworking/UIKit (2.2.1):
+  - AFNetworking/Reachability (2.2.3)
+  - AFNetworking/Security (2.2.3)
+  - AFNetworking/Serialization (2.2.3)
+  - AFNetworking/UIKit (2.2.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - dunno-shared (1.4.5):
@@ -43,7 +43,10 @@ PODS:
   - MBProgressHUD (0.8)
   - MJPopupViewController (0.4)
   - NSDate+Calendar (0.0.4)
+  - NSString+Ruby (1.1)
+  - ObjectiveSugar (1.1.0)
   - OCHamcrest (3.0.1)
+  - OCMock (2.2.4)
   - OCMockito (1.1.0):
     - OCHamcrest (~> 3.0)
   - RBBAnimation (0.3.0)
@@ -66,6 +69,9 @@ DEPENDENCIES:
   - FlatUIKit
   - MBProgressHUD
   - MJPopupViewController (from `https://github.com/seufagner/MJPopupViewController`)
+  - NSString+Ruby
+  - ObjectiveSugar
+  - OCMock
   - OCMockito
   - SDCAlertView
   - Specta
@@ -77,7 +83,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/seufagner/MJPopupViewController
 
 SPEC CHECKSUMS:
-  AFNetworking: 0121f4b69be3fa58d1ab317866e036e12ac9651d
+  AFNetworking: ae513199cca79e9d7af2708ccabe2ed075550c42
   dunno-shared: 19127ed39c182674f04f2165c9e186a24828ac01
   EAIntroView: 44482e1dfb11cdcb2fca0b4abcffc8a16a9c9a99
   EstimoteSDK: f77e7cd88abd9b3be725041550e5aad727353d4f
@@ -90,7 +96,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
   MJPopupViewController: 4cd0badf3dae541017e0e16e2d2c7578d9224052
   NSDate+Calendar: db9a1a4a03dc1536517c7e41ceb97813f0e0ee76
+  NSString+Ruby: 00549a8f8903f62ce4aa17da96b9b5fd950e96b4
+  ObjectiveSugar: fed588577bcf9733546aeaa089de444e4bab9a52
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
+  OCMock: 5008fae4b4789b8fc3e48cd7660f2eb5ef8ce89e
   OCMockito: 317fa0cf75c9b0d73d2be335789c556537be7fd2
   RBBAnimation: e7f31ed62f760f3caf120b5d943267bd9a8e1f64
   Reachability: be4883bb93f31e38266ae3365e5600a317aae735
@@ -100,4 +109,4 @@ SPEC CHECKSUMS:
   SocketRocket: 7ac946bcce46287a791dfff3c1f8daa692821dae
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
 
-COCOAPODS: 0.31.1
+COCOAPODS: 0.32.1
