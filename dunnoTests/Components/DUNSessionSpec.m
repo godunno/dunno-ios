@@ -18,9 +18,10 @@ describe(@"DUNSession", ^{
   
   __block DUNEvent *event;
   __block  DUNPusher *pusher;
-  __block DUNSession *session = [DUNSession sharedInstance];
+  __block DUNSession *session;
   
-  beforeEach(^{
+  before(^{
+    session = [DUNSession sharedInstance];
     pusher = mock([DUNPusher class]);
     event = mock([DUNEvent class]);
     [given(event.channelName) willReturn:@"foo-channel"];
@@ -29,25 +30,21 @@ describe(@"DUNSession", ^{
     session.pusher = pusher;
   });
   
-  describe(@"properties", ^{
-    expect([session respondsToSelector:@selector(currentStudent)]).to.beTruthy();
-    expect([session respondsToSelector:@selector(activeEvent)]).to.beTruthy();
-    expect([session respondsToSelector:@selector(currentPoll)]).to.beTruthy();
-  });
-  
   describe(@"#clearActiveEvent", ^{
-    
-    it(@"change activeEvent to nil", ^{
+    it(@"do nothing if activeEvent will be nil", ^{
+      session.activeEvent = nil;
       [session clearActiveEvent];
-      
-      expect(session.activeEvent).to.beNil();
+      [verifyCount(pusher, never()) unsubscribe:event.channelName];
     });
     
     it(@"call DUNPusher#unsubscribe using DUNEvent#channelName", ^{
-      
-      [verifyCount(pusher, times(1)) unsubscribe:session.activeEvent.channelName];
-      
       [session clearActiveEvent];
+      [verify(pusher) unsubscribe:event.channelName];
+    });
+    
+    it(@"change activeEvent to nil", ^{
+      [session clearActiveEvent];
+      expect(session.activeEvent).to.beNil();
     });
     
   });

@@ -32,8 +32,8 @@
 {
   if(_pusher==nil)
     _pusher = [DUNPusher sharedInstance];
-    
-    return _pusher;
+  
+  return _pusher;
 }
 
 
