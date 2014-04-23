@@ -29,6 +29,7 @@
 @interface DUNTimelineTVC () <DUNNewMessageDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) DUNSession *session;
+@property (strong, nonatomic) DUNPoll *queuedPoll;
 
 @end
 
@@ -115,8 +116,9 @@
 #if DEBUG
     NSAssert(error==nil, @"Error parsing JSON to DUNPoll on receive Poll Pusher response");
 #else
-    //TODO show error on modal dialog?
+    //TODO: show error on modal dialog?
 #endif
+    //TODO: check if poll already existing
     
     [self showPoll:poll];
   }];
@@ -129,7 +131,7 @@
 #if DEBUG
     NSAssert(error==nil, @"Error parsing JSON to DUNPoll on receive Poll Pusher response");
 #else
-    //TODO show error on modal dialog?
+    //TODO: show error on modal dialog?
 #endif
     
     [self showMedia:media];
@@ -143,10 +145,10 @@
 #if DEBUG
     NSAssert(error==nil, @"Error parsing JSON to DUNEvent on finish Event Pusher response");
 #else
-    //TODO show error on modal dialog?
+    //TODO: show error on modal dialog?
 #endif
     
-    // TODO update _session.currentEvent - close it and refresh events list at previous ViewController
+    // TODO: update _session.currentEvent - close it and refresh events list at previous ViewController
     
     if(_session.activeEvent.thermometers!=nil && [_session.activeEvent.thermometers count] > 0)
     {
@@ -177,14 +179,11 @@
 - (void)showPoll:(DUNPoll*)poll {
   NSParameterAssert(poll!=nil);
   
-  if([self.mj_popupViewController isViewLoaded])
-  {
+  if([self.mj_popupViewController isViewLoaded]) {
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
   }
   
-  //TODO verify if already exists poll active..
-  _session.currentPoll = poll;
-  
+  self.queuedPoll = poll;
   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Professor enviou uma enquete, vamos lá?" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
   alert.tag = kReleasePollTag;
   [alert show];
@@ -202,15 +201,15 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
   if (alertView.tag == kCloseEventTag) {
-    DUNThermometerTVC *thermometersVC =   [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
+    DUNThermometerTVC *thermometersVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNThermometerTVCStoryboardId];
     thermometersVC.event = _event;
     [self.navigationController pushViewController:thermometersVC animated:YES];
-  }else if(alertView.tag == kReleasePollTag)
-  {
+  } else if(alertView.tag == kReleasePollTag) {
     DUNPollVC *pollVC = [self.storyboard instantiateViewControllerWithIdentifier:kDUNPollVCStoryboardId];
+    pollVC.currentPoll = self.queuedPoll;
     [self.navigationController pushViewController:pollVC animated:YES];
-  }else if(alertView.tag == kReleaseMediaTag)
-  {
+    self.queuedPoll = nil;
+  } else if(alertView.tag == kReleaseMediaTag) {
     NSLog(@"show rich content..");
   }
   

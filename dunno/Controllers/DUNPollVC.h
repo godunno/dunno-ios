@@ -2,4 +2,6 @@
 
 @interface DUNPollVC : UIViewController
 
+@property (nonatomic, strong) DUNPoll *currentPoll;
+
 @end

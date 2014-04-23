@@ -25,16 +25,21 @@
   
   _session = [DUNSession sharedInstance];
   
-  NSParameterAssert(_session.currentPoll!=nil);
-  
   _sendAnswerButton = [DUNStyles customizeOKButton:_sendAnswerButton];
   
-  _questionTextView.text = _session.currentPoll.content;
+  _questionTextView.text = self.currentPoll.content;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+  NSParameterAssert(self.currentPoll!=nil);
+  
+  [super viewWillAppear:animated];
 }
 
 - (IBAction)sendAnswer:(id)sender
 {
-  NSString *pollUUID = ((DUNPollOption*)_session.currentPoll.options[[_optionPicker selectedRowInComponent:0]]).uuid;
+  NSString *pollUUID = ((DUNPollOption*)self.currentPoll.options[[_optionPicker selectedRowInComponent:0]]).uuid;
   
   [DUNAPI sendAnswerPollOptionUUID:pollUUID success:^{
     
@@ -54,12 +59,12 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-  return [_session.currentPoll.options count];
+  return [self.currentPoll.options count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-  return ((DUNPollOption*)_session.currentPoll.options[row]).content;
+  return ((DUNPollOption*)self.currentPoll.options[row]).content;
 }
 
 @end
