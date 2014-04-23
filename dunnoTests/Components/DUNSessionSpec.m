@@ -1,23 +1,15 @@
-#import "Specta.h"
-
-#define EXP_SHORTHAND
-#import "Expecta.h"
+#import "DUNSpecHelper.h"
 
 #import "DUNAPI.h"
 #import "DUNPusher.h"
 #import "DUNEvent.h"
-
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
 
 SpecBegin(DUNSession)
 
 describe(@"DUNSession", ^{
   
   __block DUNEvent *event;
-  __block  DUNPusher *pusher;
+  __block DUNPusher *pusher;
   __block DUNSession *session;
   
   before(^{
