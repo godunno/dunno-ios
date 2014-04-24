@@ -1,10 +1,16 @@
 #import "DUNAppDelegate.h"
 #import "DUNAppearance.h"
 
+#import "DUNEstimote.h"
+
 #import <Reachability/Reachability.h>
 
-@implementation DUNAppDelegate
+@interface DUNAppDelegate()
+@property (nonatomic, strong) DUNEstimote *estimote;
 
+@end
+
+@implementation DUNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -12,6 +18,9 @@
   [DUNAppearance applyGlobalAppearance];
   
   [self registerReachability];
+  
+  self.estimote = [DUNEstimote new];
+  [self.estimote startSeek];
   
   return YES;
 }

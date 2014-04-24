@@ -2,34 +2,28 @@
 #import <EstimoteSDK/ESTBeacon.h>
 #import <EstimoteSDK/ESTBeaconManager.h>
 
+
+static NSString * const ESTIMOTE_DEFAULT_UUID = @"B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+static NSString * const DUNNO_BEACONS_ESTIMOTE_IDENTIFIER = @"vc.dunno.beacons.estimote";
+static long const PUC_GROUP_MAJOR_IDENTIFIER = 666;
+
 @interface DUNEstimote() <ESTBeaconManagerDelegate>
 
 @property (nonatomic, strong) ESTBeaconManager *beaconManager;
 @property (nonatomic, strong) ESTBeaconRegion *beaconRegion;
 
-@property (nonatomic, strong) ESTBeacon         *beaconDetected;
-
 @end
 
 @implementation DUNEstimote
 
-- (instancetype) init
+- (void) startSeek
 {
-  if(self = [super init])
-  {
-    [self setupBeacon];
-  }
-  return self;
-}
-
-- (void) setupBeacon
-{
-  _beaconManager = [[ESTBeaconManager alloc] init];
-  _beaconManager.delegate = self;
+  self.beaconManager = [[ESTBeaconManager alloc] init];
+  self.beaconManager.delegate = self;
   
-  _beaconRegion = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_PROXIMITY_UUID
-                                                      identifier:@"PUC"];
-  [_beaconManager startRangingBeaconsInRegion:_beaconRegion];
+  self.beaconRegion = [[ESTBeaconRegion alloc] initWithProximityUUID:ESTIMOTE_PROXIMITY_UUID major:PUC_GROUP_MAJOR_IDENTIFIER identifier:DUNNO_BEACONS_ESTIMOTE_IDENTIFIER];
+                       
+  [self.beaconManager startRangingBeaconsInRegion:self.beaconRegion];
 }
 
 #pragma mark -
@@ -37,73 +31,7 @@
 
 - (void)beaconManager:(ESTBeaconManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(ESTBeaconRegion *)region
 {
-  NSLog(@"---%@",[self textForProximity:((ESTBeacon*)beacons[0]).proximity]);
-  if(((ESTBeacon*)beacons[0]).proximity == CLProximityImmediate)
-  {
-    [self initializeBeaconNotifications:beacons[0]];// use first
-  }
-}
-
-- (void)beaconManager:(ESTBeaconManager *)manager didEnterRegion:(ESTBeaconRegion *)region
-{
-  if(_beaconDetected.proximity == CLProximityImmediate)
-  {
-    UILocalNotification *notification = [UILocalNotification new];
-    notification.alertBody = @"Vem assistir a aula no dunno rapaz!!!";
-    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-  }
-  
-}
-
-- (void)beaconManager:(ESTBeaconManager *)manager didExitRegion:(ESTBeaconRegion *)region
-{
-  UILocalNotification *notification = [UILocalNotification new];
-  notification.alertBody = @"Exit region notification";
-  
-  [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-}
-
-- (NSString *)textForProximity:(CLProximity)proximity
-{
-  switch (proximity) {
-    case CLProximityFar:
-      return @"Far";
-      break;
-    case CLProximityNear:
-      return @"Near";
-      break;
-    case CLProximityImmediate:
-      return @"Immediate";
-      break;
-      
-    default:
-      return @"Unknown";
-      break;
-  }
-}
-
-#pragma mark -
-#pragma mark - Private
-
-
-- (void) initializeBeaconNotifications:(ESTBeacon*)beacon
-{
-  NSParameterAssert(beacon);
-  
-  _beaconDetected = beacon;
-  _beaconRegion = [[ESTBeaconRegion alloc] initWithProximityUUID:_beaconDetected.proximityUUID
-                                                           major:[_beaconDetected.major unsignedIntValue]
-                                                           minor:[_beaconDetected.minor unsignedIntValue]
-                                                      identifier:@"PUC-TEST"];
-  _beaconRegion.notifyOnEntry = TRUE;
-  _beaconRegion.notifyOnExit = TRUE;
-  
-  [_beaconManager startMonitoringForRegion:_beaconRegion];
-  
-  
-  UILocalNotification *notification = [UILocalNotification new];
-  notification.alertBody = @"Vem assistir a aula no dunno rapaz!!!";
-  [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+  self.beaconsDetected = beacons;
 }
 
 @end
