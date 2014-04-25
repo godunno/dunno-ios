@@ -7,6 +7,4 @@
 @property (nonatomic, readonly, strong) NSNumber *majorIdentifier;
 @property (nonatomic, readonly, strong) NSNumber *minorIdentifier;
 
-- (void)initialize;
-
 @end
