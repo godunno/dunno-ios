@@ -26,8 +26,7 @@
 		C34B67AB1893188600407497 /* DUNAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C34B67A81893188600407497 /* DUNAPI.m */; };
 		C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C35C3D121899E488001A16D2 /* DUNEventCell.m */; };
 		C36622A418CA5679003347A3 /* DUNThermometerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C36622A318CA5679003347A3 /* DUNThermometerCell.m */; };
-		C3677D901909BF0F0057F043 /* DUNEstimote.m in Sources */ = {isa = PBXBuildFile; fileRef = C3677D8D1909BF0F0057F043 /* DUNEstimote.m */; };
-		C3677D94190AC8E60057F043 /* DUNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3677D93190AC8E60057F043 /* DUNBeaconManager.m */; };
+		C3677D9A190ACB8A0057F043 /* DUNBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3677D99190ACB8A0057F043 /* DUNBeaconManager.m */; };
 		C371C62018A2B7DD00186EC0 /* DUNTimelineStartPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */; };
 		C371EA2518A2CBC7001C9450 /* DUNTimelineEndPointCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C371EA2418A2CBC7001C9450 /* DUNTimelineEndPointCell.m */; };
 		C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3850B05188F9ADF008E46FE /* DUNTimelineMessageCell.m */; };
@@ -89,10 +88,8 @@
 		C35C3D121899E488001A16D2 /* DUNEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEventCell.m; sourceTree = "<group>"; };
 		C36622A218CA5679003347A3 /* DUNThermometerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNThermometerCell.h; sourceTree = "<group>"; };
 		C36622A318CA5679003347A3 /* DUNThermometerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNThermometerCell.m; sourceTree = "<group>"; };
-		C3677D8C1909BF0F0057F043 /* DUNEstimote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNEstimote.h; sourceTree = "<group>"; };
-		C3677D8D1909BF0F0057F043 /* DUNEstimote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNEstimote.m; sourceTree = "<group>"; };
-		C3677D92190AC8E60057F043 /* DUNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNBeaconManager.h; sourceTree = "<group>"; };
-		C3677D93190AC8E60057F043 /* DUNBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNBeaconManager.m; sourceTree = "<group>"; };
+		C3677D98190ACB8A0057F043 /* DUNBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNBeaconManager.h; sourceTree = "<group>"; };
+		C3677D99190ACB8A0057F043 /* DUNBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNBeaconManager.m; sourceTree = "<group>"; };
 		C371C61E18A2B7DD00186EC0 /* DUNTimelineStartPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineStartPointCell.h; sourceTree = "<group>"; };
 		C371C61F18A2B7DD00186EC0 /* DUNTimelineStartPointCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DUNTimelineStartPointCell.m; sourceTree = "<group>"; };
 		C371EA2318A2CBC7001C9450 /* DUNTimelineEndPointCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DUNTimelineEndPointCell.h; sourceTree = "<group>"; };
@@ -230,7 +227,6 @@
 		C3006F95188599F8007B0790 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C3677D8B1909BF0F0057F043 /* Estimote */,
 				C34B67A61893188600407497 /* API */,
 				C38D27C818991C70008B8181 /* DUNSession.h */,
 				C38D27C718991C70008B8181 /* DUNSession.m */,
@@ -238,6 +234,8 @@
 				C3006F9718859A1B007B0790 /* DUNStyles.m */,
 				C3006F991885B369007B0790 /* DUNAppearance.h */,
 				C3006F9A1885B369007B0790 /* DUNAppearance.m */,
+				C3677D98190ACB8A0057F043 /* DUNBeaconManager.h */,
+				C3677D99190ACB8A0057F043 /* DUNBeaconManager.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -277,17 +275,6 @@
 				C34B67A81893188600407497 /* DUNAPI.m */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		C3677D8B1909BF0F0057F043 /* Estimote */ = {
-			isa = PBXGroup;
-			children = (
-				C3677D8C1909BF0F0057F043 /* DUNEstimote.h */,
-				C3677D8D1909BF0F0057F043 /* DUNEstimote.m */,
-				C3677D92190AC8E60057F043 /* DUNBeaconManager.h */,
-				C3677D93190AC8E60057F043 /* DUNBeaconManager.m */,
-			);
-			path = Estimote;
 			sourceTree = "<group>";
 		};
 		C3850B03188F9AD3008E46FE /* CustomViews */ = {
@@ -520,9 +507,9 @@
 				C3850B06188F9ADF008E46FE /* DUNTimelineMessageCell.m in Sources */,
 				C331F99618C91C24000C4375 /* DUNThermometerTVC.m in Sources */,
 				C371C62018A2B7DD00186EC0 /* DUNTimelineStartPointCell.m in Sources */,
+				C3677D9A190ACB8A0057F043 /* DUNBeaconManager.m in Sources */,
 				C36622A418CA5679003347A3 /* DUNThermometerCell.m in Sources */,
 				C3AF446D18B53F1C00D51575 /* DUNNewMessageVC.m in Sources */,
-				C3677D901909BF0F0057F043 /* DUNEstimote.m in Sources */,
 				C371EA2518A2CBC7001C9450 /* DUNTimelineEndPointCell.m in Sources */,
 				C3006F9B1885B369007B0790 /* DUNAppearance.m in Sources */,
 				C35C3D131899E488001A16D2 /* DUNEventCell.m in Sources */,
@@ -537,7 +524,6 @@
 				C3006F6718859432007B0790 /* main.m in Sources */,
 				C3850B09188F9CAD008E46FE /* DUNTimelineTVC.m in Sources */,
 				C34B67AB1893188600407497 /* DUNAPI.m in Sources */,
-				C3677D94190AC8E60057F043 /* DUNBeaconManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
