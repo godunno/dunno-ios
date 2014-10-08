@@ -1,3 +1,0 @@
-@interface DUNProfileVC : UIViewController
-
-@end

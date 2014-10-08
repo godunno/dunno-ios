@@ -1,28 +1,15 @@
-platform :ios, '7.0'
+source 'https://github.com/CocoaPods/Specs.git'
+workspace 'dunno'
 
-inhibit_all_warnings!
+platform :ios, '7.1'
 
-xcodeproj 'dunno'
+xcodeproj 'dunno-core/dunno-core.xcodeproj'
 
-pod 'NSString+Ruby'
-pod 'ObjectiveSugar'
+pod 'AFNetworking'
+pod 'Mantle'
+pod 'ISO8601DateFormatter'
 
-# controllers / flow
-pod 'EAIntroView'
-
-#visual
-pod 'MBProgressHUD'
-pod 'FlatUIKit'
-pod 'SDCAlertView'
-pod 'EstimoteSDK'
-pod 'MJPopupViewController', :git => 'https://github.com/seufagner/MJPopupViewController'
-
-pod 'dunno-shared', :path => '../dunno-shared'
-#pod 'dunno-shared', :git => "https://github.com/godunno/dunno-shared.git"
-
-target :dunnoTests, :exclusive => true do
-  pod 'Specta'
-  pod 'Expecta'
-  pod 'OCMockito'
-  pod 'OCMock'
+target 'dunno-ipad' do
+  xcodeproj 'dunno-ipad/dunno-ipad.xcodeproj'
+  pod 'MBProgressHUD'
 end
