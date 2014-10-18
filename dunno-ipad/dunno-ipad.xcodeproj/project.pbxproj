@@ -670,11 +670,7 @@
 				);
 				INFOPLIST_FILE = "dunno-ipad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/wanderleymiyata/Documents/dev/dunno/dunno-core/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/dunno-cophclzmmajoczcoimchvafddkth/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "dunno-ipad-beta";
 				PROVISIONING_PROFILE = "f4d64fb1-c836-4416-a2f9-29456d34b8a9";
 				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(PROJECT_TEMP_DIR)/../UninstalledProducts/include/dunno-core";
@@ -697,11 +693,7 @@
 				);
 				INFOPLIST_FILE = "dunno-ipad/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/wanderleymiyata/Documents/dev/dunno/dunno-core/build/Debug-iphoneos",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/dunno-cophclzmmajoczcoimchvafddkth/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "dunno-ipad-beta";
 				PROVISIONING_PROFILE = "f4d64fb1-c836-4416-a2f9-29456d34b8a9";
 				USER_HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/** $(PROJECT_TEMP_DIR)/../UninstalledProducts/include/dunno-core";
