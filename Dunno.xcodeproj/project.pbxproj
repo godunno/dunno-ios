@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */; };
+		9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
+		99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A19B591A2E32870006098C /* MainViewController.swift */; };
+		99A455FB1A5F0509008A0144 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A455FA1A5F0509008A0144 /* Argo.framework */; };
+		99A456031A5F08CF008A0144 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A456021A5F08CF008A0144 /* User.swift */; };
+		99A456081A5F0BED008A0144 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A455FA1A5F0509008A0144 /* Argo.framework */; };
+		99A456091A5F0C3F008A0144 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A456041A5F0BD9008A0144 /* Nimble.framework */; };
+		99A4560A1A5F0C48008A0144 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A456061A5F0BE7008A0144 /* Quick.framework */; };
 		99A4C92E1A1D20200044EDAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C92D1A1D20200044EDAF /* AppDelegate.swift */; };
 		99A4C9311A1D20200044EDAF /* Dunno.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C92F1A1D20200044EDAF /* Dunno.xcdatamodeld */; };
 		99A4C9331A1D20200044EDAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C9321A1D20200044EDAF /* ViewController.swift */; };
@@ -27,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarSegue.swift; sourceTree = "<group>"; };
+		9974EA951A3B8D91002A81E7 /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
+		99A19B591A2E32870006098C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		99A455FA1A5F0509008A0144 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
+		99A456021A5F08CF008A0144 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		99A456041A5F0BD9008A0144 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		99A456061A5F0BE7008A0144 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		99A4C9281A1D20200044EDAF /* Dunno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dunno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A4C92C1A1D20200044EDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99A4C92D1A1D20200044EDAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A455FB1A5F0509008A0144 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,15 +68,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A4560A1A5F0C48008A0144 /* Quick.framework in Frameworks */,
+				99A456091A5F0C3F008A0144 /* Nimble.framework in Frameworks */,
+				99A456081A5F0BED008A0144 /* Argo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		998E64C81A5C68ED00245FF3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		99A456011A5F08AA008A0144 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99A456021A5F08CF008A0144 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		99A4C91F1A1D20200044EDAF = {
 			isa = PBXGroup;
 			children = (
+				99A455FA1A5F0509008A0144 /* Argo.framework */,
 				99A4C92A1A1D20200044EDAF /* Dunno */,
 				99A4C9431A1D20200044EDAF /* DunnoTests */,
 				99A4C9291A1D20200044EDAF /* Products */,
@@ -79,13 +114,18 @@
 		99A4C92A1A1D20200044EDAF /* Dunno */ = {
 			isa = PBXGroup;
 			children = (
+				99A456011A5F08AA008A0144 /* Models */,
+				998E64C81A5C68ED00245FF3 /* Images */,
 				99A4C92D1A1D20200044EDAF /* AppDelegate.swift */,
+				9974EA951A3B8D91002A81E7 /* SidebarController.swift */,
 				99A4C9321A1D20200044EDAF /* ViewController.swift */,
 				99A4C9341A1D20200044EDAF /* Main.storyboard */,
 				99A4C9371A1D20200044EDAF /* Images.xcassets */,
 				99A4C9391A1D20200044EDAF /* LaunchScreen.xib */,
 				99A4C92F1A1D20200044EDAF /* Dunno.xcdatamodeld */,
 				99A4C92B1A1D20200044EDAF /* Supporting Files */,
+				99A19B591A2E32870006098C /* MainViewController.swift */,
+				9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */,
 			);
 			path = Dunno;
 			sourceTree = "<group>";
@@ -101,6 +141,8 @@
 		99A4C9431A1D20200044EDAF /* DunnoTests */ = {
 			isa = PBXGroup;
 			children = (
+				99A456061A5F0BE7008A0144 /* Quick.framework */,
+				99A456041A5F0BD9008A0144 /* Nimble.framework */,
 				99A4C9461A1D20200044EDAF /* DunnoTests.swift */,
 				99A4C9441A1D20200044EDAF /* Supporting Files */,
 			);
@@ -125,6 +167,7 @@
 				99A4C9241A1D20200044EDAF /* Sources */,
 				99A4C9251A1D20200044EDAF /* Frameworks */,
 				99A4C9261A1D20200044EDAF /* Resources */,
+				99A455FC1A5F057C008A0144 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -210,6 +253,25 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		99A455FC1A5F057C008A0144 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/opt/boxen/homebrew/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99A4C9241A1D20200044EDAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,7 +279,11 @@
 			files = (
 				99A4C9331A1D20200044EDAF /* ViewController.swift in Sources */,
 				99A4C9311A1D20200044EDAF /* Dunno.xcdatamodeld in Sources */,
+				9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */,
 				99A4C92E1A1D20200044EDAF /* AppDelegate.swift in Sources */,
+				9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */,
+				99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */,
+				99A456031A5F08CF008A0144 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +408,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Dunno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -352,9 +423,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Dunno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -365,6 +441,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -373,6 +450,7 @@
 				INFOPLIST_FILE = DunnoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dunno.app/Dunno";
 			};
 			name = Debug;
@@ -384,10 +462,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DunnoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dunno.app/Dunno";
 			};
 			name = Release;
@@ -411,6 +491,7 @@
 				99A4C94C1A1D20200044EDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99A4C94D1A1D20200044EDAF /* Build configuration list for PBXNativeTarget "DunnoTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +500,7 @@
 				99A4C94F1A1D20200044EDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
