@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -16,11 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-oh-Uob">
-                                <rect key="frame" x="16" y="20" width="74" height="30"/>
-                                <state key="normal" title="Disciplinas">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-oh-Uob">
+                                <rect key="frame" x="13" y="20" width="70" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-32" minY="39" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Disciplinas" image="Courses Icon.png">
+                                    <color key="titleColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Lato-Regular"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="MOQ-VK-RMI" kind="custom" customClass="SidebarSegue" customModule="Dunno" customModuleProvider="target" id="Phw-n0-dxg"/>
                                 </connections>
@@ -29,31 +36,36 @@
                                 <rect key="frame" x="98" y="20" width="926" height="748"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLp-eu-S8I">
-                                <rect key="frame" x="16" y="58" width="30" height="30"/>
-                                <state key="normal" title="Sair">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLp-eu-S8I">
+                                <rect key="frame" x="16" y="98" width="65" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="-32" minY="39" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Sair" image="Logout Icon.png">
+                                    <color key="titleColor" red="0.6705882352941176" green="0.6705882352941176" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Lato-Regular"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cPw-lp-3UH" firstAttribute="top" secondItem="rbp-oh-Uob" secondAttribute="top" id="81n-AV-beX"/>
                             <constraint firstItem="cPw-lp-3UH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="98" id="B7R-lT-rax"/>
                             <constraint firstItem="cPw-lp-3UH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FZN-Bg-vGn"/>
                             <constraint firstAttribute="trailing" secondItem="cPw-lp-3UH" secondAttribute="trailing" id="Gw0-e6-uXc"/>
-                            <constraint firstItem="cPw-lp-3UH" firstAttribute="leading" secondItem="rbp-oh-Uob" secondAttribute="trailing" constant="8" symbolic="YES" id="YdL-Lx-atW"/>
                             <constraint firstItem="cPw-lp-3UH" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="tT8-JK-0LM"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="placeholder" destination="cPw-lp-3UH" id="7M2-fl-fgU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="563" y="1926"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Jvg-9N-DhU">
@@ -73,8 +85,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T57-ZK-KwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379" y="310"/>
+            <point key="canvasLocation" x="1552" y="2002"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Courses Icon.png" width="32" height="28"/>
+        <image name="Logout Icon.png" width="28" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
     <color key="tintColor" red="0.28627450980392155" green="0.67843137254901964" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
 </document>
