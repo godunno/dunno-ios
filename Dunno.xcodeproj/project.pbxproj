@@ -13,8 +13,9 @@
 		9919D9041A659C4000F70761 /* Logout Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9919D8FE1A659C4000F70761 /* Logout Icon.png */; };
 		9919D9051A659C4000F70761 /* Logout Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9919D8FF1A659C4000F70761 /* Logout Icon@2x.png */; };
 		9919D9061A659C4000F70761 /* Logout Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9001A659C4000F70761 /* Logout Icon@3x.png */; };
-		9919D9091A65A34E00F70761 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9071A65A34E00F70761 /* Lato-Bold.ttf */; };
-		9919D90A1A65A34E00F70761 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9081A65A34E00F70761 /* Lato-Regular.ttf */; };
+		991F597C1A68166E007BF575 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9071A65A34E00F70761 /* Lato-Bold.ttf */; };
+		991F597D1A681672007BF575 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9081A65A34E00F70761 /* Lato-Regular.ttf */; };
+		991F597F1A6816E0007BF575 /* SidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F597E1A6816E0007BF575 /* SidebarButton.swift */; };
 		9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */; };
 		9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
 		99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A19B591A2E32870006098C /* MainViewController.swift */; };
@@ -51,6 +52,7 @@
 		9919D9001A659C4000F70761 /* Logout Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout Icon@3x.png"; sourceTree = "<group>"; };
 		9919D9071A65A34E00F70761 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		9919D9081A65A34E00F70761 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		991F597E1A6816E0007BF575 /* SidebarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarButton.swift; sourceTree = "<group>"; };
 		9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarSegue.swift; sourceTree = "<group>"; };
 		9974EA951A3B8D91002A81E7 /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		99A19B591A2E32870006098C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		99A4C91F1A1D20200044EDAF = {
 			isa = PBXGroup;
 			children = (
+				991F597E1A6816E0007BF575 /* SidebarButton.swift */,
 				99A455FA1A5F0509008A0144 /* Argo.framework */,
 				99A4C92A1A1D20200044EDAF /* Dunno */,
 				99A4C9431A1D20200044EDAF /* DunnoTests */,
@@ -282,8 +285,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991F597D1A681672007BF575 /* Lato-Regular.ttf in Resources */,
+				991F597C1A68166E007BF575 /* Lato-Bold.ttf in Resources */,
 				9919D9031A659C4000F70761 /* Courses Icon@3x.png in Resources */,
-				9919D9091A65A34E00F70761 /* Lato-Bold.ttf in Resources */,
 				9919D9011A659C4000F70761 /* Courses Icon.png in Resources */,
 				9919D9051A659C4000F70761 /* Logout Icon@2x.png in Resources */,
 				99A4C9361A1D20200044EDAF /* Main.storyboard in Resources */,
@@ -292,7 +296,6 @@
 				9919D9061A659C4000F70761 /* Logout Icon@3x.png in Resources */,
 				99A4C93B1A1D20200044EDAF /* LaunchScreen.xib in Resources */,
 				99A4C9381A1D20200044EDAF /* Images.xcassets in Resources */,
-				9919D90A1A65A34E00F70761 /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +350,7 @@
 				99A4C9311A1D20200044EDAF /* Dunno.xcdatamodeld in Sources */,
 				9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */,
 				99A4C92E1A1D20200044EDAF /* AppDelegate.swift in Sources */,
+				991F597F1A6816E0007BF575 /* SidebarButton.swift in Sources */,
 				9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */,
 				99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */,
 				99A456031A5F08CF008A0144 /* User.swift in Sources */,

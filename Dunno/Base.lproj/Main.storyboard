@@ -17,49 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-oh-Uob">
-                                <rect key="frame" x="13" y="20" width="70" height="70"/>
+                                <rect key="frame" x="24" y="41" width="70" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <inset key="titleEdgeInsets" minX="-32" minY="39" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-29" minY="39" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Disciplinas" image="Courses Icon.png">
                                     <color key="titleColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Lato-Regular"/>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="MOQ-VK-RMI" kind="custom" customClass="SidebarSegue" customModule="Dunno" customModuleProvider="target" id="Phw-n0-dxg"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-lp-3UH">
-                                <rect key="frame" x="98" y="20" width="926" height="748"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-lp-3UH">
+                                <rect key="frame" x="120" y="20" width="904" height="748"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLp-eu-S8I">
-                                <rect key="frame" x="16" y="98" width="65" height="65"/>
+                                <rect key="frame" x="29" y="137" width="65" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="-32" minY="39" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Sair" image="Logout Icon.png">
+                                <state key="normal" title="Logout" image="Logout Icon.png">
                                     <color key="titleColor" red="0.6705882352941176" green="0.6705882352941176" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="Lato-Regular"/>
-                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cPw-lp-3UH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="98" id="B7R-lT-rax"/>
-                            <constraint firstItem="cPw-lp-3UH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FZN-Bg-vGn"/>
-                            <constraint firstAttribute="trailing" secondItem="cPw-lp-3UH" secondAttribute="trailing" id="Gw0-e6-uXc"/>
-                            <constraint firstItem="cPw-lp-3UH" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="tT8-JK-0LM"/>
-                        </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="coursesButton" destination="rbp-oh-Uob" id="jok-10-bvS"/>
+                        <outlet property="logoutButton" destination="hLp-eu-S8I" id="Qaf-1g-fP8"/>
                         <outlet property="placeholder" destination="cPw-lp-3UH" id="7M2-fl-fgU"/>
                     </connections>
                 </viewController>
@@ -76,12 +66,12 @@
                         <viewControllerLayoutGuide type="bottom" id="BMq-op-XUS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yP4-MF-3yY">
-                        <rect key="frame" x="0.0" y="0.0" width="926" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="904" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="926" height="748"/>
+                    <size key="freeformSize" width="904" height="748"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T57-ZK-KwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
