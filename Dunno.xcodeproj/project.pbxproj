@@ -15,8 +15,10 @@
 		9919D9061A659C4000F70761 /* Logout Icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9001A659C4000F70761 /* Logout Icon@3x.png */; };
 		991F597C1A68166E007BF575 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9071A65A34E00F70761 /* Lato-Bold.ttf */; };
 		991F597D1A681672007BF575 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9919D9081A65A34E00F70761 /* Lato-Regular.ttf */; };
-		991F597F1A6816E0007BF575 /* SidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991F597E1A6816E0007BF575 /* SidebarButton.swift */; };
-		9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */; };
+		991F59821A68414B007BF575 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
+		991F59831A68415E007BF575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C9321A1D20200044EDAF /* ViewController.swift */; };
+		991F59841A684178007BF575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C92D1A1D20200044EDAF /* AppDelegate.swift */; };
+		991F59851A68417B007BF575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4C9341A1D20200044EDAF /* Main.storyboard */; };
 		9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
 		99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A19B591A2E32870006098C /* MainViewController.swift */; };
 		99A455FB1A5F0509008A0144 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A455FA1A5F0509008A0144 /* Argo.framework */; };
@@ -31,6 +33,10 @@
 		99A4C9381A1D20200044EDAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99A4C9371A1D20200044EDAF /* Images.xcassets */; };
 		99A4C93B1A1D20200044EDAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99A4C9391A1D20200044EDAF /* LaunchScreen.xib */; };
 		99A4C9471A1D20200044EDAF /* DunnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C9461A1D20200044EDAF /* DunnoTests.swift */; };
+		99CBB2191A6848BC0094C111 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CBB2181A6848BC0094C111 /* CoursesViewController.swift */; };
+		99CBB21B1A684E710094C111 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CBB21A1A684E710094C111 /* Course.swift */; };
+		99CBB21C1A6856680094C111 /* SidebarSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */; };
+		99CBB21D1A6856E00094C111 /* SidebarSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,6 @@
 		9919D9001A659C4000F70761 /* Logout Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout Icon@3x.png"; sourceTree = "<group>"; };
 		9919D9071A65A34E00F70761 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		9919D9081A65A34E00F70761 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		991F597E1A6816E0007BF575 /* SidebarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarButton.swift; sourceTree = "<group>"; };
 		9945BFAA1A5C9BFA00AEB899 /* SidebarSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarSegue.swift; sourceTree = "<group>"; };
 		9974EA951A3B8D91002A81E7 /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		99A19B591A2E32870006098C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +76,8 @@
 		99A4C9401A1D20200044EDAF /* DunnoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DunnoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A4C9451A1D20200044EDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99A4C9461A1D20200044EDAF /* DunnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DunnoTests.swift; sourceTree = "<group>"; };
+		99CBB2181A6848BC0094C111 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		99CBB21A1A684E710094C111 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				99A456021A5F08CF008A0144 /* User.swift */,
+				99CBB21A1A684E710094C111 /* Course.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -137,7 +145,6 @@
 		99A4C91F1A1D20200044EDAF = {
 			isa = PBXGroup;
 			children = (
-				991F597E1A6816E0007BF575 /* SidebarButton.swift */,
 				99A455FA1A5F0509008A0144 /* Argo.framework */,
 				99A4C92A1A1D20200044EDAF /* Dunno */,
 				99A4C9431A1D20200044EDAF /* DunnoTests */,
@@ -166,6 +173,7 @@
 				9974EA951A3B8D91002A81E7 /* SidebarController.swift */,
 				99A4C9321A1D20200044EDAF /* ViewController.swift */,
 				99A4C9341A1D20200044EDAF /* Main.storyboard */,
+				99CBB2181A6848BC0094C111 /* CoursesViewController.swift */,
 				99A4C9371A1D20200044EDAF /* Images.xcassets */,
 				99A4C9391A1D20200044EDAF /* LaunchScreen.xib */,
 				99A4C92F1A1D20200044EDAF /* Dunno.xcdatamodeld */,
@@ -303,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991F59851A68417B007BF575 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,11 +355,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99CBB21D1A6856E00094C111 /* SidebarSegue.swift in Sources */,
+				99CBB21B1A684E710094C111 /* Course.swift in Sources */,
 				99A4C9331A1D20200044EDAF /* ViewController.swift in Sources */,
+				99CBB2191A6848BC0094C111 /* CoursesViewController.swift in Sources */,
 				99A4C9311A1D20200044EDAF /* Dunno.xcdatamodeld in Sources */,
-				9945BFAB1A5C9BFA00AEB899 /* SidebarSegue.swift in Sources */,
 				99A4C92E1A1D20200044EDAF /* AppDelegate.swift in Sources */,
-				991F597F1A6816E0007BF575 /* SidebarButton.swift in Sources */,
 				9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */,
 				99A19B5A1A2E32870006098C /* MainViewController.swift in Sources */,
 				99A456031A5F08CF008A0144 /* User.swift in Sources */,
@@ -361,7 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991F59821A68414B007BF575 /* SidebarController.swift in Sources */,
+				991F59831A68415E007BF575 /* ViewController.swift in Sources */,
+				991F59841A684178007BF575 /* AppDelegate.swift in Sources */,
 				99A4C9471A1D20200044EDAF /* DunnoTests.swift in Sources */,
+				99CBB21C1A6856680094C111 /* SidebarSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
