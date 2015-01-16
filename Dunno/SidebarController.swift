@@ -9,7 +9,7 @@
 import UIKit
 
 class SidebarController: ViewController {
-    let defaultFont = UIFont.init(name: "Lato-Regular", size: 13.6)
+    let defaultFont = UIFont(name: "Lato-Regular", size: 13.6)
     
     @IBOutlet weak var currentViewController: UIViewController!
     @IBOutlet weak var placeholder: UIView!
