@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C99d" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BVv-Dh-UNb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Sidebar Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -13,12 +19,12 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="110" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbp-oh-Uob">
-                                <rect key="frame" x="24" y="41" width="70" height="70"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="24" y="52" width="70" height="70"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13.600000381469727"/>
                                 <inset key="titleEdgeInsets" minX="-29" minY="39" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Disciplinas" image="Courses Icon.png">
@@ -26,61 +32,87 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ypl-G2-onv" kind="custom" customClass="SidebarSegue" customModule="Dunno" id="Ihe-Y8-vjk"/>
+                                    <segue destination="vwF-mC-CsF" kind="replace" splitViewControllerTargetIndex="1" id="T7n-Kb-p1s"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPw-lp-3UH">
-                                <rect key="frame" x="120" y="20" width="904" height="748"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLp-eu-S8I">
-                                <rect key="frame" x="29" y="137" width="65" height="65"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="29" y="145" width="65" height="65"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13.600000381469727"/>
                                 <inset key="titleEdgeInsets" minX="-32" minY="39" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="14" minY="-17" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Logout" image="Logout Icon.png">
                                     <color key="titleColor" red="0.6705882352941176" green="0.6705882352941176" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oKg-H3-HdG" kind="replace" splitViewControllerTargetIndex="1" id="QMV-32-mhh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CPz-Xo-BZa"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="110" height="768"/>
                     <connections>
                         <outlet property="coursesButton" destination="rbp-oh-Uob" id="jok-10-bvS"/>
                         <outlet property="logoutButton" destination="hLp-eu-S8I" id="Qaf-1g-fP8"/>
-                        <outlet property="placeholder" destination="cPw-lp-3UH" id="7M2-fl-fgU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="1926"/>
+            <point key="canvasLocation" x="-189" y="1938"/>
         </scene>
-        <!--Courses View Controller-->
+        <!--Disciplinas-->
         <scene sceneID="cMq-41-gTi">
             <objects>
                 <collectionViewController modalPresentationStyle="currentContext" id="ypl-G2-onv" customClass="CoursesViewController" customModule="Dunno" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="f5y-xd-pWO">
-                        <rect key="frame" x="0.0" y="0.0" width="904" height="748"/>
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" id="f5y-xd-pWO">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GuD-L9-Yfq">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="422" height="180"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="courseCell" id="bEJ-jX-dtJ">
+                            <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="courseCell" id="bEJ-jX-dtJ" customClass="CourseViewCell" customModule="Dunno" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="422" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tópicos em Psicologia do Trabalho" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NU-Wr-ace">
+                                            <rect key="frame" x="12" y="29" width="399" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PUC Rio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAV-hd-VVp">
+                                            <rect key="frame" x="113" y="79" width="206" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Laboratório" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FH3-pZ-GiM">
+                                            <rect key="frame" x="325" y="79" width="89" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="customSize" width="422" height="180"/>
+                                <connections>
+                                    <outlet property="RoomLabel" destination="FH3-pZ-GiM" id="tsV-Y7-ZCJ"/>
+                                    <outlet property="institutionLabel" destination="ZAV-hd-VVp" id="CaC-Z3-eCq"/>
+                                    <outlet property="nameLabel" destination="2NU-Wr-ace" id="QuI-S0-N7Q"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -88,12 +120,70 @@
                             <outlet property="delegate" destination="ypl-G2-onv" id="9d7-5m-w0w"/>
                         </connections>
                     </collectionView>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="904" height="748"/>
+                    <navigationItem key="navigationItem" title="Disciplinas" id="xbz-53-eAN"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Meg-2v-mEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="3042"/>
+            <point key="canvasLocation" x="1936" y="1296"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="buM-9H-MP2">
+            <objects>
+                <viewController id="oKg-H3-HdG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dBo-HC-5fe"/>
+                        <viewControllerLayoutGuide type="bottom" id="DwZ-5F-rIu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3iB-nU-F9y">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PWs-Ue-mb0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ywk-xi-csL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397.5" y="2373"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yef-ZW-XLT">
+            <objects>
+                <navigationController id="vwF-mC-CsF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gn8-Xb-cy0">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RdV-hr-phV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.28627450980392155" green="0.67843137254901964" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ypl-G2-onv" kind="relationship" relationship="rootViewController" id="Xik-55-jwR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQb-L6-HNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.5" y="1309"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Qcc-eU-g7g">
+            <objects>
+                <splitViewController id="BVv-Dh-UNb" customClass="SplitViewController" customModule="Dunno" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="masterViewController" id="Epu-ue-S5H"/>
+                        <segue destination="vwF-mC-CsF" kind="relationship" relationship="detailViewController" id="pUn-7b-TTv"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4v-ly-vvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-440" y="953"/>
         </scene>
     </scenes>
     <resources>
@@ -105,5 +195,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="T7n-Kb-p1s"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.28627450980392155" green="0.67843137254901964" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
 </document>
