@@ -15,6 +15,7 @@ struct Course {
     let name: String
     let institution: String?
     let class_name: String?
+    let color: String?
 }
 
 extension Course {
@@ -22,8 +23,8 @@ extension Course {
         var startDate = NSDate(dateString: "2014-03-01")
         var endDate = NSDate(dateString: "2014-06-30")
        return [
-        Course(id: 1, startDate: startDate, endDate: endDate, name: "Curso1", institution: "Puc", class_name: "101"),
-        Course(id: 1, startDate: startDate, endDate: endDate, name: "Curso2", institution: "Puc", class_name: "101"),
+        Course(id: 1, startDate: startDate, endDate: endDate, name: "Fundamentos da Psicologia I", institution: "PUC", class_name: "TR203", color: "#FEDD59"),
+        Course(id: 1, startDate: startDate, endDate: endDate, name: "Introdução à Psicologia", institution: "PUC", class_name: "TR204", color: "#54C5FF")
         ]
     }
 }

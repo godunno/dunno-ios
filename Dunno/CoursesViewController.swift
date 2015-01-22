@@ -34,6 +34,8 @@ class CoursesViewController: UICollectionViewController, UICollectionViewDataSou
         cell.nameLabel.text = course.name
         cell.roomLabel.text = course.class_name
         cell.institutionLabel.text = course.institution
+        let color = course.color!
+        cell.topPanel!.backgroundColor = UIColor(rgba: color)
         
         return cell
     }

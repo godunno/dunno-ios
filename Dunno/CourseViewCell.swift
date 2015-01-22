@@ -12,4 +12,5 @@ class CourseViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
+    @IBOutlet weak var topPanel: UIView!
 }
