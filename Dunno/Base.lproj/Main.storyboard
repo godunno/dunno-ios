@@ -170,7 +170,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yef-ZW-XLT">
             <objects>
-                <navigationController id="vwF-mC-CsF" sceneMemberID="viewController">
+                <navigationController id="vwF-mC-CsF" customClass="NavigationController" customModule="Dunno" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="gn8-Xb-cy0">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
