@@ -22,7 +22,6 @@ class CoursesViewController: UICollectionViewController, UICollectionViewDataSou
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        println(courses.count)
         return courses.count
     }
     
@@ -30,13 +29,20 @@ class CoursesViewController: UICollectionViewController, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("courseCell", forIndexPath: indexPath) as CourseViewCell
         let course = courseForIndexPath(indexPath)
         
-        cell.layer.cornerRadius = 5.0
-        cell.nameLabel.text = course.name
-        cell.roomLabel.text = course.class_name
-        cell.institutionLabel.text = course.institution
+        cell.loadCourse(course)
+        
         cell.topPanel!.backgroundColor = UIColor(rgba: course.color!)
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as? CourseViewCell
+        let destinationViewController = segue.destinationViewController as? EventViewController
+        
+        if (cell != nil) && (destinationViewController != nil) {
+            destinationViewController?.loadCourse(cell!.course!)
+        }
     }
     
     func courseForIndexPath(indexPath: NSIndexPath) -> Course {

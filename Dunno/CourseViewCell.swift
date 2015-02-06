@@ -13,4 +13,13 @@ class CourseViewCell: UICollectionViewCell {
     @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var institutionLabel: UILabel!
     @IBOutlet weak var topPanel: UIView!
+    
+    var course: Course?
+    
+    func loadCourse(course: Course) {
+        self.course = course
+        nameLabel.text = course.name
+        roomLabel.text = course.class_name
+        institutionLabel.text = course.institution
+    }
 }
