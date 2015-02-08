@@ -18,10 +18,10 @@
 		991F59821A68414B007BF575 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
 		991F59831A68415E007BF575 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C9321A1D20200044EDAF /* ViewController.swift */; };
 		991F59841A684178007BF575 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C92D1A1D20200044EDAF /* AppDelegate.swift */; };
-		991F59851A68417B007BF575 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A4C9341A1D20200044EDAF /* Main.storyboard */; };
+		9931272E1A881D88008C94DD /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9931272D1A881D88008C94DD /* UIViewExtension.swift */; };
 		995688681A79552D001EC41E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995688671A79552D001EC41E /* NavigationController.swift */; };
 		9956886A1A799581001EC41E /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995688691A799581001EC41E /* EventViewCell.swift */; };
-		9956886C1A799634001EC41E /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956886B1A799634001EC41E /* EventViewController.swift */; };
+		9956886C1A799634001EC41E /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956886B1A799634001EC41E /* EventsViewController.swift */; };
 		9956886E1A799BED001EC41E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956886D1A799BED001EC41E /* Event.swift */; };
 		9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974EA951A3B8D91002A81E7 /* SidebarController.swift */; };
 		99762A571A701A2F008CE0F2 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99762A561A701A2F008CE0F2 /* SplitViewController.swift */; };
@@ -45,8 +45,6 @@
 		99A4C9471A1D20200044EDAF /* DunnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A4C9461A1D20200044EDAF /* DunnoTests.swift */; };
 		99CBB2191A6848BC0094C111 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CBB2181A6848BC0094C111 /* CoursesViewController.swift */; };
 		99CBB21B1A684E710094C111 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CBB21A1A684E710094C111 /* Course.swift */; };
-		99D1F66C1A8545760061F466 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995688691A799581001EC41E /* EventViewCell.swift */; };
-		99D1F66D1A8545790061F466 /* CourseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999D9C2A1A69830400EE9CFD /* CourseViewCell.swift */; };
 		99D1F66E1A8545A60061F466 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956886D1A799BED001EC41E /* Event.swift */; };
 		99D1F66F1A8545D90061F466 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CBB21A1A684E710094C111 /* Course.swift */; };
 		99D1F6701A8545DC0061F466 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A456021A5F08CF008A0144 /* User.swift */; };
@@ -73,9 +71,10 @@
 		9919D9001A659C4000F70761 /* Logout Icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout Icon@3x.png"; sourceTree = "<group>"; };
 		9919D9071A65A34E00F70761 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		9919D9081A65A34E00F70761 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		9931272D1A881D88008C94DD /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		995688671A79552D001EC41E /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		995688691A799581001EC41E /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
-		9956886B1A799634001EC41E /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		9956886B1A799634001EC41E /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		9956886D1A799BED001EC41E /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		9974EA951A3B8D91002A81E7 /* SidebarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarController.swift; sourceTree = "<group>"; };
 		99762A561A701A2F008CE0F2 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +149,7 @@
 			children = (
 				99762A5E1A7177B2008CE0F2 /* UIColorExtension.swift */,
 				99762A611A73C04C008CE0F2 /* NSDateExtension.swift */,
+				9931272D1A881D88008C94DD /* UIViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				9974EA951A3B8D91002A81E7 /* SidebarController.swift */,
 				99A4C9321A1D20200044EDAF /* ViewController.swift */,
 				99A4C9341A1D20200044EDAF /* Main.storyboard */,
-				9956886B1A799634001EC41E /* EventViewController.swift */,
+				9956886B1A799634001EC41E /* EventsViewController.swift */,
 				99762A561A701A2F008CE0F2 /* SplitViewController.swift */,
 				99CBB2181A6848BC0094C111 /* CoursesViewController.swift */,
 				995688671A79552D001EC41E /* NavigationController.swift */,
@@ -355,7 +355,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991F59851A68417B007BF575 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,11 +404,12 @@
 				9956886A1A799581001EC41E /* EventViewCell.swift in Sources */,
 				9956886E1A799BED001EC41E /* Event.swift in Sources */,
 				99A4C9331A1D20200044EDAF /* ViewController.swift in Sources */,
+				9931272E1A881D88008C94DD /* UIViewExtension.swift in Sources */,
 				99CBB2191A6848BC0094C111 /* CoursesViewController.swift in Sources */,
 				99A4C9311A1D20200044EDAF /* Dunno.xcdatamodeld in Sources */,
 				99A4C92E1A1D20200044EDAF /* AppDelegate.swift in Sources */,
 				9974EA961A3B8D91002A81E7 /* SidebarController.swift in Sources */,
-				9956886C1A799634001EC41E /* EventViewController.swift in Sources */,
+				9956886C1A799634001EC41E /* EventsViewController.swift in Sources */,
 				99762A5F1A7177B2008CE0F2 /* UIColorExtension.swift in Sources */,
 				99762A621A73C04C008CE0F2 /* NSDateExtension.swift in Sources */,
 				99A456031A5F08CF008A0144 /* User.swift in Sources */,
@@ -423,9 +423,7 @@
 			files = (
 				99D1F66F1A8545D90061F466 /* Course.swift in Sources */,
 				991F59821A68414B007BF575 /* SidebarController.swift in Sources */,
-				99D1F66C1A8545760061F466 /* EventViewCell.swift in Sources */,
 				991F59831A68415E007BF575 /* ViewController.swift in Sources */,
-				99D1F66D1A8545790061F466 /* CourseViewCell.swift in Sources */,
 				99D1F6701A8545DC0061F466 /* User.swift in Sources */,
 				991F59841A684178007BF575 /* AppDelegate.swift in Sources */,
 				99D1F6711A8546170061F466 /* UIColorExtension.swift in Sources */,
