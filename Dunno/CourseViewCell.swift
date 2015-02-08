@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class CourseViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
