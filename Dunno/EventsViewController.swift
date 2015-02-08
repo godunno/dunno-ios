@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventViewController: UICollectionViewController {
+class EventsViewController: UICollectionViewController {
     var course: Course!
     var events: [Event]!
     

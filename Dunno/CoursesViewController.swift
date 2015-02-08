@@ -38,7 +38,7 @@ class CoursesViewController: UICollectionViewController, UICollectionViewDataSou
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as? CourseViewCell
-        let destinationViewController = segue.destinationViewController as? EventViewController
+        let destinationViewController = segue.destinationViewController as? EventsViewController
         
         if (cell != nil) && (destinationViewController != nil) {
             destinationViewController?.loadCourse(cell!.course!)
